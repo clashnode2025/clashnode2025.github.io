@@ -1,4 +1,4 @@
-# 「6月26日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅  更新时间 2024-06-26 10:56:14
+# 「6月27日」2025年最新高速V2ray/Shadowrocket/SSR/Clash免费节点链接订阅  更新时间 2024-06-27 11:46:25
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashnode2025.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashnode2025.github.io/uploads/2024/06/0-20240626.yaml
-- https://clashnode2025.github.io/uploads/2024/06/1-20240626.yaml
-- https://clashnode2025.github.io/uploads/2024/06/2-20240626.yaml
-- https://clashnode2025.github.io/uploads/2024/06/3-20240626.yaml
-- https://clashnode2025.github.io/uploads/2024/06/4-20240626.yml
+- https://clashnode2025.github.io/uploads/2024/06/0-20240627.yaml
+- https://clashnode2025.github.io/uploads/2024/06/1-20240627.yaml
+- https://clashnode2025.github.io/uploads/2024/06/2-20240627.yaml
+- https://clashnode2025.github.io/uploads/2024/06/3-20240627.yaml
+- https://clashnode2025.github.io/uploads/2024/06/4-20240627.yml
 
 ### V2ray订阅链接
 
-- https://clashnode2025.github.io/uploads/2024/06/0-20240626.txt
-- https://clashnode2025.github.io/uploads/2024/06/1-20240626.txt
-- https://clashnode2025.github.io/uploads/2024/06/2-20240626.txt
-- https://clashnode2025.github.io/uploads/2024/06/3-20240626.txt
-- https://clashnode2025.github.io/uploads/2024/06/4-20240626.txt
+- https://clashnode2025.github.io/uploads/2024/06/0-20240627.txt
+- https://clashnode2025.github.io/uploads/2024/06/1-20240627.txt
+- https://clashnode2025.github.io/uploads/2024/06/2-20240627.txt
+- https://clashnode2025.github.io/uploads/2024/06/3-20240627.txt
+- https://clashnode2025.github.io/uploads/2024/06/4-20240627.txt
 
 ## 更多clash节点订阅 ：
 
