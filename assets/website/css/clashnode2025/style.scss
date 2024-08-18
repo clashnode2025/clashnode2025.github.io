@@ -1,0 +1,15 @@
+$primary: #081158;
+$secondary: #FBB244;
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-sans-serif-secondary: 'Montserrat', sans-serif;
+
+@import 'bootstrap/mixins';
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/bootstrap';
+
+@import 'components/site-base';
+@import 'components/site-navbar';
+@import 'components/site-blocks';
+@import 'components/site-footer';

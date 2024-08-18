@@ -1,0 +1,11 @@
+.hero-section {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  height: 100vh;
+  min-height: 600px;
+  background: #070d59;
+  position: relative; }
+
+.section {
+  padding-top: 7rem;
+  padding-bottom: 7rem; }
