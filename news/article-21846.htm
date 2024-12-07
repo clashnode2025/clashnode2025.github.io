@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-21846.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="__ADDON__/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>SpringBoot 起步依赖+SpringBoot配置</title>
+        <meta name="description" content="1）版本锁定 如spring-boot-starter-parent中，指定了版本，子module中不需要再次指定版本 &lt;dependencyManagement&gt;&lt;/depende" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">SpringBoot 起步依赖+SpringBoot配置</h1>
+                    </div>
+
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> </h1> <p>1）版本锁定<br /> 如spring-boot-starter-parent中，指定了版本，子module中不需要再次指定版本</p> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependencyManagement<span class="token punctuation">&gt;</span></span><span class="token operator">&lt;</span><span class="token operator">/</span>dependencyManagement<span class="token operator">&gt;</span></code></pre> <p>2）依赖传递<br /> 如spring-boot-starter-web中</p> </h1> <h2><a id="_12" rel="nofollow"></a>（一）配置文件分类</h2> <p>SpringBoot 是基于约定的，所以很多配置都有默认值，但如果想使用自己的配置替换默认的话，就可以使用application.properties 或者 application.yml （application.yaml）进行配置。</p> <ul> <li>properties<br /><code>server.port=8080</code></li> <li>yml<br /><code>server: port: 8080</code></li> </ul> <p>如果resource目录下同时存在以下配置文件：<br /> application.properties<br /> application.yml<br /> application.yaml<br /> 则优先级application.properties 最高，其次是application.yml，最后是application.yaml。即若3个配置文件存在同一个键值对，实际上取的值是application.properties文件中的；他们是叠加读取的。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/9dff67873a7d61183de293467d20e49a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="yaml_29" rel="nofollow"></a>（二）yaml</h2> <p>YAML全称是YAML Ain’t Markup Language，意思是yaml不是一种标记性语言。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/b9bf797fc26f3fd77d7caaa49846f0aa.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/9179a651a1f3158093e3fa9c4c0651e8.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/d2990380b4152315bd79836df8abd16d.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/78e8999557f684ad532a03be6be7e6a5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/99270d2eb074a572d50898a051e2c27a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="_38" rel="nofollow"></a>（三）读取配置文件内容</h2> <h3><a id="1Value_39" rel="nofollow"></a>1、@Value</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/0d680a8c3c2bf703b15b32fb6b2af3c5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/dd5aa9f6c6eeb54d1138e365e6c84ecd.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h3><a id="2Environment_43" rel="nofollow"></a>2、Environment</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/b1670cd1ad75375e034bb75fdc137aff.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/01bd417c6026bdecfbf95946a906bfa9.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h3><a id="3_ConfigurationProperties_47" rel="nofollow"></a>3、 @ConfigurationProperties</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/448ef92876f01bfb5bc13b50e1b06fa9.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/0959ff327e6eeb65cf129edd4a993d90.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/e00f012fb79d071bee4a3e5234be125c.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p>加上下面这依赖之后，自己写的类上的属性就能在配置文件里有提示了。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/62f06d58fa3078ff522eda06d5aabc17.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/126a5a101ffbe02cb47a6428e06363e5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="profile_56" rel="nofollow"></a>（四）profile</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/52f9b752af98d792e48ad3b8c445128a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/c638c2172afc357f821f4a2c7f979686.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/e88c733492c7af916fbe24f222e59ab5.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/ee809ae534de4f9433a916644d1af5b7.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/dd937b4a39a5b486c32b2f427d4cec48.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/ff2b3d8d53f0c76536c6977049ac322d.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/2b440db8aa5b293de931a60aebeefc6e.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="_69" rel="nofollow"></a>（五）内部配置加载顺序</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221130/660bf91d8f803a4ef1807bf97432f8b6.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /> resource目录下是属于第4种，在classpath的根目录下。</p> <p>多个文件都会加载，形成互补的配置；同名变量生效优先级1&gt;2&gt;3&gt;4。<br /> 说明：1和2是不会打进jar包文件里的，因为他不符合maven结构<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/1f12099a7231345125bb23f0306e8503.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> <h2><a id="_77" rel="nofollow"></a>（六）外部配置加载顺序</h2> <p>https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/8be272eb46775740d49f5eaef839f088.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /> 17种外部配置方式<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/c0264ccd8ff90a063048d066bba3f02a.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/a450b1c587b8d20400a05468cdb83c23.jpg" alt="SpringBoot 起步依赖+SpringBoot配置"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-21845.htm">关于Android10 暗黑模式的简述</a></p>
+                                        <p>下一个：<a href="/news/article-22298.htm">饲料搅拌机转不动什么原因（饲料搅拌机工作原理）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-8-9-node-share-links.htm" title="「8月9日」2025年最新高速V2ray/Shadowrocket/SSR/Clash免费节点链接订阅">「8月9日」2025年最新高速V2ray/Shadowrocket/SSR/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-6-free-node-subscribe-links.htm" title="3月6日22.4M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接">3月6日22.4M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19094.htm" title="合肥哪里有领养狗狗的地方 合肥哪里有领养狗狗的地方啊">合肥哪里有领养狗狗的地方 合肥哪里有领养狗狗的地方啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-17-free-ssr-subscribe.htm" title="3月17日22.7M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接">3月17日22.7M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-ssr-subscribe.htm" title="「12月4日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅机场">「12月4日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-29-shadowrocket-node.htm" title="「5月29日」2024年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅">「5月29日」2024年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-free-high-speed-nodes.htm" title="「9月11日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅">「9月11日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/news/article-22299.htm" title="猫咪疫苗三针多少钱一针啊（猫咪疫苗三针是什么）">猫咪疫苗三针多少钱一针啊（猫咪疫苗三针是什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-clash-windows.htm" title="「11月3日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场">「11月3日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-27-node-share-links.htm" title="「4月27日」2024年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅">「4月27日」2024年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
