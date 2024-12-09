@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-22756.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="__ADDON__/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>C++的命名空间</title>
+        <meta name="description" content="命名空间提供了一种在大项目中避免名字冲突的方法。 在命名空间块内声明的符号被放入一个被命名（具名）的作用域中，避免这些符号被误认为其他作用域中的同名符号。 多个命名空间块的名字可以相同，这些块中的所有" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">C++的命名空间</h1>
+                    </div>
+
+                                      				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <p>命名空间提供了一种在大项目中避免名字冲突的方法。</p> <p>在命名空间块内声明的符号被放入一个被命名（具名）的作用域中，避免这些符号被误认为其他作用域中的同名符号。</p> <p>多个命名空间块的名字可以相同，这些块中的所有声明在该具名作用域声明。</p> <p>基本语法：<code>inline(可选) namespace 属性(可选) 标识符 { 命名空间体 }</code></p> <ul> <li>inline<code>：存在时，表明此命名空间时内联命名空间。如果原初命名空间定义不使用</code>inline``，那么不能出现在扩展命名空间定义中。（内联命名空间可以把空间内函数和类型导出到父命名空间中） <ul> <li> <code>inline</code>可以出现在除第一个<code>namespace</code>之外的任意<code>namespace</code>之前。</li> </ul> </li> </ul> <p>示例一：</p> <pre><code class="prism language-cpp"><span class="token keyword">namespace</span> S1 <span class="token punctuation">{<!-- --></span>  <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token keyword">namespace</span> S2 <span class="token punctuation">{<!-- --></span>  <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token keyword">using</span> <span class="token keyword">namespace</span> S1<span class="token punctuation">;</span> <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token class-name">S2</span><span class="token double-colon punctuation">::</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>以上是命名空间的一个典型例子，例子中命名空间S1和S2都有相同的函数foo，在调用两个函数时，由于命名空间S1被<code>using</code>关键字打开，因此S1的foo函数可以直接使用，而S2的foo函数需要使用::来指定函数的命名空间。</p> <p>示例二：内联命名空间</p> <pre><code class="prism language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span> <span class="token keyword">namespace</span> Parent <span class="token punctuation">{<!-- --></span>  <span class="token keyword">namespace</span> Child1  <span class="token punctuation">{<!-- --></span>  <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Child1::foo()"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token punctuation">}</span>  <span class="token keyword">inline</span> <span class="token keyword">namespace</span> Child2  <span class="token punctuation">{<!-- --></span>  <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Child2::foo()"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>  Parent<span class="token double-colon punctuation">::</span><span class="token class-name">Child1</span><span class="token double-colon punctuation">::</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token class-name">Parent</span><span class="token double-colon punctuation">::</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>在上面的代码中，Child1不是一个内联命名空间，所以调用Child1的foo函数需要明确指定所属命名空间。而调用Child2的foo函数则方便了许多，直接指定父命名空间即可。</p> <p>示例三：嵌套命名空间</p> <pre><code class="prism language-cpp"><span class="token keyword">namespace</span> A<span class="token double-colon punctuation">::</span>B<span class="token double-colon punctuation">::</span>C <span class="token punctuation">{<!-- --></span>  <span class="token keyword">int</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>上述代码等价于：</p> <pre><code class="prism language-cpp"><span class="token keyword">namespace</span> A <span class="token punctuation">{<!-- --></span>    <span class="token keyword">namespace</span> B <span class="token punctuation">{<!-- --></span>      <span class="token keyword">namespace</span> C <span class="token punctuation">{<!-- --></span>          <span class="token keyword">int</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> <span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>      <span class="token punctuation">}</span>    <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>示例四：无名命名空间</p> <pre><code class="prism language-cpp"><span class="token keyword">namespace</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">int</span> i<span class="token punctuation">;</span> <span class="token comment">// 定义 ::(独有)::i</span> <span class="token punctuation">}</span>   <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     i<span class="token operator">++</span><span class="token punctuation">;</span>   <span class="token comment">// 自增 ::(独有)::i</span> <span class="token punctuation">}</span>   <span class="token keyword">namespace</span> A <span class="token punctuation">{<!-- --></span>     <span class="token keyword">namespace</span>     <span class="token punctuation">{<!-- --></span>         <span class="token keyword">int</span> i<span class="token punctuation">;</span>        <span class="token comment">// A::(独有)::i</span>         <span class="token keyword">int</span> j<span class="token punctuation">;</span>        <span class="token comment">// A::(独有)::j</span>     <span class="token punctuation">}</span>       <span class="token keyword">void</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment">// A::(独有)::i++</span> <span class="token punctuation">}</span>   <span class="token keyword">using</span> <span class="token keyword">namespace</span> A<span class="token punctuation">;</span> <span class="token comment">// 从 A 引入所有名称到全局命名空间</span>   <span class="token keyword">void</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     i<span class="token operator">++</span><span class="token punctuation">;</span>    <span class="token comment">// 错误：::(独有)::i 与 ::A::(独有)::i 均在作用域中</span>     A<span class="token double-colon punctuation">::</span>i<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">// OK：自增 A::(独有)::i</span>     j<span class="token operator">++</span><span class="token punctuation">;</span>    <span class="token comment">// OK：自增 A::(独有)::j</span> <span class="token punctuation">}</span> </code></pre> <p>虽然无名命名空间中的名字可以声明为具有外部连接，但从其他翻译单元无法访问它们，因为它的命名空间名是独有的。</p> <p>无名命名空间以及所有直接或间接在无名命名空间内声明的命名空间都具有内部连接，这表示在无名命名空间内声明的所有名字都具有内部连接。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-22299.htm">猫咪疫苗三针多少钱一针啊（猫咪疫苗三针是什么）</a></p>
+                                        <p>下一个：<a href="/news/article-22757.htm">聊一聊Vue3.2中setup语法糖+volar</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-clash-v2ray-ss-ssr.htm" title="「10月21日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅机场">「10月21日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-free-v2ray.htm" title="「9月23日」2025年最新高速SSR/Shadowrocket/Clash/V2ray免费节点链接订阅">「9月23日」2025年最新高速SSR/Shadowrocket/Clash/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-2-free-node-subscribe-links.htm" title="「9月2日」2025年最新高速Clash/Shadowrocket/V2ray/SSR免费节点链接订阅">「9月2日」2025年最新高速Clash/Shadowrocket/V2ray/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-13-shadowrocket-node.htm" title="「5月13日」2024年最新高速V2ray/Shadowrocket/SSR/Clash免费节点链接订阅">「5月13日」2024年最新高速V2ray/Shadowrocket/SSR/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-11-free-clash-subscribe.htm" title="3月11日22.2M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接">3月11日22.2M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-7-node-share-links.htm" title="3月7日22.7M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接">3月7日22.7M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-29-free-node-subscribe-links.htm" title="「9月29日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅">「9月29日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-clash-node-daily-updates.htm" title="「11月25日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「11月25日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-clash.htm" title="「10月30日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅机场">「10月30日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-10-free-high-speed-nodes.htm" title="「5月10日」2024年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅">「5月10日」2024年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
