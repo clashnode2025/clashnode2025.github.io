@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-26466.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>python之pandas库的DataFrame — 数据对齐与缺失数据处理</title>
+        <meta name="description" content="python之pandas库的DataFrame — 数据对齐与缺失数据处理 目录 1.基本操作 DataFrame相加 DataFrame缺失值填充 fillna DataFrame缺失值删除 dr" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">python之pandas库的DataFrame — 数据对齐与缺失数据处理</h1>
+                    </div>
+
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>python之pandas库的DataFrame — 数据对齐与缺失数据处理</p> <p>目录<br /> 1.基本操作<br /> DataFrame相加<br /> DataFrame缺失值填充 fillna<br /> DataFrame缺失值删除 dropna</p> <p>2.高级操作<br /> 缺失值删除 dropna（how = ‘’）<br /> 当一行中全部为缺失值时删除整行<br /> 当一行中任意为缺失值时删除整行<br /> 当一行中全部为缺失值时删除整列<br /> 当一行中任意为缺失值时删除整列</p> <p>代码实现<br /> 1.基本操作</p> <pre><code class="prism language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np df1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token string">'one'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'two'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> df2 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token string">'one'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'two'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> df_add <span class="token operator">=</span> df1 <span class="token operator">+</span> df2 df_fill <span class="token operator">=</span> df2<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">#填充缺失值</span> df_drop <span class="token operator">=</span> df2<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#一行中有一个缺失值时，会把整行删掉</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df1='</span><span class="token punctuation">,</span>df1<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df2='</span><span class="token punctuation">,</span>df2<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df_add='</span><span class="token punctuation">,</span>df_add<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df_fill='</span><span class="token punctuation">,</span>df_fill<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df_drop='</span><span class="token punctuation">,</span>df_drop<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span>  </code></pre> <pre><code>df1=    one  two a    1    5 b    2    6 c    3    7 d    4    8   df2=    one  two d  1.0    5 c  2.0    6 b  3.0    7 a  NaN    8   df_add=    one  two a  NaN   13 b  5.0   13 c  5.0   13 d  5.0   13   df_fill=    one  two d  1.0    5 c  2.0    6 b  3.0    7 a  0.0    8   df_drop=    one  two d  1.0    5 c  2.0    6 b  3.0    7   df3=    one  two d  1.0  5.0 c  2.0  6.0 b  3.0  NaN a  NaN  NaN   df3_drop=    one  two d  1.0  5.0 c  2.0  6.0 b  3.0  NaN   df3_drop2=    one  two d  1.0  5.0 c  2.0  6.0  </code></pre> <p>2.高级操作</p> <pre><code class="prism language-python"><span class="token comment">#缺失值删除的高级操作#</span> df3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token string">'one'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'two'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> df3_drop <span class="token operator">=</span> df3<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>how<span class="token operator">=</span><span class="token string">'all'</span><span class="token punctuation">)</span> <span class="token comment">#当一行中全部为缺失值时删除整行#</span> df3_drop2 <span class="token operator">=</span> df3<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>how<span class="token operator">=</span><span class="token string">'any'</span><span class="token punctuation">)</span> <span class="token comment">#当一行中有任意缺失值时删除整行#</span> df4 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token string">'one'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'two'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'three'</span><span class="token punctuation">:</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">,</span>np<span class="token punctuation">.</span>nan<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> df4_drop <span class="token operator">=</span> df4<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>how<span class="token operator">=</span><span class="token string">'any'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#当一列中有任意缺失值时删除整行#</span> df4_drop2 <span class="token operator">=</span> df4<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>how<span class="token operator">=</span><span class="token string">'all'</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">#当一列中全部为缺失值时删除整行#</span>  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df3='</span><span class="token punctuation">,</span>df3<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df3_drop='</span><span class="token punctuation">,</span>df3_drop<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df3_drop2='</span><span class="token punctuation">,</span>df3_drop2<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df4='</span><span class="token punctuation">,</span>df4<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df4_drop='</span><span class="token punctuation">,</span>df4_drop<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'df4_drop2='</span><span class="token punctuation">,</span>df4_drop2<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span>  </code></pre> <pre><code>df3=    one  two d  1.0  5.0 c  2.0  6.0 b  3.0  NaN a  NaN  NaN   df3_drop=    one  two d  1.0  5.0 c  2.0  6.0 b  3.0  NaN   df3_drop2=    one  two d  1.0  5.0 c  2.0  6.0   df4=    one  two  three d    1  5.0    NaN c    2  6.0    NaN b    3  NaN    NaN a    4  NaN    NaN   df4_drop=    one d    1 c    2 b    3 a    4   df4_drop2=    one  two d    1  5.0 c    2  6.0 b    3  NaN a    4  NaN  </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-26005.htm">南京宠物领养平台电话号码是多少（南京宠物猫领养中心）</a></p>
+                                        <p>下一个：<a href="/news/article-26467.htm">动物医院住院部护理（动物医院前台）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-7-18-node-share.htm" title="「7月18日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅">「7月18日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-10-free-node-subscribe-links.htm" title="3月10日18.2M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接">3月10日18.2M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-18-free-ssr-node.htm" title="3月18日22.1M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接">3月18日22.1M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-6-free-ssr-subscribe.htm" title="「10月6日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅">「10月6日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-8-free-subscribe-node.htm" title="3月8日21.4M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接">3月8日21.4M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-3-free-high-speed-nodes.htm" title="「8月3日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅">「8月3日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-3-free-v2ray-subscribe.htm" title="「9月3日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅">「9月3日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-8-free-v2ray-subscribe.htm" title="「5月8日」2024年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅">「5月8日」2024年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-24-free-clash.htm" title="「4月24日」2024年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅">「4月24日」2024年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-2-free-node-subscribe-links.htm" title="「6月2日」2024年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅">「6月2日」2024年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
