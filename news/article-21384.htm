@@ -6,7 +6,7 @@
     <link rel="canonical" href="https://clashnode2025.github.io/news/article-21384.htm" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="__ADDON__/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
     <title>Kafka消费者rebalanced异常分析</title>
         <meta name="description" content="异常 org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot  be completed since the gr" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -82,7 +82,8 @@
                         <h1 class="mb-5 text-center">Kafka消费者rebalanced异常分析</h1>
                     </div>
 
-                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>异常</h2> <pre><code class="prism language-java"><span class="token class-name"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>kafka<span class="token punctuation">.</span>clients<span class="token punctuation">.</span>consumer<span class="token punctuation">.</span></span>CommitFailedException</span><span class="token operator">:</span> <span class="token class-name">Commit</span> cannot  be completed since the group has already rebalanced and assigned the  partitions <span class="token keyword">to</span> <span class="token namespace">another</span> <span class="token class-name"><span class="token namespace">member<span class="token punctuation">.</span></span> This</span> means that the time between  subsequent calls <span class="token keyword">to</span> <span class="token namespace">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> was longer than the configured  max<span class="token punctuation">.</span>poll<span class="token punctuation">.</span>interval<span class="token punctuation">.</span>ms<span class="token punctuation">,</span> which typically implies that the poll loop is  spending too much time message <span class="token class-name"><span class="token namespace">processing<span class="token punctuation">.</span></span> You</span> can address <span class="token keyword">this</span> either  by increasing the session timeout or by reducing the maximum size of   batches returned in <span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">with</span> <span class="token namespace">max<span class="token punctuation">.</span>poll<span class="token punctuation">.</span>records<span class="token punctuation">.</span></span> </code></pre> <p>大概意思：该Consumer不能提交offset了，应为分区已经分配给另一个消费者。是因为你的两次poll的间隔(<strong>poll会发送心跳</strong>)大于你要报告给server的最大时间(<strong>max.poll.interval.ms</strong>)。解决办法是，要么增加超时时间，要么减少每次poll回来的消息个数(<strong>max.poll.records</strong>)。</p> <h2> <a id="_14" rel="nofollow"></a>参数解释</h2> <p>max.poll.interval.ms：两次poll的最大间隔时间，超过该时间则被kafka认为是挂掉了。<br /> 需要注意的是，如果我们采取的是先消费完拉取的任务，再提交offset的模式，要确保消费完这些任务的时间小于max.poll.interval.ms。<br /> 但是一般情况下我们采用的是另起线程或者线程池的方式消费消息。</p> <p>session.timeout.ms：检测心跳的最长时间间隔。如果超过该时间没有检测到心跳，则认为该消费者挂掉。</p> <p>poll(timeout)：timeout的表示，如果主题中有消息，则拉取，否则等待timeout的时间后再拉取。调用poll方法的时候回发送心跳。</p> <p>max.poll.records：最大拉取多少条记录。</p> <p><strong>注</strong>：在0.10.1之后的版本中，poll会启动两个线程，一个用于拉取消息。一个用于专门上报心跳，间隔是heartbeat.interval.ms。注意这个时间要小于session.timeout.ms。<br /> 这样的好处是：就算消费消息的时间超过了max.poll.interval.ms，也会应为有专门的线程在上报心跳，而不会将该消费者移除。</p> </p></div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>异常</h2> <pre><code class="prism language-java"><span class="token class-name"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>kafka<span class="token punctuation">.</span>clients<span class="token punctuation">.</span>consumer<span class="token punctuation">.</span></span>CommitFailedException</span><span class="token operator">:</span> <span class="token class-name">Commit</span> cannot  be completed since the group has already rebalanced and assigned the  partitions <span class="token keyword">to</span> <span class="token namespace">another</span> <span class="token class-name"><span class="token namespace">member<span class="token punctuation">.</span></span> This</span> means that the time between  subsequent calls <span class="token keyword">to</span> <span class="token namespace">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> was longer than the configured  max<span class="token punctuation">.</span>poll<span class="token punctuation">.</span>interval<span class="token punctuation">.</span>ms<span class="token punctuation">,</span> which typically implies that the poll loop is  spending too much time message <span class="token class-name"><span class="token namespace">processing<span class="token punctuation">.</span></span> You</span> can address <span class="token keyword">this</span> either  by increasing the session timeout or by reducing the maximum size of   batches returned in <span class="token function">poll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">with</span> <span class="token namespace">max<span class="token punctuation">.</span>poll<span class="token punctuation">.</span>records<span class="token punctuation">.</span></span> </code></pre> <p>大概意思：该Consumer不能提交offset了，应为分区已经分配给另一个消费者。是因为你的两次poll的间隔(<strong>poll会发送心跳</strong>)大于你要报告给server的最大时间(<strong>max.poll.interval.ms</strong>)。解决办法是，要么增加超时时间，要么减少每次poll回来的消息个数(<strong>max.poll.records</strong>)。</p> <h2> <a id="_14" rel="nofollow"></a>参数解释</h2> <p>max.poll.interval.ms：两次poll的最大间隔时间，超过该时间则被kafka认为是挂掉了。<br /> 需要注意的是，如果我们采取的是先消费完拉取的任务，再提交offset的模式，要确保消费完这些任务的时间小于max.poll.interval.ms。<br /> 但是一般情况下我们采用的是另起线程或者线程池的方式消费消息。</p> <p>session.timeout.ms：检测心跳的最长时间间隔。如果超过该时间没有检测到心跳，则认为该消费者挂掉。</p> <p>poll(timeout)：timeout的表示，如果主题中有消息，则拉取，否则等待timeout的时间后再拉取。调用poll方法的时候回发送心跳。</p> <p>max.poll.records：最大拉取多少条记录。</p> <p><strong>注</strong>：在0.10.1之后的版本中，poll会启动两个线程，一个用于拉取消息。一个用于专门上报心跳，间隔是heartbeat.interval.ms。注意这个时间要小于session.timeout.ms。<br /> 这样的好处是：就算消费消息的时间超过了max.poll.interval.ms，也会应为有专门的线程在上报心跳，而不会将该消费者移除。</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-20926.htm">宠物领养网免费平台有哪些公司可以注册 宠物领养网免费平台有哪些公司可以注册的</a></p>
                                         <p>下一个：<a href="/news/article-21385.htm">湖南腊肉炒之前要煮一下吗(湖南腊肉炒之前需要焯水吗?)</a></p>
@@ -96,16 +97,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-5-18-clash-node-daily-updates.htm" title="「5月18日」2024年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅">「5月18日」2024年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-19-free-node-subscribe.htm" title="「6月19日」2024年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅">「6月19日」2024年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/news/article-20012.htm" title="养猫人容易得什么寄生虫病（养猫人容易得什么寄生虫病毒）">养猫人容易得什么寄生虫病（养猫人容易得什么寄生虫病毒）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-subscribe-node.htm" title="「10月20日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场">「10月20日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-4-8-shadowrocket-node.htm" title="「4月8日」2024年最新高速SSR/Shadowrocket/V2ray/Clash免费节点链接订阅">「4月8日」2024年最新高速SSR/Shadowrocket/V2ray/Clash免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-7-free-node-subscribe.htm" title="「12月7日」2025年最新高速V2ray/Clash/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「12月7日」2025年最新高速V2ray/Clash/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-6-node-share.htm" title="「5月6日」2024年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅">「5月6日」2024年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-10-node-share-links.htm" title="「6月10日」2024年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅">「6月10日」2024年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-15-free-ssr-node.htm" title="「8月15日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅">「8月15日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-3-30-clash-node.htm" title="「3月30日」2024年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅">「3月30日」2024年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-14-free-clash.htm" title="「9月14日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅">「9月14日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-11-free-clash-subscribe.htm" title="「8月11日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅">「8月11日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-14-free-subscribe-node.htm" title="「4月14日」2024年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅">「4月14日」2024年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-7-free-clash.htm" title="「4月7日」2024年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅">「4月7日」2024年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-ssr-node.htm" title="「11月13日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场">「11月13日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-5-free-shadowrocket-node.htm" title="「4月5日」2024年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅">「4月5日」2024年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-23-free-clash.htm" title="「7月23日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅">「7月23日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-31-shadowrocket-node.htm" title="「7月31日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅">「7月31日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-21-free-v2ray-subscribe.htm" title="「4月21日」2024年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅">「4月21日」2024年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-node-daily-updates.htm" title="「10月18日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场">「10月18日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
                     </ul>
     </div>
 </div>
@@ -117,7 +118,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -160,6 +161,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                     <p>
                         ClashNode2025订阅分享站 版权所有
                         <br />
