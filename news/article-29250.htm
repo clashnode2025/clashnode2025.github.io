@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-29250.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Spring Security教程（13）&#8212;- 验证码功能的实现</title>
+        <meta name="description" content="有三中方法可以实现验证码的功能 第一种是自定义一个filter，放在SpringSecurity过滤器之前，在用户登录的时候会先经过这个filter，然后在这个filter中实现对验证码进行验证的功能" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Spring Security教程（13）&#8212;- 验证码功能的实现</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>有三中方法可以实现验证码的功能</p> <p>第一种是自定义一个filter，放在SpringSecurity过滤器之前，在用户登录的时候会先经过这个filter，然后在这个filter中实现对验证码进行验证的功能，这种方法不推荐，因为它已经脱离了SpringSecurity</p> <p>第二种是自定义一个filter让它继承自UsernamePasswordAuthenticationFilter，然后重写attemptAuthentication方法在这个方法中实现验证码的功能，如果验证码错误就抛出一个继承自AuthenticationException的验证吗错误的异常比如（CaptchaException），然后这个异常就会被SpringSecurity捕获到并将异常信息返回到前台，这种实现起来比较简单</p> <pre><code class="language-java">	@Override 	public Authentication attemptAuthentication(HttpServletRequest request, 			HttpServletResponse response) throws AuthenticationException { 		 		String requestCaptcha = request.getParameter(this.getCaptchaFieldName()); 		String genCaptcha = (String)request.getSession().getAttribute("code"); 		 		logger.info("开始校验验证码，生成的验证码为："+genCaptcha+" ，输入的验证码为："+requestCaptcha); 		 		if( !genCaptcha.equals(requestCaptcha)){ 			throw new CaptchaException( 					this.messageSource.getMessage("AbstractUserDetailsAuthenticationProvider.badCaptcha",null,"Default",null)); 		} 		return super.attemptAuthentication(request, response); 	}</code></pre> <p>然后在配置文件中配置下</p> <pre><code class="language-html">	&lt;bean id="loginFilter" class="com.zrhis.system.security.DefaultUsernamePasswordAuthenticationFilter"&gt; 		&lt;property name="authenticationManager"  ref="authenticationManager"&gt;&lt;/property&gt; 		&lt;property name="authenticationSuccessHandler"&gt; 			&lt;bean class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler"&gt; 				&lt;property name="defaultTargetUrl" value="/index.jsp"&gt;&lt;/property&gt; 			&lt;/bean&gt; 		&lt;/property&gt; 		&lt;property name="authenticationFailureHandler"&gt; 			&lt;bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"&gt; 				&lt;property name="defaultFailureUrl" value="/login.jsp"&gt;&lt;/property&gt; 			&lt;/bean&gt; 		&lt;/property&gt; 	&lt;/bean&gt;</code></pre> <p>最后在http中加入custom-filter配置，将这个filter放在SpringSecurity的FORM_LOGIN_FILTER之前</p> <pre><code class="language-html">&lt;custom-filter ref="loginFilter" before="FORM_LOGIN_FILTER"/&gt;</code></pre> <p>最后一种是直接替换掉SpringSecurity的UsernamePasswordAuthenticationFilter，这种比较复杂，但是更为合理，也是我现在正在用的。</p> <p>如果用这种方法那么http 中的auto-config就必须去掉，而form-login配置也必须去掉，因为这个不需要了，里面的属性都需要我们自行注入。</p> <p>首先需要创建一个EntryPoint</p> <pre><code class="language-html">	&lt;bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint"&gt; 		&lt;property name="loginFormUrl" value="/login.jsp" /&gt; 	&lt;/bean&gt;</code></pre> <p>然后在http中配置下</p> <pre><code class="language-html">&lt;sec:http access-decision-manager-ref="accessDecisionManager" 		entry-point-ref="authenticationEntryPoint"&gt;</code></pre> <p>然后我们来写CaptchaAuthenticationFilter，同样需要继承自UsernamePasswordAuthenticationFilter</p> <pre><code class="language-java">public class CaptchaAuthenticationFilter extends UsernamePasswordAuthenticationFilter{ 	 	public static final String SPRING_SECURITY_FORM_CAPTCHA_KEY = "j_captcha"; 	public static final String SESSION_GENERATED_CAPTCHA_KEY = Constant.SESSION_GENERATED_CAPTCHA_KEY; 	 	private String captchaParameter = SPRING_SECURITY_FORM_CAPTCHA_KEY; 	 	public Authentication attemptAuthentication(HttpServletRequest request, 			HttpServletResponse response) throws AuthenticationException { 		 		String genCode = this.obtainGeneratedCaptcha(request); 		String inputCode = this.obtainCaptcha(request); 		if(genCode == null) 			throw new CaptchaException(this.messages.getMessage("LoginAuthentication.captchaInvalid")); 		if(!genCode.equalsIgnoreCase(inputCode)){ 			throw new CaptchaException(this.messages.getMessage("LoginAuthentication.captchaNotEquals")); 		} 		 		return super.attemptAuthentication(request, response); 	} 	 	protected String obtainCaptcha(HttpServletRequest request){ 		return request.getParameter(this.captchaParameter); 	} 	 	protected String obtainGeneratedCaptcha (HttpServletRequest request){ 		return (String)request.getSession().getAttribute(SESSION_GENERATED_CAPTCHA_KEY); 	} 	 }</code></pre> <p>在配置文件中配置CaptchaAuthenticationFilter</p> <pre><code class="language-html">	&lt;bean id="captchaAuthenticaionFilter" class="com.zrhis.system.security.CaptchaAuthenticationFilter"&gt; 		&lt;property name="authenticationManager" ref="authenticationManager" /&gt; 		&lt;property name="authenticationFailureHandler" ref="authenticationFailureHandler" /&gt; 		&lt;property name="authenticationSuccessHandler" ref="authenticationSuccessHandler" /&gt; 		&lt;property name="filterProcessesUrl" value="/login.do" /&gt; 	&lt;/bean&gt; 	 	&lt;bean id="authenticationSuccessHandler" class="com.zrhis.system.security.SimpleLoginSuccessHandler"&gt; 		&lt;property name="defaultTargetUrl" value="/WEB-INF/app.jsp"&gt;&lt;/property&gt; 		&lt;property name="forwardToDestination" value="true"&gt;&lt;/property&gt; 	&lt;/bean&gt; 	&lt;bean id="authenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"&gt; 		&lt;property name="defaultFailureUrl" value="/login.jsp" /&gt; 	&lt;/bean&gt;</code></pre> <p>从配置文件中就可以看出来authenticationManager、authenticationFailureHandler、authenticationSuccessHandler、filterProcessesUrl等都需要我们自行注入了。</p> <p>filterProcessesUrl定义的是登录验证的地址，默认的是j_spring_security_check这里我们改成login.do</p> <p>authenticationSuccessHandler中的defaultTargetUrl定义的是登录成功后跳转到的页面</p> <p>authenticationFailureHandler中的defaultTargetUrl定义的是登录失败后跳转到的页面</p> <p>我们的首页app.jsp在/WEB-INF下所以需要使用服务器跳转，所以需要将forwardToDestination设为true，因为客户端跳转是不能直接访问WEB-INF下的内容的。</p> <p>最后在http中将FORM_LOGIN_FILTER替换掉，最终http中完整的配置就变成了下面的内容</p> <pre><code class="language-html">	&lt;sec:http access-decision-manager-ref="accessDecisionManager" 		entry-point-ref="authenticationEntryPoint"&gt; 		 		&lt;sec:access-denied-handler ref="accessDeniedHandler"/&gt; 		 		&lt;sec:session-management invalid-session-url="/login.jsp" /&gt; 		 		&lt;sec:custom-filter ref="filterSecurityInterceptor" before="FILTER_SECURITY_INTERCEPTOR"/&gt; 		&lt;sec:custom-filter ref="captchaAuthenticaionFilter" position="FORM_LOGIN_FILTER"/&gt; 	&lt;/sec:http&gt;</code></pre> <p>custom-filter中before是在这个filter之前，after是之后，position是替换。</p> <p> 这样就可以实现对验证码的验证了，效果如下 </p> <div style="text-align:center">  <img decoding="async" src="http://img.555519.xyz/uploads/20230217/e56069b5c53bde8f80dc6b01b17b7af6.jpg" alt="Spring Security教程（13）---- 验证码功能的实现"> </div> <p></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28788.htm">扬州收费合理的宠物医院（扬州正规的宠物医院）</a></p>
+                                        <p>下一个：<a href="/news/article-29251.htm">人打动物疫苗多少钱一针啊 人打动物疫苗多少钱一针啊图片</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-6-23-free-clash.htm" title="「6月23日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅">「6月23日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-5-clash-node.htm" title="「6月5日」2024年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅">「6月5日」2024年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-high-speed-nodes.htm" title="「11月1日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅机场">「11月1日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-9-free-clash-subscribe.htm" title="3月9日20.2M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接">3月9日20.2M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-v2ray-ss-ssr.htm" title="「11月19日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅机场">「11月19日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-22298.htm" title="饲料搅拌机转不动什么原因（饲料搅拌机工作原理）">饲料搅拌机转不动什么原因（饲料搅拌机工作原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-20-free-node-subscribe.htm" title="「12月20日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅源">「12月20日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-20-free-high-speed-nodes.htm" title="3月20日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">3月20日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-6-free-node-subscribe-links.htm" title="3月6日22.4M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接">3月6日22.4M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-13-free-clash-subscribe.htm" title="「10月13日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅">「10月13日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-28787.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>maven打war包</title>
+        <meta name="description" content="maven打包 1 . maven打jar包(Spring Framework) 1.1 插件使用 maven-resources-plugin（资源插件）,maven-compiler-plugin" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">maven打war包</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <hr/> <h2><a id="maven_1" rel="nofollow"></a>maven打包</h2> <h3><a id="1__mavenjarSpring_Framework_4" rel="nofollow"></a>1 . maven打jar包(Spring Framework)</h3> <h4><a id="11__5" rel="nofollow"></a>1.1 插件使用</h4> <p>maven-resources-plugin（资源插件）,maven-compiler-plugin（编译项目）,maven-jar-plugin（将项目打成jar包）,maven-assembly-plugin（将所有依赖打成jar包）。使用maven-assembly-plugin容易产生一个错误，就是在多个依赖冲突的时候无法解决。不过使用 maven-shade-plugin 生成一个 uber-jar，可以解决依赖间的冲突,适用于Spring Framework。</p> <blockquote> <p>配置 maven-shade-plugin</p> </blockquote> <pre><code>&lt;plugins&gt;       &lt;plugin&gt;           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;           &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;           &lt;version&gt;2.4.1&lt;/version&gt;           &lt;executions&gt;               &lt;execution&gt;   				&lt;!-- 将goal shade:shade 绑定到 phase package 上,绑定后执行mvn package即可 --&gt;                 &lt;phase&gt;package&lt;/phase&gt;                   &lt;goals&gt;                       &lt;goal&gt;shade&lt;/goal&gt;                   &lt;/goals&gt;                   &lt;configuration&gt;                       &lt;transformers&gt;                           &lt;transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"&gt;                               &lt;mainClass&gt;com.xxg.Main&lt;/mainClass&gt;                           &lt;/transformer&gt;                           &lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;                              &lt;resource&gt;META-INF/spring.handlers&lt;/resource&gt;                           &lt;/transformer&gt;                           &lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;                               &lt;resource&gt;META-INF/spring.schemas&lt;/resource&gt;                           &lt;/transformer&gt;                       &lt;/transformers&gt;                   &lt;/configuration&gt;               &lt;/execution&gt;           &lt;/executions&gt;       &lt;/plugin&gt;   &lt;/plugins&gt;</code></pre> <blockquote> <p>配置完成后，执行mvn package即可打包。生成的jar文件包含了所有依赖，所以可以直接运行。</p> </blockquote> <pre><code>&lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;        &lt;resource&gt;META-INF/spring.handlers&lt;/resource&gt;   &lt;/transformer&gt;   &lt;transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"&gt;         &lt;resource&gt;META-INF/spring.schemas&lt;/resource&gt;   &lt;/transformer&gt;</code></pre> <blockquote> <p>这里的AppendingTransformer的作用是:在Spring Framework中会将多个依赖打到一个jar中,每个jar都会包含spring.handlers和spring.schemas文件,如果生成一个jar包文件会互相覆盖,运行时就会出现XML schema文件出错。为了避免互相影响，使用AppendingTransformer来对文件内容追加合并.</p> </blockquote> <h3><a id="2__mavenwar_49" rel="nofollow"></a>2 . maven打war包</h3> <h4><a id="21__50" rel="nofollow"></a>2.1 插件使用</h4> <p>打war时需要maven-resources-plugin（资源插件）,maven-compiler-plugin（编译项目）,maven-war-plugin插件</p> <blockquote> <p>maven-war-plugin配置</p> </blockquote> <pre><code>&lt;plugin&gt;      &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;      &lt;version&gt;3.2.0&lt;/version&gt;      &lt;configuration&gt;           &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;      &lt;/configuration&gt; &lt;/plugin&gt;</code></pre> <blockquote> <p>不想打进war包的jar的配置</p> </blockquote> <pre><code>&lt;build&gt; &lt;filters&gt;     &lt;!-- 过滤文件,通常是一个属性文件（名值对的形式） --&gt;     &lt;filter&gt;src/main/webapp/META-INF/auto-config.properties&lt;/filter&gt; &lt;/filters&gt; &lt;finalName&gt;communitytag&lt;/finalName&gt; &lt;plugins&gt;     &lt;plugin&gt;         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;         &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;         &lt;version&gt;2.1-alpha-1&lt;/version&gt;         &lt;configuration&gt; 			&lt;!-- 不想打进war包的xxx.jar的配置 --&gt;             &lt;warSourceExcludes&gt;*/lib/xxx.jar&lt;/warSourceExcludes&gt;             &lt;webResources&gt;                 &lt;resource&gt;                     &lt;!-- 元配置文件的目录，相对于pom.xml文件的路径 --&gt;                     &lt;directory&gt;src/main/webapp/WEB-INF&lt;/directory&gt;                     &lt;!-- 是否过滤文件，也就是是否启动auto-config的功能 --&gt;                     &lt;filtering&gt;true&lt;/filtering&gt;                     &lt;!-- 目标路径 --&gt;                     &lt;targetPath&gt;WEB-INF&lt;/targetPath&gt;                 &lt;/resource&gt;             &lt;/webResources&gt;         &lt;/configuration&gt;     &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt;</code></pre> <h3><a id="3__ideamavenwar_93" rel="nofollow"></a>3 . idea中maven打war包(多种方式)</h3> <blockquote> <p>单个执行指令先clean-&gt;package<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/74854acf169cc90aea52ec84dfc39f66.jpg" alt="maven打war包"></p> </blockquote> <blockquote> <p>Build Artifacts<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220603/6709eb8cdd29a0863bba60ad2d4e09cb.jpg" alt="maven打war包"></p> </blockquote> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28328.htm">重庆宠物狗领养中心电话号码查询（重庆领养宠物狗免费的地方在哪里）</a></p>
+                                        <p>下一个：<a href="/news/article-28788.htm">扬州收费合理的宠物医院（扬州正规的宠物医院）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-4-10-clash-windows.htm" title="「4月10日」2024年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅">「4月10日」2024年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/news/article-27401.htm" title="如何给新开的宠物店宣传（新开宠物店宣传语）">如何给新开的宠物店宣传（新开宠物店宣传语）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-v2ray.htm" title="「12月21日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「12月21日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-23215.htm" title="动物医院叫什么名字来着 动物医院叫什么名字来着呢">动物医院叫什么名字来着 动物医院叫什么名字来着呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-7-free-node-subscribe-links.htm" title="「8月7日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅">「8月7日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-node-subscribe-links.htm" title="「11月17日」2025年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅，推荐便宜订阅机场">「11月17日」2025年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-shadowrocket-node.htm" title="「10月15日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅机场">「10月15日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-3-free-subscribe-node.htm" title="「6月3日」2024年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅">「6月3日」2024年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-9-node-share-links.htm" title="「9月9日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅">「9月9日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/news/article-25542.htm" title="手把手教会将 Windows 窗体桌面应用从.NET Framework迁移到 .NET SDK/.NET 6 格式">手把手教会将 Windows 窗体桌面应用从.NET Framework迁移到 .NET SDK/.NET 6 格式</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
