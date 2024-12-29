@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-32580.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>C语言_函数_地址和指针：值传递和地址传递的区别</title>
+        <meta name="description" content="函数调用中，实参的数据和形参对应传递，有两种传递方式： 1.值传递（只传送值，实参不做改变） 2.地址传递（传送地址，实参被改变） # include &lt;stdio.h&gt;  void sw" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">C语言_函数_地址和指针：值传递和地址传递的区别</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>函数调用中，实参的数据和形参对应传递，有两种传递方式：</strong></p> <p>1.值传递（只传送值，实参不做改变）<br /> 2.地址传递（传送地址，实参被改变）</p> <pre><code class="prism language-c"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>  <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>	 	<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>  	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(1)x=%d y=%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token function">swap</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//调用函数swap</span> 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(4)x=%d y=%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>		<span class="token comment">//void:没有返回参数</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> t<span class="token punctuation">;</span>  	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(2)a=%d b=%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> 	t<span class="token operator">=</span>a<span class="token punctuation">;</span> a<span class="token operator">=</span>b<span class="token punctuation">;</span> b<span class="token operator">=</span>t<span class="token punctuation">;</span> 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(3)a=%d b=%d\n"</span><span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token comment">/* 结果： (1)x=10 y=20 (2)a=10 b=20		 (3)a=20 b=10		 (4)x=10 y=20		值传递，只传送值，实参不做改变 请按任意键继续. . . */</span> </code></pre> <pre><code class="prism language-c"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>  <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//形参是指针变量</span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span> 	 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(1)x=%d y=%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>  	<span class="token function">swap</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>x<span class="token punctuation">,</span> <span class="token operator">&amp;</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(4)x=%d y=%d\n"</span><span class="token punctuation">,</span> x <span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">/* 	通过传递地址值 	在被调用函数中 	直接改变调用函数中的变量的值*/</span> 	 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>b<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> t<span class="token punctuation">;</span>  	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(2)a=%d b=%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>  	t <span class="token operator">=</span> <span class="token operator">*</span>a<span class="token punctuation">;</span>		<span class="token comment">//*a :取a中的地址所指向的空间的值</span> 	<span class="token operator">*</span>a <span class="token operator">=</span> <span class="token operator">*</span>b<span class="token punctuation">;</span> 	<span class="token operator">*</span>b <span class="token operator">=</span> t<span class="token punctuation">;</span>  	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(3)a=%d b=%d\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token operator">/</span><span class="token operator">*</span>结果： <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>x<span class="token operator">=</span><span class="token number">30</span> y<span class="token operator">=</span><span class="token number">20</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>a<span class="token operator">=</span><span class="token number">30</span> b<span class="token operator">=</span><span class="token number">20</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>a<span class="token operator">=</span><span class="token number">20</span> b<span class="token operator">=</span><span class="token number">30</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>x<span class="token operator">=</span><span class="token number">20</span> y<span class="token operator">=</span><span class="token number">30</span>	地址传递，实参被改变 请按任意键继续<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span><span class="token operator">/</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-32109.htm">动物防疫中心可以打疫苗吗现在还能打吗（动物疾病预防控制中心可以打疫苗吗）</a></p>
+                                        <p>下一个：<a href="/news/article-32581.htm">给宠物医院的好评怎么写（给宠物医院的好评怎么写简短）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-3-24-free-high-speed-nodes.htm" title="「3月24日」2024年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅">「3月24日」2024年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-24-node-share-links.htm" title="「6月24日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅">「6月24日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-28-free-clash-subscribe.htm" title="「7月28日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅">「7月28日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-20-free-high-speed-nodes.htm" title="3月20日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">3月20日21.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-10-node-share-links.htm" title="「6月10日」2024年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅">「6月10日」2024年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-clash-windows.htm" title="「11月3日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场">「11月3日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-29-free-high-speed-nodes.htm" title="「6月29日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅">「6月29日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-4-node-share.htm" title="「11月4日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「11月4日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-22298.htm" title="饲料搅拌机转不动什么原因（饲料搅拌机工作原理）">饲料搅拌机转不动什么原因（饲料搅拌机工作原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-clash-node.htm" title="「12月25日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「12月25日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
