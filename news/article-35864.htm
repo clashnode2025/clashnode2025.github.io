@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-35864.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>C#操作Byte数组和十六进制进行互转_C#教程</title>
+        <meta name="description" content="一、Byte 数组转十六进制字符串   		/// &lt;summary&gt;          /// Byte 数组转十六进制字符串          /// &lt;/summary&gt;" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">C#操作Byte数组和十六进制进行互转_C#教程</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2>一、Byte 数组转十六进制字符串</h2> <div class="ay1code"> <pre class="brush:csharp;"> 		/// &lt;summary&gt;          /// Byte 数组转十六进制字符串          /// &lt;/summary&gt;          /// &lt;param name="Bytes"&gt;&lt;/param&gt;          /// &lt;returns&gt;&lt;/returns&gt;          public static string ByteToHex(byte[] Bytes)          {              string str = string.Empty;              foreach (byte Byte in Bytes)              {                  str += String.Format("{0:X2}", Byte) + " ";              }              return str.Trim();          }</pre> </div> <h2>二、字符串转十六进制Byte数组</h2> <div class="ay1code"> <pre class="brush:csharp;">        /// &lt;summary&gt;          /// 字符串转十六进制Byte数组          /// &lt;/summary&gt;          /// &lt;param name="hexString"&gt;&lt;/param&gt;          /// &lt;returns&gt;&lt;/returns&gt;          public static byte[] strToToHexByte(string hexString)          {              try              {                  hexString = hexString.Replace(" ", "");                  if ((hexString.Length % 2) != 0)                      hexString += " ";                  byte[] returnBytes = new byte[hexString.Length / 2];                  for (int i = 0; i &lt; returnBytes.Length; i++)                      returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);                  return returnBytes;              }              catch              {                  return null;              }            }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-35863.htm">Uniapp实现自定义组件</a></p>
+                                        <p>下一个：<a href="/news/article-36395.htm">小型狗粮加工设备厂家排名 小型狗粮加工设备厂家排名前十</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30086.htm" title="芭比堂宠物医院价格多少（芭比堂宠物医院玉泉路总店）">芭比堂宠物医院价格多少（芭比堂宠物医院玉泉路总店）</a></li>
+                        <li class="py-2"><a href="/news/article-25076.htm" title="动物防疫站打针免费吗现在 动物防疫站打针免费吗现在还能打吗">动物防疫站打针免费吗现在 动物防疫站打针免费吗现在还能打吗</a></li>
+                        <li class="py-2"><a href="/news/article-22298.htm" title="饲料搅拌机转不动什么原因（饲料搅拌机工作原理）">饲料搅拌机转不动什么原因（饲料搅拌机工作原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-v2ray-subscribe.htm" title="「11月5日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅机场">「11月5日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-v2ray-subscribe.htm" title="「11月29日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场">「11月29日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-21385.htm" title="湖南腊肉炒之前要煮一下吗(湖南腊肉炒之前需要焯水吗?)">湖南腊肉炒之前要煮一下吗(湖南腊肉炒之前需要焯水吗?)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-shadowrocket-node.htm" title="「10月28日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「10月28日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-25542.htm" title="手把手教会将 Windows 窗体桌面应用从.NET Framework迁移到 .NET SDK/.NET 6 格式">手把手教会将 Windows 窗体桌面应用从.NET Framework迁移到 .NET SDK/.NET 6 格式</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share-links.htm" title="「10月8日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅">「10月8日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-ssr-node.htm" title="「11月13日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场">「11月13日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
