@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-37857.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Nestjs模块机制的概念和实现原理</title>
+        <meta name="description" content="Nest 提供了模块机制，通过在模块装饰器中定义提供者、导入、导出和提供者构造函数便完成了依赖注入，通过模块树组织整个应用程序的开发。按照框架本身的约定直接撸一个应用程序，是完全没有问题的。可是，于我" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Nestjs模块机制的概念和实现原理</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <p>Nest 提供了模块机制，通过在模块装饰器中定义提供者、导入、导出和提供者构造函数便完成了依赖注入，通过模块树组织整个应用程序的开发。按照框架本身的约定直接撸一个应用程序，是完全没有问题的。可是，于我而言对于框架宣称的依赖注入、控制反转、模块、提供者、元数据、相关装饰器等等，觉得缺乏一个更清晰系统的认识。</p> <blockquote> <ul> <li>为什么需要控制反转？</li> <li>什么是依赖注入？</li> <li>装饰器做了啥？</li> <li>模块 (@Module) 中的提供者（providers），导入(imports)、导出(exports)是什么实现原理？</li> </ul> </blockquote> <p>好像能够理解，能够意会，但是让我自己从头说清楚，我说不清楚。于是进行了一番探索，便有了这篇文章。从现在起，我们从新出发，进入正文。</p> </h1> <h2 id="21-expresskoa">2.1 Express、Koa</h2> <p>一个语言和其技术社区的发展过程，一定是从底层功能逐渐往上丰富发展的，就像是树根慢慢生长为树枝再长满树叶的过程。在较早，Nodejs 出现了 Express 和 Koa 这样的基本 Web 服务框架。能够提供一个非常基础的服务能力。基于这样的框架，大量的中间件、插件开始在社区诞生，为框架提供更加丰富的服务。我们需要自己去组织应用依赖，搭建应用脚手架，灵活又繁琐，也具有一定工作量。</p> <p>发展到后面，一些生产更高效、规则更统一的框架便诞生了，开启了一个更新的阶段。</p> <h2 id="22-eggjsnestjs">2.2 EggJs、Nestjs</h2> <p>为了更加适应快速生产应用，统一规范，开箱即用，便发展出了 EggJs、NestJs、Midway等框架。此类框架，通过实现底层生命周期，将一个应用的实现抽象为一个通用可扩展的过程，我们只需要按照框架提供的配置方式，便可以更简单的实现应用程序。框架实现了程序的过程控制，而我们只需要在合适位置组装我们的零件就行，这看起来更像是流水线工作，每个流程被分割的很清楚，也省去了很多实现成本。</p> <h2 id="23-小结">2.3 小结</h2> <p>上面的两个阶段只是一个铺垫，我们可以大致了解到，框架的升级是提高了生产效率，而要实现框架的升级，就会引入一些设计思路和模式，Nest 中就出现了控制反转、依赖注入、元编程的概念，下面我们来聊聊。</p> </h1> <h2 id="31-依赖注入">3.1 依赖注入</h2> <p>一个应用程序实际就是非常多的抽象类，通过互相调用实现应用的所有功能。随着应用代码和功能复杂度的增加，项目一定会越来越难以维护，因为类越来越多，相互之间的关系越来越复杂。</p> <p>举个例子，假如我们使用 Koa 开发我们的应用，Koa 本身主要实现了一套基础的 Web 服务能力，我们在实现应用的过程中，会定义很多类，这些类的实例化方式、相互依赖关系，都会由我们在代码逻辑自由组织和控制。每个类的实例化都是由我们手动 new，并且我们可以控制某个类是只实例化一次然后被共享，还是每次都实例化。下面的 B 类依赖 A，每次实例化 B 的时候，A 都会被实例化一次，所以对于每个实例 B 来说，A 是不被共享的实例。</p> <pre><code>class A{} // B class B{     contructor(){         this.a = new A();     } }</code></pre> <p>下面的 C 是获取的外部实例，所以多个 C 实例是共享的 app.a 这个实例。</p> <pre><code>class A{} // C const app = {}; app.a = new A(); class C{     contructor(){         this.a = app.a;     } }</code></pre> <p>下面的 D 是通过构造函数参数传入，可以每次传入一个非共享实例，也可以传入共享的 app.a 这个实例(D 和 F 共享 app.a)，并且由于现在是参数的方式传入，我也可以传入一个 X 类实例。</p> <pre><code>class A{} class X{} // D const app = {}; app.a = new A(); class D{     contructor(a){         this.a = a;     } } class F{     contructor(a){         this.a = a;     } } new D(app.a) new F(app.a) new D(new X())</code></pre> <p>这种方式就是<strong>依赖注入</strong>，把 B 所依赖的 A，通过传值的方式注入到 B 中。通过构造函数注入（传值）只是一种实现方式，也可以通过实现 set 方法调用传入，或者是其他任何方式，只要能把外部的一个依赖，传入到内部就行。其实就这么简单。</p> <pre><code>class A{} // D class D{     setDep(a){         this.a = a;     } } const d = new D() d.setDep(new A())</code></pre> <h2 id="32-all-in-依赖注入">3.2 All in 依赖注入？</h2> <p>随着迭代进行，出现了 B 根据不同的前置条件依赖会发生变化。比如，前置条件一<code>this.a</code> 需要传入 A 的实例，前置条件二<code>this.a</code>需要传入 X 的实例。这个时候，我们就会开始做实际的抽象了。我们就会改造成上面 D 这样依赖注入的方式。</p> <p>初期，我们在实现应用的时候，在满足当时需求的情况下，就会实现出 B 和 C 类的写法，这本身也没有什么问题，项目迭代了几年之后，都不一定会动这部分代码。我们要是去考虑后期扩展什么的，是会影响开发效率的，而且不一定派的上用场。所以大部分时候，我们都是遇到需要抽象的场景，再对部分代码做抽象改造。</p> <pre><code>// 改造前 class B{     contructor(){         this.a = new A();     } } new B()  // 改造后 class D{     contructor(a){         this.a = a;     } } new D(new A()) new D(new X())</code></pre> <p>按照目前的开发模式，CBD三种类都会存在，B 和 C有一定的几率发展成为 D，每次升级 D 的抽象过程，我们会需要重构代码，这是一种实现成本。</p> <p>这里举这个例子是想说明，在一个没有任何约束或者规定的开发模式下。我们是可以自由的写代码来达到各种类与类之间依赖控制。在一个完全开放的环境里，是非常自由的，这是一个刀耕火种的原始时代。由于没有一个固定的代码开发模式，没有一个最高行动纲领，随着不同开发人员的介入或者说同一个开发者不同时间段写代码的差别，代码在增长的过程中，依赖关系会变得非常不清晰，该共享的实例可能被多次实例化，浪费内存。从代码中，很难看清楚一个完整的依赖关系结构，代码可能会变得非常难以维护。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a2429483c446cc55209e11edcb1cbcd5.jpg" alt="Nestjs模块机制的概念和实现原理"></p> <p>那我们每定义一个类，都按照依赖注入的方式来写，都写成 D 这样的，那 C 和 B 的抽象过程就被提前了，这样后期扩展也比较方便，减少了改造成本。所以把这叫<code>All in 依赖注入</code>，也就是我们所有依赖都通过依赖注入的方式实现。</p> <p>可这样前期的实现成本又变高了，很难在团队协作中达到统一并且坚持下去，最终可能会落地失败，这也可以被定义为是一种过度设计，因为额外的实现成本，不一定能带来收益。</p> <h2 id="33-控制反转">3.3 控制反转</h2> <p>既然已经约定好了统一使用依赖注入的方式，那是否可以通过框架的底层封装，实现一个底层控制器，约定一个依赖配置规则，控制器根据我们定义的依赖配置来控制实例化过程和依赖共享，帮助我们实现类管理。这样的设计模式就叫<strong>控制反转</strong>。</p> <p>控制反转可能第一次听说的时候会很难理解，控制指的什么？反转了啥？</p> <blockquote> <p>猜测是由于开发者一开始就用此类框架，并没有体验过上个“Express、Koa时代”，缺乏旧社会毒打。加上这反转的用词，在程序中显得非常的抽象，难以望文生义。</p> </blockquote> <p>前文我们说的实现 Koa 应用，所有的类完全由我们自由控制的，所以可以看作是一个常规的程序控制方式，那就叫它：控制正转。而我们使用 Nest，它底层实现一套控制器，我们只需要在实际开发过程中，按照约定写配置代码，框架程序就会帮我们管理类的依赖注入，所以就把它叫作：控制反转。</p> <p>本质就是把程序的实现过程交给框架程序去统一管理，控制权从开发者，交给了框架程序。</p> <blockquote> <h2 id="控制正转开发者纯手动控制程序">控制正转：开发者纯手动控制程序</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/83a248d3760188a758d2104779c62846.jpg" alt="Nestjs模块机制的概念和实现原理"></p> </blockquote> <blockquote> <h2 id="控制反转框架程序控制">控制反转：框架程序控制</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/fc8e4473533c3cae1e2eea8640f09789.jpg" alt="Nestjs模块机制的概念和实现原理"></p> </blockquote> <p>举个现实的例子，一个人本来是自己开车去上班的，他的目的就是到达公司。它自己开车，自己控制路线。而如果交出开车的控制权，就是去赶公交，他只需要选择一个对应的班车就可以到达公司了。单从控制来说，人就是被解放出来了，只需要记住坐那趟公交就行了，犯错的几率也小了，人也轻松了不少。公交系统就是控制器，公交线路就是约定配置。</p> <p>通过如上的实际对比，我想应该有点能理解控制反转了。</p> <h2 id="34-小结">3.4 小结</h2> <p>从 Koa 到 Nest，从前端的 JQuery 到 Vue React。其实都是一步步通过框架封装，去解决上个时代低效率的问题。</p> <p>上面的 Koa 应用开发，通过非常原始的方式去控制依赖和实例化，就类似于前端中的 JQuery 操作 dom ，这种很原始的方式就把它叫控制正转，而 Vue React 就好似 Nest 提供了一层程序控制器，他们可以都叫控制反转。这也是个人理解，如果有问题期望大神指出。</p> <p>下面再来说说 Nest 中的模块 @Module，依赖注入、控制反转需要它作为媒介。</p> </h1> <p>Nestjs实现了控制反转，约定配置模块(@module)的 imports、exports、providers 管理提供者也就是类的依赖注入。</p> <p>providers 可以理解是在当前模块注册和实例化类，下面的 A 和 B 就在当前模块被实例化，如果B在构造函数中引用 A，就是引用的当前 ModuleD 的 A 实例。</p> <pre><code>import { Module } from '@nestjs/common'; import { ModuleX } from './moduleX'; import { A } from './A'; import { B } from './B';  @Module({   imports: [ModuleX],   providers: [A,B],   exports: [A] }) export class ModuleD {}  // B class B{     constructor(a:A){         this.a = a;     } }</code></pre> <p><code>exports</code> 就是把当前模块中的<code>providers</code> 中实例化的类，作为可被外部模块共享的类。比如现在 ModuleF 的 C 类实例化的时候，想直接注入 ModuleD 的 A 类实例。就在 ModuleD 中设置导出（exports）A，在 ModuleF 中通过<code>imports</code> 导入 ModuleD。</p> <p>按照下面的写法，控制反转程序会自动扫描依赖，首先看自己模块的 providers 中，有没有提供者 A，如果没有就去寻找导入的 ModuleD 中是否有 A 实例，发现存在，就取得 ModuleD 的 A 实例注入到 C 实例之中。</p> <pre><code>import { Module } from '@nestjs/common'; import { ModuleD} from './moduleD'; import { C } from './C';  @Module({   imports: [ModuleD],   providers: [C], }) export class ModuleF {}  // C class C {     constructor(a:A){         this.a = a;     } }</code></pre> <p>因此想要让外部模块使用当前模块的类实例，必须先在当前模块的<code>providers</code>里定义实例化类，再定义导出这个类，否则就会报错。</p> <pre><code>//正确 @Module({   providers: [A],   exports: [A] }) //错误 @Module({   providers: [],   exports: [A] })</code></pre> <blockquote> <h3 id="后期补充">后期补充</h3> <p>模块查找实例的过程回看了一下，确实有点不清晰。核心点就是providers里的类会被实例化，实例化后就是提供者，模块里只有providers里的类会被实例化，而导出和导入只是一个组织关系配置。模块会优先使用自己的提供者，如果没有，再去找导入的模块是否有对应提供者</p> </blockquote> <p><strong>这里还是提一嘴ts的知识点</strong></p> <pre><code>export class C {   constructor(private a: A) {   } }</code></pre> <p>由于 TypeScript 支持 constructor 参数(private、protected、public、readonly)隐式自动定义为 class 属性 (Parameter Property)，因此无需使用<code>this.a = a</code>。Nest 中都是这样的写法。</p> </h1> <p>元编程的概念在 Nest 框架中得到了体现，它其中的控制反转、装饰器，就是元编程的实现。大概可以理解为，元编程本质还是编程，只是中间多了一些抽象的程序，这个抽象程序能够识别元数据（如@Module中的对象数据），其实就是一种扩展能力，能够将其他程序作为数据来处理。我们在编写这样的抽象程序，就是在元编程了。</p> </h1> <p>Nest 文档中也常提到了元数据，元数据这个概念第一次看到的话，也会比较费解，需要随着接触时间增长习惯成理解，可以不用太过纠结。</p> <p>元数据的定义是：描述数据的数据，主要是描述数据属性的信息，也可以理解为描述程序的数据。</p> <p>Nest 中 @Module 配置的<code>exports、providers、imports、controllers</code>都是<strong>元数据</strong>，因为它是用来描述程序关系的数据，这个数据信息不是展示给终端用户的实际数据，而是给框架程序读取识别的。</p> </h1> <p>如果看看 Nest 中的装饰器源码，会发现，几乎每一个装饰器本身只是通过 reflect-metadata 定义了一个元数据。</p> <p>@Injectable装饰器</p> <pre><code>export function Injectable(options?: InjectableOptions): ClassDecorator {   return (target: object) =&gt; {     Reflect.defineMetadata(INJECTABLE_WATERMARK, true, target);     Reflect.defineMetadata(SCOPE_OPTIONS_METADATA, options, target);   }; }</code></pre> <p>这里存在反射的概念，反射也比较好理解，拿 @Module 装饰器举例，定义元数据<code>providers</code>，只是往<code>providers</code>数组里传入了类，在程序实际运行时<code>providers</code>里的类，会被框架程序自动实例化变为提供者，不需要开发者显示的去执行实例化和依赖注入。类只有在模块中实例化了之后才变成了提供者。<code>providers</code>中的类被反射了成了提供者，控制反转就是利用的反射技术。</p> <p>换个例子的话，就是数据库中的<strong>ORM（对象关系映射）</strong>，使用 ORM 只需要定义表字段，ORM 库会自动把对象数据转换为 SQL 语句。</p> <pre><code>const data = TableModel.build();  data.time = 1; data.browser = 'chrome';      data.save(); // SQL: INSERT INTO tableName (time,browser) [{"time":1,"browser":"chrome"}]</code></pre> <p>ORM 库就是利用了反射技术，让使用者只需要关注字段数据本身，对象被 ORM 库反射成为了 SQL 执行语句，开发者只需要关注数据字段，而不需要去写 SQL 了。</p> <h2 id="53-reflect-metadata">5.3 reflect-metadata</h2> <p>reflect-metadata 是一个反射库，Nest 用它来管理元数据。reflect-metadata 使用 WeakMap，创建一个全局单实例，通过 set 和 get 方法设置和获取被装饰对象（类、方法等）的元数据。</p> <pre><code>// 随便看看即可 var _WeakMap = !usePolyfill &amp;&amp; typeof WeakMap === "function" ? WeakMap : CreateWeakMapPolyfill();     var Metadata = new _WeakMap(); function defineMetadata(){     OrdinaryDefineOwnMetadata(){         GetOrCreateMetadataMap(){           var targetMetadata = Metadata.get(O);             if (IsUndefined(targetMetadata)) {                 if (!Create)                     return undefined;                 targetMetadata = new _Map();                 Metadata.set(O, targetMetadata);             }             var metadataMap = targetMetadata.get(P);             if (IsUndefined(metadataMap)) {                 if (!Create)                     return undefined;                 metadataMap = new _Map();                 targetMetadata.set(P, metadataMap);             }             return metadataMap;         }     } }</code></pre> <p>reflect-metadata 把被装饰者的元数据存在了全局单例对象中，进行统一管理。reflect-metadata 并不是实现具体的反射，而是提供了一个辅助反射实现的工具库。</p> </h1> <p>现在再来看看前面的几个疑问。</p> <blockquote> <ol> <li>为什么需要控制反转？</li> <li>什么是依赖注入？</li> <li>装饰器做了啥？</li> <li>模块 (@Module) 中的提供者（providers），导入(imports)、导出(exports)是什么实现原理？</li> </ol> </blockquote> <p>1 和 2 我想前面已经说清楚了，如果还有点模糊，建议再回去看一遍并查阅一些其它文章资料，通过不同作者的思维来帮助理解知识。</p> <h3 id="61-问题-3-4-总述">6.1 问题 [3 4] 总述:</h3> <p>Nest 利用反射技术、实现了控制反转，提供了元编程能力，开发者使用 @Module 装饰器修饰类并定义元数据(providers\imports\exports)，元数据被存储在全局对象中（使用 reflect-metadata 库）。程序运行后，Nest 框架内部的控制程序读取和注册模块树，扫描元数据并实例化类，使其成为提供者，并根据模块元数据中的 providers\imports\exports 定义，在所有模块的提供者中寻找当前类的其它依赖类的实例（提供者），找到后通过构造函数注入。</p> <h3 id="本文概念较多也并没有做太详细的解析概念需要时间慢慢理解如果一时理解不透彻也不必太过着急好吧就到这里这篇文章还是花费不少精力喜欢的朋友期望你能一键三连">本文概念较多，也并没有做太详细的解析，概念需要时间慢慢理解，如果一时理解不透彻，也不必太过着急。好吧，就到这里，这篇文章还是花费不少精力，喜欢的朋友期望你能一键三连～</h3> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37856.htm">Nacos配置中心集群原理及源码分析</a></p>
+                                        <p>下一个：<a href="/news/article-38352.htm">Vue指令之v-for的使用说明_vue.js</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-clash-node-daily-updates.htm" title="「11月24日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅机场">「11月24日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-clash.htm" title="「10月22日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅机场">「10月22日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-20467.htm" title="成都领养宠物贴吧（成都宠物领养吧领养代替购买）">成都领养宠物贴吧（成都宠物领养吧领养代替购买）</a></li>
+                        <li class="py-2"><a href="/news/article-30682.htm" title="宠物医院好评评语100字怎么写（宠物医院写好评题材）">宠物医院好评评语100字怎么写（宠物医院写好评题材）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-clash.htm" title="「12月15日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「12月15日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share-links.htm" title="「11月27日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅机场">「11月27日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-node-share.htm" title="「11月21日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场">「11月21日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-clash-v2ray-ss-ssr.htm" title="「12月9日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「12月9日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-node-subscribe-links.htm" title="「12月22日」2025年最新高速SSR/Shadowrocket/V2ray/Clash免费节点链接订阅，推荐便宜订阅源">「12月22日」2025年最新高速SSR/Shadowrocket/V2ray/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share-links.htm" title="「10月8日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅">「10月8日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
