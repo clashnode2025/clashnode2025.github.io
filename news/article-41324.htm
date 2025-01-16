@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-41324.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Java 的程序逻辑控制</title>
+        <meta name="description" content="在程序开发的过程之中一共会存在三种程序逻辑：顺序结构、分支结构、循环结构，对于之前所编写的代码大部分都是顺序结构的定义，即：所有的程序将按照定义的代码顺序依次执行。  if 分支结构主要是针对于关系表" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Java 的程序逻辑控制</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>在程序开发的过程之中一共会存在三种程序逻辑：顺序结构、分支结构、循环结构，对于之前所编写的代码大部分都是顺序结构的定义，即：所有的程序将按照定义的代码顺序依次执行。</p> </h1> <p>if 分支结构主要是针对于关系表达式进行判断处理的分支操作。对于分支语句主要有三类的使用形式，使用的关键字：if、else。</p> </h1> <p>switch 是一个开关语句，它主要是根据内容来进行的判断，需要注意的是 switch 中可以判断的只能够是数据（int、char、枚举、String）,而不能使用逻辑判断。</p> <p>举例：</p> <pre><code class="language-java">&nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp;int ch=2;  &nbsp; &nbsp; &nbsp; &nbsp;switch (ch){  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case 2:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("设置的内容是2。");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case 1:{  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("设置的内容是1。");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;default:{  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("没有内容满足。");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}  &nbsp; &nbsp; &nbsp; &nbsp;}  &nbsp; &nbsp; }  &nbsp; &nbsp; /**  &nbsp; &nbsp; &nbsp;* 输出结果：  &nbsp; &nbsp; &nbsp;* 设置的内容是2。  &nbsp; &nbsp; &nbsp;* 设置的内容是1。  &nbsp; &nbsp; &nbsp;* 没有内容满足。  &nbsp; &nbsp; &nbsp;*/  &nbsp; &nbsp; }</code></pre> <p>switch 语句进行设计的时候，如果你在每一个 case 后面没有追加 break 语句，那么会在第一个匹配的 case 之后继续执行，一直到全部的 switch 中后续代码执行完毕或者遇见 break。</p> <p>举例：</p> <pre><code class="language-java">&nbsp; &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp;int ch=2;  &nbsp; &nbsp; &nbsp; &nbsp;switch (ch){  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case 2:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("设置的内容是2。");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case 1:{  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("设置的内容是1。");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;default:{  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("没有内容满足。");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}  &nbsp; &nbsp; &nbsp; &nbsp;}  &nbsp; &nbsp; }  &nbsp; &nbsp; /**  &nbsp; &nbsp; &nbsp;* 输出结果：  &nbsp; &nbsp; &nbsp;*设置的内容是2。  &nbsp; &nbsp; &nbsp;*/</code></pre> </h1> <p>所谓的循环结构指的是某一段代码被重复执行的处理操作，在程序之中提供有while 语句来实现循环的定义，该语句有两类使用形式：</p> <p>while 循环：</p> <pre><code class="language-java">&nbsp; &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; int sum = 0;// 保存最终的计算总和  &nbsp; &nbsp; &nbsp; &nbsp; int num = 1;//进行循环控制  &nbsp; &nbsp; &nbsp; &nbsp; while (num &lt;= 100) { //循环的执行条件  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sum += num; //累加  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; num++; //修改循环条件  &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(sum);//5050    &nbsp; &nbsp; }</code></pre> <p>do...while 循环：</p> <pre><code class="language-java">&nbsp; &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; int sum = 0;// 保存最终的计算总和  &nbsp; &nbsp; &nbsp; &nbsp; int num = 1;//进行循环控制  &nbsp; &nbsp; &nbsp; &nbsp; do { //循环的执行条件  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sum += num; //累加  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; num++; //修改循环条件  &nbsp; &nbsp; &nbsp; &nbsp; } while (num &lt;= 100);  &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(sum);//5050    &nbsp; &nbsp; }</code></pre> </h1> <p>while 循环是先判断后执行，而 do...while先执行一次后判断。开发中能见到 do...while循环的几率几乎为1%，99%的情况下首选的肯定是 while 循环。</p> </h1> <p>for 循环也是一种常规的使用结构。</p> <p>举例：</p> <pre><code>&nbsp; &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; int sum = 0;// 保存最终的计算总和  &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt;= 100; i++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sum += i; //累加  &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(sum);//5050  &nbsp; &nbsp; }</code></pre> <p>对于 while 和 for 循环的选择只有一个参考标准：</p> <p>1. 在明确确定循环次数的情况下优先选择 for 循环；</p> <p>2. 在不知道循环次数但是直到循环结束条件的情况下使用 while 循环；</p> </h1> <p>在循环语句定义的时候还有两个控制语句：break、continue</p> <p>1. break 主要的功能是退出整个循环结构</p> <p>举例：</p> <pre><code>&nbsp; &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt;10 ; i++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i==3){  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(i+" "); //0 1 2  &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; }</code></pre> <p>2. continue 严格来讲只是结束当前的一次调用（结束当前循环）</p> <p>举例：</p> <pre><code>&nbsp; &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt;10 ; i++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (i==3){  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(i+" "); //0 1 2 4 5 6 7 8 9  &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; }</code></pre> <p>当执行到了 continue 的时候就表示当前的语句之后后续代码不再执行，而直接进行后续的判断处理。</p> </h1> <p>在一个循环语句之中嵌套其它的循环语句就称为循环嵌套处理，循环嵌套层次越多时间复杂度就越高，那么下面通过循环的嵌套观察两个简单的程序。</p> <p>举例“：打印乘法口诀表</p> <pre><code> &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 1; i &lt;= 9; i++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 1; j &lt; 10; j++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (j &gt; i) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(j + "*" + i + "=" + (i * j) + " ");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println();  &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; }</code></pre> <p>举例：打印三角形</p> <pre><code> &nbsp; public static void main(String[] args) {  &nbsp; &nbsp; &nbsp; &nbsp; for (int i = 0; i &lt;= 9; i++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 9 - i; j++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(" ");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int j = 0; j &lt; 2 * i + 1; j++) {  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print("*");  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println();  &nbsp; &nbsp; &nbsp; &nbsp; }  &nbsp; &nbsp; }</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-40816.htm">宠物领养需要花钱吗现在（宠物领养要钱吗?）</a></p>
+                                        <p>下一个：<a href="/news/article-41325.htm">2021公务员国考报名要求是什么（公务员国考报考指南）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-41325.htm" title="2021公务员国考报名要求是什么（公务员国考报考指南）">2021公务员国考报名要求是什么（公务员国考报考指南）</a></li>
+                        <li class="py-2"><a href="/news/article-20925.htm" title="狗狗疫苗自己打可以办狗证吗（狗狗疫苗自己打可以办狗证吗多少钱）">狗狗疫苗自己打可以办狗证吗（狗狗疫苗自己打可以办狗证吗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-22298.htm" title="饲料搅拌机转不动什么原因（饲料搅拌机工作原理）">饲料搅拌机转不动什么原因（饲料搅拌机工作原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-node-share-links.htm" title="「1月15日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「1月15日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-34021.htm" title="全国动物疫苗生产厂家有哪些品牌的（全国动物疫苗生产厂家有哪些品牌的）">全国动物疫苗生产厂家有哪些品牌的（全国动物疫苗生产厂家有哪些品牌的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-13-free-ssr-node.htm" title="「11月13日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场">「11月13日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-28328.htm" title="重庆宠物狗领养中心电话号码查询（重庆领养宠物狗免费的地方在哪里）">重庆宠物狗领养中心电话号码查询（重庆领养宠物狗免费的地方在哪里）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-1-clash-node-daily-updates.htm" title="「12月1日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅机场">「12月1日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-24607.htm" title="python协程编程实例_Python异步IO编程之-asyncio协程应用例子">python协程编程实例_Python异步IO编程之-asyncio协程应用例子</a></li>
+                        <li class="py-2"><a href="/news/article-38839.htm" title="重庆宠物领养中心官网招聘电话是多少（重庆宠物领养中心宠物领养）">重庆宠物领养中心官网招聘电话是多少（重庆宠物领养中心宠物领养）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
