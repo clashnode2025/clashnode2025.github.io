@@ -1,0 +1,201 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-44794.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>MSSQL基本语法及实例操作语句_MsSql_</title>
+        <meta name="description" content="刷新本地缓存  Ctrl+Shift+R  查询  select *from [table]  修改 1、普通更新  UPDATE [table] set [字段]=[values]  2、关联表更新" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-44794.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="MSSQL基本语法及实例操作语句_MsSql_" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/32d9322411cc647dc00c61b8043cbeb8.webp" />
+        <meta property="og:release_date" content="2025-01-23T10:39:35" />
+    <meta property="og:updated_time" content="2025-01-23T10:39:35" />
+        <meta property="og:description" content="刷新本地缓存  Ctrl+Shift+R  查询  select *from [table]  修改 1、普通更新  UPDATE [table] set [字段]=[values]  2、关联表更新" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MSSQL基本语法及实例操作语句_MsSql_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">MSSQL基本语法及实例操作语句_MsSql_</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2>刷新本地缓存</h2> <div class="ay1code"> <pre class="brush:sql;">Ctrl+Shift+R</pre> </div> <h2>查询</h2> <div class="ay1code"> <pre class="brush:sql;">select *from [table]</pre> </div> <h2>修改</h2> <h3>1、普通更新</h3> <div class="ay1code"> <pre class="brush:sql;">UPDATE [table] set [字段]=[values]</pre> </div> <h3>2、关联表更新</h3> <div class="ay1code"> <pre class="brush:sql;">UPDATE A SET A1 = B1, A2 = B2, A3 = B3 FROM A, B WHERE A.ID = B.ID</pre> </div> <h2>删除（数据）</h2> <div class="ay1code"> <pre class="brush:sql;">delete [table]</pre> </div> <h2>删除（表）</h2> <div class="ay1code"> <pre class="brush:sql;">drop [table]</pre> </div> <h2>条件查询</h2> <div class="ay1code"> <pre class="brush:sql;">select *from [table] where [字段]=[values]</pre> </div> <h2>事务</h2> <p>1 开始事务: begin transaction</p> <p>2 提交事务：commit transaction</p> <p>3 回滚事务: rollback transaction</p> <p>4 结束事务: 提交或回滚事务都将结束事务</p> <div class="ay1code"> <pre class="brush:sql;">/*--开始事务--*/  begin transaction  declare @errorSum int    --定义变量，用于累计事务执行过程中的错误  /*--转帐--*/  update bank set currentMoney=currentMoney-800 where customerName='张三'  set @errorSum=@errorSum+@@error    --累计是否有错误  update bank set currentMoney=currentMoney+800 where customerName='李四'  set @errorSum=@errorSum+@@error --累计是否有错误    print '查看转帐事务过程中的余额'  select * from bank    /*--根据是否有错误，确定事务是提交还是回滚--*/  if @errorSum&gt;0      begin          print '交易失败，回滚事务.'          rollback transaction      end  else      begin          print '交易成功，提交事务，写入硬盘，永久保存！'          /*--提交并且结束事务--*/          commit transaction      end  go    print '查看转帐后的余额'  select * from bank  go</pre> </div> <h2>查询所有表名</h2> <div class="ay1code"> <pre class="brush:sql;">select * from sys.tables</pre> </div> <h2>查询所有表包含的字段名</h2> <div class="ay1code"> <pre class="brush:sql;">select * from sys.columns</pre> </div> <h2>查询所有字段说明</h2> <div class="ay1code"> <pre class="brush:sql;">select * from sys.extended_properties</pre> </div> <h2>根据表查询所含字段说明</h2> <div class="ay1code"> <pre class="brush:sql;">SELECT t.[name] AS 表名,c.[name] AS 字段名,cast(ep.[value]  as varchar(100)) AS [字段说明]  FROM sys.tables AS t  INNER JOIN sys.columns AS c   ON t.object_id = c.object_id  LEFT JOIN sys.extended_properties AS ep  ON ep.major_id = c.object_id AND ep.minor_id = c.column_id WHERE ep.class =1  AND t.name='UTB_GBNT_PROJ_INFO'--------表名</pre> </div> <h2>创建视图</h2> <div class="ay1code"> <pre class="brush:sql;">create view ViewName  (字段1，字段2)  as  (      select 字段1, 字段2       from [table]   )</pre> </div> <h2>数据字典</h2> <div class="ay1code"> <pre class="brush:sql;">SELECT t.FieldExp 名称,t.ColumnName 代码,    case t.FieldDataType   when 'bigint' then t.FieldDataType  when 'int' then t.FieldDataType  when 'datetime' then t.FieldDataType  when 'numeric' then t.FieldDataType  when 'nvarchar' then (cast(t.FieldDataType as varchar(100))+'('+cast(t.Fieldlength as varchar(100))+')')  when 'decimal' then (cast(t.FieldDataType as varchar(100))+'('+cast(t.Fieldlength as varchar(100))+','+cast(t.Scale as varchar(100))+')')  end as 数据类型    ,t.Fieldlength 长度,t.Scale 精确度    ,case t.FieldNullable  when 0 then '不为空'  when 1 then '' end as 说明    from (select   colorder=C.column_id,   FieldExp=ISNULL(PFD.[value],N''),   ColumnName=C.name,   FieldDataType=T.name,   Fieldlength=COLUMNPROPERTY(c.object_id ,c.name ,'PRECISION'),   Scale=C.scale,  FieldNullable=C.is_nullable  --FieldDefVal=D.definition  FROM sys.columns C   INNER JOIN sys.objects O   ON C.[object_id]=O.[object_id]   AND (O.type='U' or O.type='V')   AND O.is_ms_shipped=0   INNER JOIN sys.types T   ON C.user_type_id=T.user_type_id   LEFT JOIN sys.default_constraints D   ON C.[object_id]=D.parent_object_id   AND C.column_id=D.parent_column_id   AND C.default_object_id=D.[object_id]   LEFT JOIN sys.extended_properties PFD   ON PFD.class=1   AND C.[object_id]=PFD.major_id   AND C.column_id=PFD.minor_id   LEFT JOIN sys.extended_properties PTB   ON PTB.class=1   AND PTB.minor_id=0   AND C.[object_id]=PTB.major_id   LEFT JOIN   (   SELECT   IDXC.[object_id],   IDXC.column_id,   Sort=CASE INDEXKEY_PROPERTY(IDXC.[object_id],IDXC.index_id,IDXC.index_column_id,'IsDescending')  WHEN 1 THEN 'DESC' WHEN 0 THEN 'ASC' ELSE '' END,    PrimaryKey=CASE WHEN IDX.is_primary_key=1 THEN N'√'ELSE N'' END,   IndexName=IDX.Name    FROM sys.indexes IDX    INNER JOIN sys.index_columns IDXC    ON IDX.[object_id]=IDXC.[object_id]    AND IDX.index_id=IDXC.index_id    LEFT JOIN sys.key_constraints KC    ON IDX.[object_id]=KC.[parent_object_id]    AND IDX.index_id=KC.unique_index_id    INNER JOIN    (    SELECT [object_id], Column_id, index_id=MIN(index_id)    FROM sys.index_columns    GROUP BY [object_id], Column_id    ) IDXCUQ    ON IDXC.[object_id]=IDXCUQ.[object_id]    AND IDXC.Column_id=IDXCUQ.Column_id    AND IDXC.index_id=IDXCUQ.index_id    ) IDX    ON C.[object_id]=IDX.[object_id]    AND C.column_id=IDX.column_id    WHERE O.name='--tablename--')as t  ORDER BY colorder,ColumnName</pre> </div> <div class="ay1code"> <pre class="brush:sql;">SELECT    表名=case when a.colorder=1 then d.name else '' end,   表说明=case when a.colorder=1 then isnull(f.value,'') else '' end,  字段序号=a.colorder,   字段名=a.name,   标识=case when COLUMNPROPERTY(a.id,a.name,'IsIdentity')=1 then '√'else '' end,   主键=case when exists(SELECT 1 FROM sysobjects where xtype='PK' and name in (    SELECT name FROM sysindexes WHERE indid in(     SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid      ))) then '√' else '' end,   类型=b.name,   占用字节数=a.length,   长度=COLUMNPROPERTY(a.id,a.name,'PRECISION'),   小数位数=isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0),   允许空=case when a.isnullable=1 then '√'else '' end,   默认值=isnull(e.text,''),   字段说明=isnull(g.[value],'')   FROM syscolumns a   left join systypes b on a.xtype=b.xusertype   inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name&lt;&gt;'dtproperties'   left join syscomments e on a.cdefault=e.id   left join sys.extended_properties g on a.id=g.major_id and a.colid=g.minor_id   left join sys.extended_properties f on d.id=f.major_id and f.minor_id =0   --where d.name='要查询的表' --如果只查询指定表,加上此条件     order by a.id,a.colorder</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44298.htm">上海有什么宠物救助机构（上海有宠物救助中心吗）</a></p>
+                                        <p>下一个：<a href="/news/article-44795.htm">宠物出售平台有哪些软件可以做（宠物出售平台有哪些软件可以做的）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-ssr-subscribe.htm" title="「12月16日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源">「12月16日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-37857.htm" title="Nestjs模块机制的概念和实现原理">Nestjs模块机制的概念和实现原理</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-12-clash-node-daily-updates.htm" title="「12月12日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源">「12月12日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-30682.htm" title="宠物医院好评评语100字怎么写（宠物医院写好评题材）">宠物医院好评评语100字怎么写（宠物医院写好评题材）</a></li>
+                        <li class="py-2"><a href="/news/article-18608.htm" title="看了郑爽和张翰的恋爱综艺，才知道男女之间的恋爱观差这么大">看了郑爽和张翰的恋爱综艺，才知道男女之间的恋爱观差这么大</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-clash-node-daily-updates.htm" title="「10月18日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场">「10月18日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-high-speed-nodes.htm" title="「12月18日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「12月18日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-30209.htm" title="宠物打疫苗不能吃什么东西呢（宠物打疫苗不能洗澡的原因）">宠物打疫苗不能吃什么东西呢（宠物打疫苗不能洗澡的原因）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-free-v2ray-subscribe.htm" title="「1月6日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源">「1月6日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-42802.htm" title="func-spring-boot-starter 匿名函数托管">func-spring-boot-starter 匿名函数托管</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
