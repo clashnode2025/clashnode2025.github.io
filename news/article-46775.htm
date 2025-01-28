@@ -1,0 +1,201 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-46775.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Java8 LocalDate、LocalDateTime、LocalTime、Instant</title>
+        <meta name="description" content="Java8日期时间API，新增了LocalDate、LocalDateTime、LocalTime等线程安全类，下面简单介绍他们的使用及Date与LocalDate互转。  &nbsp;1、Local" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-46775.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="Java8 LocalDate、LocalDateTime、LocalTime、Instant" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/2043a492aabf14b7ae5595337cb61544.webp" />
+        <meta property="og:release_date" content="2025-01-27T08:17:20" />
+    <meta property="og:updated_time" content="2025-01-27T08:17:20" />
+        <meta property="og:description" content="Java8日期时间API，新增了LocalDate、LocalDateTime、LocalTime等线程安全类，下面简单介绍他们的使用及Date与LocalDate互转。  &nbsp;1、Local" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java8 LocalDate、LocalDateTime、LocalTime、Instant">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="#">关于</a></li>
+                    <li><a href="#">联系</a></li>
+                </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Java8 LocalDate、LocalDateTime、LocalTime、Instant</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <blockquote> <p>Java8日期时间API，新增了LocalDate、LocalDateTime、LocalTime等线程安全类，下面简单介绍他们的使用及Date与LocalDate互转。</p> </blockquote> <p><strong>&nbsp;1、LocalDate、LocalDateTime、LocalTime</strong></p> <p><img fetchpriority="high" decoding="async" alt="" height="251" src="http://img.555519.xyz/uploads/20221117/5762bf0a0e690630fdbbcd3c5e1ac655.jpg"></p> <p><img decoding="async" alt="" height="430" src="http://img.555519.xyz/uploads/20221117/2baeeceb43a71d60f80c0b2ebcbc8036.jpg"></p> <p><img decoding="async" alt="" height="487" src="http://img.555519.xyz/uploads/20221117/2368e627e40c69181f985d2874258075.jpg"></p> <p><img loading="lazy" decoding="async" alt="" height="644" src="http://img.555519.xyz/uploads/20221117/ecbd8e4b095c693cff816055a9c1564d.jpg"></p> <blockquote> <p>LocalDate 是日期：2022-09-21</p> <p>LocalDateTime 是日期和时间：2022-09-21 15:20:10</p> <p>LocalTime 是时间：15:20:16</p> <p><strong>定义当前时间使用自带的now() 方法：</strong></p> <p>LocalDate.now();</p> <p>LocalDateTime.now();</p> <p>LocalTime.now();</p> <p><strong>定义指定时间：</strong></p> <p>LocalTime time = LocalTime.of(11,11,11);<br /> LocalDate date = LocalDate.of(2022,9,21);<br /> LocalDateTime lt = LocalDateTime.of(date, time);</p> <p><strong>时间与字符串的相互转化</strong><br /> DateTimeFormatter 将时间转成字符串，或将字符串转成时间</p> <p>定义：df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");</p> <p><strong>时间转字符串：</strong></p> <p>df.format(LocalDateTime.now())</p> <p><strong>字符串转化成时间：</strong></p> <p>LocalDateTime.parse("2022-09-21 15:31:19",df)</p> <p>日期及时间的的转换也可以使用相同的方式。</p> <p><strong>两个时间的比较，返回结果true/false</strong></p> <p>isAfter();</p> <p>isBefore()</p> <p>LocalDateTime.now().isAfter(dt2);</p> </blockquote> <p>例子1：</p> <pre><code class="language-java">   /**      * LocalDate 与 String 之间的转换      */     @Test     public void localDateToString(){         LocalDate today = LocalDate.now();         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");         String dateStr = today.format(fmt);         System.out.println("dateStr:"+dateStr);          String str = "2022-09-22";         //指定转换格式         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");         //进行转换         LocalDate date = LocalDate.parse(str, dateTimeFormatter);         System.out.println("date:"+date);      }</code></pre> <p>控制台输出：</p> <p><img loading="lazy" decoding="async" alt="" height="136" src="http://img.555519.xyz/uploads/20221117/9d33b6a9b8ed3d0ef7f7bf9aa7bb93e3.jpg"></p> <p>例子2：</p> <pre><code class="language-java">    @Test     public void  testDate(){         Date date = new Date();         LocalDate localDate = LocalDate.now();         System.out.println("localDate:"+localDate);         LocalDateTime localDateTime = LocalDateTime.now();         System.out.println("localDateTime:"+localDateTime);         LocalTime localTime= LocalTime.now();         System.out.println("localTime:"+localTime);         //Date转LocalDate         System.out.println("Date转LocalDate:");         System.out.println("DateToLocalDate:"+date2LocalDate(date));         //LocalDate转Date         System.out.println("LocalDate转Date:");         System.out.println("LocalDateToDate:"+localDate2Date(localDate));     }     /**      * Date转LocalDate      * @param date      */     public static LocalDate date2LocalDate(Date date) {         if(null == date) {             return null;         }         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();     }     /**      * LocalDate转Date      * @param localDate      * @return      */     public static Date localDate2Date(LocalDate localDate) {         if (null == localDate) {             return null;         }         ZonedDateTime zonedDateTime = localDate.atStartOfDay(ZoneId.systemDefault());         return Date.from(zonedDateTime.toInstant());     }</code></pre> <p>控制台输出：</p> <p><img loading="lazy" decoding="async" alt="" height="258" src="http://img.555519.xyz/uploads/20221117/2c3b178118bb81a7e01f54a16756908e.jpg"></p> <p>&nbsp;2、Instant</p> <pre><code class="language-java">    @Test     public void testInstant(){         Instant now = Instant.now();         System.out.println("现在时间:"+now);         /**          * 注意：通过这种方式获取的时间戳与北京时间相差8个时区，需要修正为北京时间，          * 通过查看源代码发现Instant.now()使用等是UTC时间Clock.systemUTC().instant()。LocalDate、LocalDateTime          * 的now()方法使用的是系统默认时区 不存在Instant.now()的时间问题。          * 解决方法:增加8个小时          */         Instant now1 = Instant.now().plusMillis(TimeUnit.HOURS.toMillis(8));         System.out.println("修正后的现在时间:"+now1);          //Instant获取long类型的10位秒数、13位毫秒数         Instant now2 = Instant.now().plusMillis(TimeUnit.HOURS.toMillis(8));         System.out.println("秒数:"+now2.getEpochSecond());         System.out.println("毫秒数:"+now2.toEpochMilli());          //LocalDateTime输出毫秒数的方式，比Instant多一步转换         LocalDateTime localDateTime = LocalDateTime.now();         //LocalDateTime转Instant         Instant localDateTime2Instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();         System.out.println("LocalDateTime 毫秒数:"+localDateTime2Instant.toEpochMilli());     }</code></pre> <p>控制台输出：</p> <p><img loading="lazy" decoding="async" alt="" height="231" src="http://img.555519.xyz/uploads/20221117/354fe9b5de4149ceecf1ec12d8328686.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46282.htm">动物疫苗公司产量排名前十 动物疫苗公司产量排名前十名</a></p>
+                                        <p>下一个：<a href="/news/article-46776.htm">动物疫苗周期多长时间打一次（动物疫苗注射后多久产生抗体）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-v2ray-subscribe.htm" title="「12月8日」2025年最新高速V2ray/Clash/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「12月8日」2025年最新高速V2ray/Clash/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/news/article-20468.htm" title="包含成都宠物领养中心免费领养狗狗的词条">包含成都宠物领养中心免费领养狗狗的词条</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-free-subscribe-node.htm" title="「1月14日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月14日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-shadowrocket-node.htm" title="「10月27日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场">「10月27日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅机场</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-free-v2ray-subscribe.htm" title="「1月3日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「1月3日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-45782.htm" title="宠物粮食品牌排名前十名有哪些呢视频（宠物粮品牌大全）">宠物粮食品牌排名前十名有哪些呢视频（宠物粮品牌大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-high-speed-nodes.htm" title="「1月5日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「1月5日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-30682.htm" title="宠物医院好评评语100字怎么写（宠物医院写好评题材）">宠物医院好评评语100字怎么写（宠物医院写好评题材）</a></li>
+                        <li class="py-2"><a href="/news/article-21385.htm" title="湖南腊肉炒之前要煮一下吗(湖南腊肉炒之前需要焯水吗?)">湖南腊肉炒之前要煮一下吗(湖南腊肉炒之前需要焯水吗?)</a></li>
+                        <li class="py-2"><a href="/news/article-28787.htm" title="maven打war包">maven打war包</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
