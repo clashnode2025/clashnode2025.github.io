@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <!-- Required meta tags -->
@@ -9,10 +9,37 @@
     <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
     <title>Vue指令之v-for的使用说明_vue.js</title>
         <meta name="description" content="目录  Vue v-for的使用  1.迭代普通数组 2.迭代对象数组 3.迭代对象 4.迭代数字  v-for的最佳使用技巧  1.始终在v-for循环中使用key 2.不要在循环中使用v-if 3" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-38352.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="Vue指令之v-for的使用说明_vue.js" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/1ff112e028cd504716ca7f283e279e64.webp" />
+        <meta property="og:release_date" content="2025-01-10T10:42:08" />
+    <meta property="og:updated_time" content="2025-01-10T10:42:08" />
+        <meta property="og:description" content="目录  Vue v-for的使用  1.迭代普通数组 2.迭代对象数组 3.迭代对象 4.迭代数字  v-for的最佳使用技巧  1.始终在v-for循环中使用key 2.不要在循环中使用v-if 3" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue指令之v-for的使用说明_vue.js">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/icomoon/style.css">
-    <link rel="stylesheet" href="__ADDON__/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
     <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
     <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
@@ -68,7 +95,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="img-wrap" data-aos="fade-left">
-                        <img href="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -97,16 +124,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-32109.htm" title="动物防疫中心可以打疫苗吗现在还能打吗（动物疾病预防控制中心可以打疫苗吗）">动物防疫中心可以打疫苗吗现在还能打吗（动物疾病预防控制中心可以打疫苗吗）</a></li>
-                        <li class="py-2"><a href="/news/article-21845.htm" title="关于Android10 暗黑模式的简述">关于Android10 暗黑模式的简述</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-13-free-clash-subscribe.htm" title="「10月13日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅">「10月13日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/news/article-27860.htm" title="养猫打疫苗贵吗（养猫注射疫苗）">养猫打疫苗贵吗（养猫注射疫苗）</a></li>
-                        <li class="py-2"><a href="/news/article-24480.htm" title="畜牧兽医成人自考（畜牧兽医成人自考需要考哪些科）">畜牧兽医成人自考（畜牧兽医成人自考需要考哪些科）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-free-ssr-node.htm" title="「10月23日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅机场">「10月23日」2025年最新高速SSR/Clash/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅机场</a></li>
-                        <li class="py-2"><a href="/news/article-26467.htm" title="动物医院住院部护理（动物医院前台）">动物医院住院部护理（动物医院前台）</a></li>
-                        <li class="py-2"><a href="/news/article-25542.htm" title="手把手教会将 Windows 窗体桌面应用从.NET Framework迁移到 .NET SDK/.NET 6 格式">手把手教会将 Windows 窗体桌面应用从.NET Framework迁移到 .NET SDK/.NET 6 格式</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-8-node-share-links.htm" title="「10月8日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅">「10月8日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅</a></li>
-                        <li class="py-2"><a href="/news/article-21846.htm" title="SpringBoot 起步依赖+SpringBoot配置">SpringBoot 起步依赖+SpringBoot配置</a></li>
+                        <li class="py-2"><a href="/news/article-39831.htm" title="C语言多文件编程详解">C语言多文件编程详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-v2ray.htm" title="「12月21日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「12月21日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-25075.htm" title="通过实例程序验证与优化谈谈网上很多对于Java DCL的一些误解以及为何要理解Java内存模型">通过实例程序验证与优化谈谈网上很多对于Java DCL的一些误解以及为何要理解Java内存模型</a></li>
+                        <li class="py-2"><a href="/news/article-29250.htm" title="Spring Security教程（13）&#8212;- 验证码功能的实现">Spring Security教程（13）&#8212;- 验证码功能的实现</a></li>
+                        <li class="py-2"><a href="/news/article-32580.htm" title="C语言_函数_地址和指针：值传递和地址传递的区别">C语言_函数_地址和指针：值传递和地址传递的区别</a></li>
+                        <li class="py-2"><a href="/news/article-25543.htm" title="动物疫苗使用时的注意事项是什么呢（动物疫苗知识）">动物疫苗使用时的注意事项是什么呢（动物疫苗知识）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-node-subscribe-links.htm" title="「1月27日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月27日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-clash-v2ray-ss-ssr.htm" title="「1月29日」2025年最新高速SSR/Shadowrocket/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月29日」2025年最新高速SSR/Shadowrocket/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-42803.htm" title="动物疫苗品牌排行榜 动物疫苗品牌排行榜前十名">动物疫苗品牌排行榜 动物疫苗品牌排行榜前十名</a></li>
+                        <li class="py-2"><a href="/news/article-48217.htm" title="佳雯宠物医院客服电话是多少号（佳雯宠物医院客服电话是多少号码）">佳雯宠物医院客服电话是多少号（佳雯宠物医院客服电话是多少号码）</a></li>
                     </ul>
     </div>
 </div>
@@ -118,16 +145,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
