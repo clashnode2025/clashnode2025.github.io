@@ -1,0 +1,200 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-56189.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Springboot过滤器和拦截器详解及使用场景</title>
+        <meta name="description" content="1、过滤器和拦截器触发时机不一样，过滤器是在请求进入容器后，但请求进入servlet之前进行预处理的。请求结束返回也是，是在servlet处理完后，返回给前端之前。 2、拦截器可以获取IOC容器中的各" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-56189.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="Springboot过滤器和拦截器详解及使用场景" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/62e40d419d1aa77899fef0974cf293a1.webp" />
+        <meta property="og:release_date" content="2025-02-14T10:00:32" />
+    <meta property="og:updated_time" content="2025-02-14T10:00:32" />
+        <meta property="og:description" content="1、过滤器和拦截器触发时机不一样，过滤器是在请求进入容器后，但请求进入servlet之前进行预处理的。请求结束返回也是，是在servlet处理完后，返回给前端之前。 2、拦截器可以获取IOC容器中的各" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Springboot过滤器和拦截器详解及使用场景">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Springboot过滤器和拦截器详解及使用场景</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p><img fetchpriority="high" decoding="async" alt="" height="671" src="http://img.555519.xyz/uploads/20221130/537d7086993083b8bd6a8e2d9b0cb26d.jpg"></p> <p>1、过滤器和拦截器<strong>触发时机不一样</strong>，<strong>过滤器是</strong>在请<strong>求进入容器后</strong>，但请求<strong>进入servlet之前</strong>进<strong>行预处理</strong>的。请求结束返回也是，是在servlet处理完后，返回给前端之前。</p> <p>2、<strong>拦截器</strong>可以获取IOC容器中的各个bean，而过滤器就不行，因为拦<strong>截器是spring提供并管理的</strong>，spring的功能可以被拦截器使用，在拦截器里注入一个service，可以调用业务逻辑。而过滤器是JavaEE标准，只需依赖servlet api ，不需要依赖spring。</p> <p>3、<strong>过滤器的实现</strong>基于<strong>回调函数</strong>。而<strong>拦截器</strong>（代理模式）的实现<strong>基于反射</strong></p> <p>4、<strong>Filter</strong>是依<strong>赖于Servlet容</strong>器，<strong>属于Servlet规范的一部分</strong>，而<strong>拦截器则是独立存</strong>在的，可以在任何情况下使用。</p> <p>5、<strong>Filte</strong>r的执行由<strong>Servlet容器回调完成</strong>，而<strong>拦截器</strong>通常通<strong>过动态代理（反射）</strong>的方式来执行。</p> <p>6、<strong>Filter的生命周</strong>期<strong>由Servlet容器管理</strong>，而<strong>拦截器则</strong>可以通过I<strong>oC容器来管理</strong>，因此可以通过注入等方式来获取其他Bean的实例，因此使用会更方便。</p> <p>过滤器和拦截器非常相似，但是它们有很大的区别<br /> 最简单明了的区别就是**过滤器可以修改request，而拦截器不能<br /> 过滤器需要在servlet容器中实现，拦截器可以适用于javaEE，javaSE等各种环境<br /> 拦截器可以调用IOC容器中的各种依赖，而过滤器不能<br /> 过滤器只能在请求的前后使用，而拦截器可以详细到每个方法**<br /> 区别很多，大家可以去查下</p> <p>总的来说<br /> 过滤器就是筛选出你要的东西，比如requeset中你要的那部分<br /> 拦截器在做安全方面用的比较多，比如终止一些流程<br /> 网上有一张图片很不错，这里拷过来给大家看一下</p> <p><img decoding="async" alt="" height="488" src="http://img.555519.xyz/uploads/20221130/a895b222b36e06e51be0e18aadbf1f3e.jpg"></p> <p>过滤器（Filter） ：可以拿到原始的http请求，但是拿不到你请求的控制器和请求控制器中的方法的信息。</p> <p>拦截器（Interceptor）：可以拿到你请求的控制器和方法，却拿不到请求方法的参数。</p> <p>切片（Aspect）: 可以拿到方法的参数，但是却拿不到http请求和响应的对象</p> <p><img decoding="async" alt="" height="635" src="http://img.555519.xyz/uploads/20221130/03c2363854ecbb90c8b301daebefec50.jpg"></p> </h1> <p><strong>两种方式：</strong><br /><strong>1、</strong>使用spring boot提供的<strong>FilterRegistrationBean注册Filter</strong><br /><strong>2、</strong>使用<strong>原生servlet注解定义Filter</strong><br /> 两种方式的本质都是一样的，<strong>都是去FilterRegistrationBean注册自定义Filter</strong></p> <p><strong>方式一: （使用spring boot提供的FilterRegistrationBean注册Filter ）</strong><br /> ①、先定义Filter：</p> <pre><code>package com.corwien.filter;import javax.servlet.*;import java.io.IOException;public class MyFilter implements Filter {    @Override public void init(FilterConfig filterConfig) throws ServletException {    }    @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException { // do something 处理request 或response     // doFilter()方法中的servletRequest参数的类型是ServletRequest，需要转换为HttpServletRequest类型方便调用某些方法      System.out.println("filter1"); // 调用filter链中的下一个filter   HttpServletRequest request = (HttpServletRequest) servletRequest;        HttpServletResponse response = (HttpServletResponse) servletResponse;         String ip = request.getRemoteAddr();        String url = request.getRequestURL().toString();        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");        Date d = new Date();        String date = sdf.format(d);         System.out.printf("%s %s 访问了 %s%n", date, ip, url);                filterChain.doFilter(request, response);    }    @Override public void destroy() {    }}</code></pre> <p>②、注册自定义Filter</p> <pre><code>@Configurationpublic class FilterConfig {    @Bean    public FilterRegistrationBean registrationBean() {       ** FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new** **MyFilter());**        filterRegistrationBean.addUrlPatterns("/*");        return filterRegistrationBean;    }}</code></pre> <p><strong>方式一的①②步骤可以用下面这段代码代替：</strong></p> <pre><code>@Configuration public class FilterConfig {     @Bean public **FilterRegistrationBean** registFilter() {        **FilterRegistrationBean registration** **= new FilterRegistrationBean();        registration.setFilter(new** **LogCostFilter());**        registration.addUrlPatterns("/*");        registration.setName("LogCostFilter");        registration.setOrder(1); return registration;    } }</code></pre> <pre><code>public class LogCostFilter implements Filter {    @Override public void init(FilterConfig filterConfig) throws ServletException {     }     @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException { long start = System.currentTimeMillis();        filterChain.doFilter(servletRequest,servletResponse);        System.out.println("Execute cost="+(System.currentTimeMillis()-start));    }     @Override public void destroy() {     }</code></pre> <p><strong>方式二：（使用</strong>原生servlet注解定义Filter<strong>&nbsp;）</strong></p> <pre><code>// 注入spring容器@Component // 定义filterName 和过滤的url@WebFilter(filterName = "my2Filter" ,urlPatterns = "/*") public class My2Filter implements Filter {    @Override public void init(FilterConfig filterConfig) throws ServletException {    }    @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {        System.out.println("filter2");    }    @Override public void destroy() {    }}</code></pre> <p>这里直接用<strong>@WebFilter就</strong>可以进行配置，同样，可<strong>以设置url匹配模式，过滤器名称</strong>等。这里需要注意一点的是<strong>@WebFilter这个注解是Servlet3.0的规范，并不是Spring boot提供</strong>的。除了这个注解以外，我们还需在<strong>启动类中加另外一个注解：@ServletComponetScan，指定扫描的包。</strong></p> </h1> <p>实现拦截器可以通过继承&nbsp;HandlerInterceptorAdapter类也可以通过实现HandlerInterceptor这个接口。另外，如果preHandle方法return true，则继续后续处理。</p> <p><strong>首先我们实现拦截器类：</strong></p> <pre><code>public class LogCostInterceptor implements HandlerInterceptor { long start = System.currentTimeMillis();    @Override public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {        start = System.currentTimeMillis(); return true;    }     @Override public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {        System.out.println("Interceptor cost="+(System.currentTimeMillis()-start));    }     @Override public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {    }}</code></pre> <p>我们<strong>还需要</strong>实现<strong>HandlerInterceptor这个接口</strong>，这个接口包括三个方法，p<strong>reHandle是请求执行前</strong>执行的，<strong>postHandler是请求结束</strong>执行的，但<strong>只有preHandle方法返回true的时候才会执</strong>行，<strong>afterCompletion是视图渲染完成后才执行</strong>，同样需要preHandle返回true，该方法通常用于清理资源等工作。除了实现上面的接口外，我们还需对其进行配置：</p> <pre><code>@Configuration public class InterceptorConfig extends WebMvcConfigurerAdapter {     @Override public void addInterceptors(InterceptorRegistry registry) {        registry.addInterceptor(new LogCostInterceptor()).addPathPatterns("/**"); super.addInterceptors(registry);    }}</code></pre> <p>这里我们<strong>继承了WebMVCConfigurerAdapter</strong>，这里我们<strong>重写了addInterceptors这个方法</strong>，进行拦截器的配置，<strong>主要配置项就两个</strong>，一个是<strong>指定拦截器</strong>，第二个是<strong>指定拦截的URL</strong>。</p> <p>坑坑坑：<br /> 拦截器不生效常见问题：<br /> 1）是否有加@Configuration<br /> 2）拦截路径是否有问题&nbsp;**&nbsp;和&nbsp;*<br /> 3）拦截器最后路径一定要 “/**”， 如果是目录的话则是&nbsp;/*/</p> <p>总结一下:创建拦截器需要两步：</p> <blockquote> <p>1、自定义拦截器<br /> 2、注册拦截器</p> </blockquote> </h1> <p>拦截器是在DispatcherServlet这个servlet中执行的，因此所有的请求最先进入Filter，最后离开Filter。其顺序如下。</p> <p>Filter-&gt;Interceptor.preHandle-&gt;Handler-&gt;Interceptor.postHandle-&gt;Interceptor.afterCompletion-&gt;Filter</p> </h1> <p>拦截器本质上是面向切面编程（AOP），符合横切关注点的功能都可以放在拦截器中来实现，主要的应用场景包括：</p> <ul> <li>登录验证，判断用户是否登录。</li> <li>权限验证，判断用户是否有权限访问资源，如校验token</li> <li>日志记录，记录请求操作日志（用户ip，访问时间等），以便统计请求访问量。</li> <li>处理cookie、本地化、国际化、主题等。</li> <li>性能监控，监控请求处理时长等。</li> <li>通用行为：读取cookie得到用户信息并将用户对象放入请求，从而方便后续流程使用，还有如提取Locale、Theme信息等，只要是多个处理器都需要的即可使用拦截器实现）</li> </ul> </h1> <p>1）过滤敏感词汇（防止sql注入）<br /> 2）设置字符编码<br /> 3）URL级别的权限访问控制<br /> 4）压缩响应信息</p> <p><img loading="lazy" decoding="async" alt="" height="407" src="http://img.555519.xyz/uploads/20221130/439f90e7896c0a9c8f2a451f70b31f33.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55632.htm">怎么给猫&#25171;&#38024;打在哪里（怎样给猫&#25171;&#38024;需要扎入多深）</a></p>
+                                        <p>下一个：<a href="/news/article-56190.htm">做宠物粮食生意好做吗赚钱吗现在 做宠物粮食生意好做吗赚钱吗现在怎么样</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-v2ray-subscribe.htm" title="「2月7日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「2月7日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-41816.htm" title="义乌福利院领养孩子条件（义乌福利院领养孩子条件要求）">义乌福利院领养孩子条件（义乌福利院领养孩子条件要求）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-clash.htm" title="「12月15日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「12月15日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-39342.htm" title="动物疫苗生产企业排行（动物疫苗生产企业排行榜最新）">动物疫苗生产企业排行（动物疫苗生产企业排行榜最新）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-clash-node.htm" title="「2月14日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「2月14日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-34021.htm" title="全国动物疫苗生产厂家有哪些品牌的（全国动物疫苗生产厂家有哪些品牌的）">全国动物疫苗生产厂家有哪些品牌的（全国动物疫苗生产厂家有哪些品牌的）</a></li>
+                        <li class="py-2"><a href="/news/article-20467.htm" title="成都领养宠物贴吧（成都宠物领养吧领养代替购买）">成都领养宠物贴吧（成都宠物领养吧领养代替购买）</a></li>
+                        <li class="py-2"><a href="/news/article-26467.htm" title="动物医院住院部护理（动物医院前台）">动物医院住院部护理（动物医院前台）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-free-ssr-subscribe.htm" title="「12月17日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅源">「12月17日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-31133.htm" title="上海市青浦区二中分数线是多少分录取（青浦二中2020中考最低录取分数线）">上海市青浦区二中分数线是多少分录取（青浦二中2020中考最低录取分数线）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">47</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
