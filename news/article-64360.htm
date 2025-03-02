@@ -1,0 +1,203 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-64360.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>PHP别名/导入名称空间方法详解</title>
+        <meta name="description" content="介绍 命名空间的重要功能是能够使用别名引用外部完全限定名称或进行导入。PHP命名空间支持以下几种别名或导入-   给类名起别名，   为接口名称起别名，   给命名空间名称起别名   别名或导入函数和" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-64360.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="PHP别名/导入名称空间方法详解" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/136bc0272fb80d68b3f9b909dd50fe09.webp" />
+        <meta property="og:release_date" content="2025-02-28T06:55:44" />
+    <meta property="og:updated_time" content="2025-02-28T06:55:44" />
+        <meta property="og:description" content="介绍 命名空间的重要功能是能够使用别名引用外部完全限定名称或进行导入。PHP命名空间支持以下几种别名或导入-   给类名起别名，   为接口名称起别名，   给命名空间名称起别名   别名或导入函数和" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PHP别名/导入名称空间方法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">PHP别名/导入名称空间方法详解</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2>介绍</h2> <p>命名空间的重要功能是能够使用别名引用外部完全限定名称或进行导入。PHP命名空间支持以下几种别名或导入-</p> <ul class="list-paddingleft-2"> <li> <p>给类名起别名，</p> </li> <li> <p>为接口名称起别名，</p> </li> <li> <p>给命名空间名称起别名</p> </li> <li> <p>别名或导入函数和常量名称。</p> </li> </ul> <p>在PHP中，别名是通过use运算符完成的。</p> <h2>使用运算符</h2> <h2>示例</h2> <pre>#test1.php &lt;?php namespace&nbsp;mynamespace; function&nbsp;sayhello(){ &nbsp;&nbsp;&nbsp;echo&nbsp;"Hello&nbsp;from&nbsp;mynamespace\n"; } sayhello(); namespace&nbsp;mynewspace; function&nbsp;sayhello(){ &nbsp;&nbsp;&nbsp;echo&nbsp;"Hello&nbsp;from&nbsp;my&nbsp;new&nbsp;space\n"; } sayhello(); use&nbsp;\mynewspace\sayhello&nbsp;as&nbsp;hello; ?&gt;</pre> <p>输出结果</p> <pre>Hello&nbsp;from&nbsp;mynamespace Hello&nbsp;from&nbsp;my&nbsp;new&nbsp;space</pre> <h2>多种使用陈述相结合</h2> <h2>示例</h2> <pre>&lt;?php namespace&nbsp;mynamespace; class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;function&nbsp;test()&nbsp;{&nbsp;echo&nbsp;"myclass&nbsp;in&nbsp;mynamespace\n";&nbsp;} } class&nbsp;testclass{ &nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;test()&nbsp;{&nbsp;echo&nbsp;"testclass&nbsp;in&nbsp;mynamespace\n";&nbsp;} } use&nbsp;\mynamespace\myclass&nbsp;as&nbsp;myclass,&nbsp;\mynamespace\testclass; $a=new&nbsp;myclass(); $a-&gt;test(); $b=new&nbsp;\mynamespace\testclass(); $b-&gt;test(); ?&gt;</pre> <p>输出结果</p> <pre>myclass&nbsp;in&nbsp;mynamespace testclass&nbsp;in&nbsp;mynamespace</pre> <h2>导入和动态名称</h2> <p>动态替换导入类的名称</p> <h2>示例</h2> <pre>&lt;?php namespace&nbsp;mynamespace; class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;function&nbsp;test()&nbsp;{&nbsp;echo&nbsp;"myclass&nbsp;in&nbsp;mynamespace\n";&nbsp;} } class&nbsp;testclass{ &nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;test()&nbsp;{&nbsp;echo&nbsp;"testclass&nbsp;in&nbsp;mynamespace\n";&nbsp;} } use&nbsp;\mynamespace\myclass&nbsp;as&nbsp;myclass; $a=new&nbsp;myclass; $b='myclass'; $c=new&nbsp;$b; ?&gt;</pre> <p>use关键字必须在最外部或全局范围内或在命名空间声明内声明。导入过程在编译时而不是在运行时完成。因此，不能对它进行块作用域限定。以下使用将是非法的</p> <h2>示例</h2> <pre>&lt;?php function&nbsp;myfunction(){ &nbsp;&nbsp;&nbsp;use&nbsp;myspace\myclass; &nbsp;&nbsp;&nbsp;// &nbsp;&nbsp;&nbsp;// } ?&gt;</pre> <p>包含的文件不会继承父文件的导入规则，因为它们是基于每个文件的</p> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-63760.htm">一片枫叶什么意思（一片枫叶是什么牌子潮牌）</a></p>
+                                        <p>下一个：<a href="/news/article-64361.htm">源码中的设计模式&#8211;装饰器模式_在线工具</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-node-subscribe-links.htm" title="「2月5日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「2月5日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-subscribe-node.htm" title="「1月28日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「1月28日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-clash-node.htm" title="「2月24日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「2月24日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-55082.htm" title="动物疫苗的作用原理和方法图片 动物疫苗的作用原理和方法图片大全">动物疫苗的作用原理和方法图片 动物疫苗的作用原理和方法图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-19554.htm" title="宠物领养步骤图片大全（宠物领养步骤图片大全大图）">宠物领养步骤图片大全（宠物领养步骤图片大全大图）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-free-ssr-subscribe.htm" title="「2月28日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源">「2月28日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-21846.htm" title="SpringBoot 起步依赖+SpringBoot配置">SpringBoot 起步依赖+SpringBoot配置</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-subscribe-node.htm" title="「2月22日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源">「2月22日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-41815.htm" title="动物疫苗反应有哪些症状表现（动物打疫苗后的不良反应）">动物疫苗反应有哪些症状表现（动物打疫苗后的不良反应）</a></li>
+                        <li class="py-2"><a href="/news/article-56750.htm" title="三国杀动态皮肤为什么没有特效（三国杀手游我动态皮肤为什么没有特效）">三国杀动态皮肤为什么没有特效（三国杀手游我动态皮肤为什么没有特效）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
