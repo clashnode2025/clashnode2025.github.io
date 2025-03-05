@@ -1,0 +1,197 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-66852.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具</title>
+        <meta name="description" content="MybatisPlus是国产的第三方插件， 它封装了许多常用的CURDapi，免去了我们写mapper.xml的重复劳动，这里介绍了基本的整合SpringBoot和基础用法。  在项目中pom文件引入" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-66852.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/6f0963e67bdb7c0fe1881b0beb1842e3.webp" />
+        <meta property="og:release_date" content="2025-03-04T10:13:15" />
+    <meta property="og:updated_time" content="2025-03-04T10:13:15" />
+        <meta property="og:description" content="MybatisPlus是国产的第三方插件， 它封装了许多常用的CURDapi，免去了我们写mapper.xml的重复劳动，这里介绍了基本的整合SpringBoot和基础用法。  在项目中pom文件引入" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <p>MybatisPlus是国产的第三方插件， 它封装了许多常用的CURDapi，免去了我们写mapper.xml的重复劳动，这里介绍了基本的整合SpringBoot和基础用法。</p> </h1> <p>在项目中<code>pom</code>文件引入<code>mybatisplus</code>和<code>mysql</code>驱动依赖，如下图</p> <pre><code class="language-xml">    &lt;dependency&gt;         &lt;groupId&gt;com.baomidou&lt;/groupId&gt;         &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;         &lt;version&gt;3.5.1&lt;/version&gt;     &lt;/dependency&gt;      &lt;dependency&gt;          &lt;groupId&gt;mysql&lt;/groupId&gt;          &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;          &lt;version&gt;8.0.26&lt;/version&gt;      &lt;/dependency&gt; </code></pre> </h1> <p>在项目中application.yaml文件中配置数据库的连接信息</p> <pre><code class="language-yaml">spring:   datasource:     driver-class-name: com.mysql.cj.jdbc.Driver     url: jdbc:mysql://127.0.0.1:3306/didiadmin?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true&amp;serverTimezone=GMT%2B8&amp;nullCatalogMeansCurrent=true     username: root     password: 123456 </code></pre> </h1> <p>本案例通过一个完整的业务流程来介绍如何使用<code>mybatispuls</code>，首先在数据库中新建两个表，一个是字典类型表<code>sys_dict_type</code>和一个字典数据表<code>sys_dict_data</code></p> <pre><code class="language-sql">CREATE TABLE `sys_dict_type` ( `id` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '标识', `type_name` VARCHAR (255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '字典类型名称',  `type_code` VARCHAR (255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '字典类型标识',  `description` VARCHAR (255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '字典类型描述',  `enable` CHAR (1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '是否启用',  `create_by` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '创建人ID',   `create_name` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '创建人名称',  `create_time` datetime DEFAULT NULL COMMENT '创建时间',  `update_by` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '修改人ID',  `update_name` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '修改人名称',  `update_time` datetime DEFAULT NULL COMMENT '修改时间',  `remark` VARCHAR (255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '备注',  PRIMARY KEY (`id`) USING BTREE ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC  CREATE TABLE `sys_dict_data` ( `data_id` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '标识', `data_label` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '字典标签',  `data_value` CHAR (20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '字典值',  `type_code` CHAR (20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '所属类型',  `is_default` CHAR (1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '是否默认',  `update_by` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '修改人ID',    `update_name` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '修改人名称',  `update_time` datetime DEFAULT NULL COMMENT '修改时间',  `create_by` VARCHAR (255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '创建人ID',    `create_name` CHAR (19) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '创建人名称',  `create_time` datetime DEFAULT NULL COMMENT '创建时间',  `remark` VARCHAR (255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '备注',  `enable` CHAR (1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '是否启用',  PRIMARY KEY (`data_id`) USING BTREE ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC </code></pre> </h1> <p>通过观察SQL语句发现两个表中有很多相同的字段，所有我们把相同的字段抽离出来，放到一个基础的实体类中，其他实体类通过集成方式获取公共的字段。</p> <h2 id="创建基础实体类">创建基础实体类</h2> <pre><code class="language-java">package com.didiplus.common.base;  import com.baomidou.mybatisplus.annotation.FieldFill; import com.baomidou.mybatisplus.annotation.TableField; import lombok.Data;  import java.io.Serializable; import java.time.LocalDateTime;  /** * Author: didiplus * Email: 972479352@qq.com * CreateTime: 2022/4/29 * Desc: 基 础 实 体 类 */  @Data public class BaseDomain implements Serializable {          /**     * 创建时间     */     @TableField(value = "create_time", fill = FieldFill.INSERT)     private LocalDateTime createTime;          /**     * 创建人     */     @TableField(value = "create_by", fill = FieldFill.INSERT)     private String createBy;          /**     * 创建人名称     */     @TableField(value = "create_name", fill = FieldFill.INSERT)     private String createName;          /**     * 修改时间     */     @TableField(value = "update_time", fill = FieldFill.UPDATE)     private LocalDateTime updateTime;          /**     * 修改人     */     @TableField(value = "update_by", fill = FieldFill.UPDATE)     private String updateBy;          /**     * 修改人名称     */     @TableField(value = "update_name", fill = FieldFill.UPDATE)     private String updateName;               /**     * 备注     */     private String remark; }  </code></pre> <blockquote> <p>@TableField 是mybatisplus中的一个注解，后面会讲解到的。</p> </blockquote> <p>基础实体类创建好了，接着我们把剩下的两个实体类也一同创建吧。</p> <h2 id="sysdicttype实体类">SysDictType实体类</h2> <pre><code class="language-java">package com.didiplus.modules.sys.domain;  import com.didiplus.common.base.BaseDomain; import com.didiplus.common.base.ValidGroup; import io.swagger.annotations.ApiModel; import io.swagger.annotations.ApiModelProperty; import lombok.Data;  import javax.validation.constraints.*;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/25  * Desc: 字典类型领域模型  */  @Data @ApiModel(value = "字典类型") public class SysDictType extends BaseDomain {      /**      * 标识      */     @Null(groups = ValidGroup.Crud.Create.class)     @NotNull(groups = ValidGroup.Crud.Update.class,message = "字典ID不能为空")     @ApiModelProperty("ID")     private String id;      /**      * 字典名称      */     @NotBlank(message = "字典名称必填项")     @ApiModelProperty(value = "字典名称",example = "用户ID")     private String typeName;     /**      * 字典类型      */     @NotBlank(message = "字典编码不能为空")     @ApiModelProperty(value = "字典编码")     private String typeCode;     /**      * 字典描述      */     @ApiModelProperty(value = "字典描述")     private String description;     /**      * 字典可用状态      */     @NotBlank(message = "字典状态不能为空")     @ApiModelProperty(value = "字典状态")     private Boolean enable; }  </code></pre> <h2 id="sysdictdata实体类">SysDictData实体类</h2> <pre><code class="language-java">package com.didiplus.modules.sys.domain;  import com.baomidou.mybatisplus.annotation.TableField; import com.didiplus.common.base.BaseDomain; import com.didiplus.common.base.ValidGroup; import io.swagger.annotations.ApiModelProperty; import lombok.Data;  import javax.validation.constraints.NotBlank; import javax.validation.constraints.NotNull; import javax.validation.constraints.Null;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc: 字典值领域模型  */  @Data public class SysDictData extends BaseDomain {     /**      * id 编号      */     @Null(groups = ValidGroup.Crud.Create.class)     @NotNull(groups = ValidGroup.Crud.Update.class,message = "字典数据ID不能为空")     @ApiModelProperty("ID")     @TableField(value = "data_id")     private String dataId;     /**      * 字典显示      */     @NotBlank(message = "字典数据名称必填项")     @ApiModelProperty(value = "字典数据名称")     private String dataLabel;     /**      * 字典值      */     @NotBlank(message = "字典数据值不能为空")     @ApiModelProperty(value = "字典数据值")     private String dataValue;     /**      * 字典类型      */     @ApiModelProperty(value = "字典编码")     @NotBlank(message = "字典数据值不能为空")     private String typeCode;     /**      * 是否为默认      */     @ApiModelProperty(value = "字典编码")     @NotBlank(message = "字典数据值不能为空")     private String isDefault;      /**      * 是否启用      */     @NotBlank(message = "字典状态不能为空")     @ApiModelProperty(value = "字典数据状态")     private Boolean enable; } </code></pre> </h1> <p>为两个实体类中分别添加DAO继承MybatisPlus增强接口，这样就可以集成了增删改查的功能了。</p> <h2 id="sysdicttypemapper">SysDictTypeMapper</h2> <pre><code class="language-java">package com.didiplus.modules.sys.mapper;  import com.baomidou.mybatisplus.core.mapper.BaseMapper; import com.didiplus.modules.sys.domain.SysDictType; import org.apache.ibatis.annotations.Mapper;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc: 字典类型接口  */ @Mapper public interface SysDictTypeMapper extends BaseMapper&lt;SysDictType&gt; { } </code></pre> <h2 id="sysdictdatamapper">SysDictDataMapper</h2> <pre><code class="language-java">package com.didiplus.modules.sys.mapper;  import com.baomidou.mybatisplus.core.mapper.BaseMapper; import com.didiplus.modules.sys.domain.SysDictData; import org.apache.ibatis.annotations.Mapper;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc: 字典数据接口  */  @Mapper public interface SysDictDataMapper extends BaseMapper&lt;SysDictData&gt; { } </code></pre> </h1> <h2 id="定义service接口中的抽象方法">定义Service接口中的抽象方法</h2> <h3 id="sysdictdataservice">SysDictDataService</h3> <pre><code class="language-java">package com.didiplus.modules.sys.service;  import com.baomidou.mybatisplus.extension.service.IService; import com.didiplus.modules.sys.domain.SysDictData;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc:  */  public interface SysDictDataService extends IService&lt;SysDictData&gt; { } </code></pre> <h3 id="sysdicttypeservice">SysDictTypeService</h3> <pre><code class="language-java">package com.didiplus.modules.sys.service;  import com.baomidou.mybatisplus.extension.service.IService; import com.didiplus.modules.sys.domain.SysDictType;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc:  */ public interface SysDictTypeService extends IService&lt;SysDictType&gt; { }  </code></pre> <h2 id="实现service接口中的方法">实现Service接口中的方法</h2> <h3 id="sysdicttypeserviceimpl">SysDictTypeServiceImpl</h3> <pre><code class="language-java">package com.didiplus.modules.sys.service.impl;  import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl; import com.didiplus.modules.sys.domain.SysDictType; import com.didiplus.modules.sys.mapper.SysDictTypeMapper; import com.didiplus.modules.sys.service.SysDictTypeService; import org.springframework.stereotype.Service;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc:  */ @Service public class SysDictTypeServiceImpl extends ServiceImpl&lt;SysDictTypeMapper, SysDictType&gt; implements SysDictTypeService { }  </code></pre> <h3 id="sysdictdataserviceimpl">SysDictDataServiceImpl</h3> <pre><code class="language-java">package com.didiplus.modules.sys.service.impl;  import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl; import com.didiplus.modules.sys.domain.SysDictType; import com.didiplus.modules.sys.mapper.SysDictTypeMapper; import com.didiplus.modules.sys.service.SysDictTypeService; import org.springframework.stereotype.Service;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc:  */ @Service public class SysDictTypeServiceImpl extends ServiceImpl&lt;SysDictTypeMapper, SysDictType&gt; implements SysDictTypeService { }  </code></pre> </h1> <h2 id="sysdicttypecontroller">SysDictTypeController</h2> <pre><code class="language-java">package com.didiplus.modules.sys.controller;  import com.didiplus.common.base.ValidGroup; import com.didiplus.modules.sys.domain.SysDictType; import com.didiplus.modules.sys.service.SysDictTypeService; import io.swagger.annotations.Api; import io.swagger.annotations.ApiOperation; import io.swagger.v3.oas.annotations.parameters.RequestBody; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.validation.annotation.Validated; import org.springframework.web.bind.annotation.*;   /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/25  * Desc: 数据字典控制器  */ @RestController @Api(tags = "数据字典") @RequestMapping("/api/sys/dictType") public class SysDictTypeController {      @Autowired     SysDictTypeService sysDictTypeService;      @ApiOperation("字典添加")     @PostMapping("/add")     public String add(@Validated(value = ValidGroup.Crud.Create.class) @RequestBody SysDictType sysDictType) {         return  sysDictTypeService.save(sysDictType)? "添加成功":"添加失败";     }      @ApiOperation("字典修改")     @PutMapping("/edit")     public String edit(@Validated(value = ValidGroup.Crud.Update.class) @RequestBody SysDictType sysDictType) {         return  sysDictTypeService.updateById(sysDictType)? "修改成功":"修改失败";     }       @ApiOperation("字典删除")     @DeleteMapping("/del/{id}")     public  String del( @PathVariable String id) {         return  sysDictTypeService.removeById(id)? "删除成功":"删除失败";     }   } </code></pre> <h3 id="体验效果">体验效果</h3> <h4 id="新增数据">新增数据</h4> <p><img decoding="async" src="https://gitee.com/didiplus/imgbed/raw/master/static/20220504211559.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=ZpWkd&amp;originHeight=621&amp;originWidth=1559&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=stroke&amp;title=" alt="" loading="lazy"><br /><img decoding="async" src="https://gitee.com/didiplus/imgbed/raw/master/static/20220504211648.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=qbhit&amp;originHeight=96&amp;originWidth=1281&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=stroke&amp;title=" alt="" loading="lazy"></p> <h4 id="修改数据">修改数据</h4> <p><img decoding="async" src="https://cdn.nlark.com/yuque/0/2022/png/2113616/1651673254258-0c6cc6b2-b34b-4022-b76b-696645ef65fe.png#clientId=u1488f36a-6710-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=580&amp;id=u717d83fb&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=580&amp;originWidth=1572&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=55528&amp;status=done&amp;style=stroke&amp;taskId=u6bfec9fb-40ad-46d0-a438-0c08a8d2563&amp;title=&amp;width=1572" alt="image.png"><br /><img decoding="async" src="https://cdn.nlark.com/yuque/0/2022/png/2113616/1651673273458-169bfd91-4349-473c-bc01-c1330077f912.png#clientId=u1488f36a-6710-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=101&amp;id=uf29f47ca&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=101&amp;originWidth=1380&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=10346&amp;status=done&amp;style=stroke&amp;taskId=u5128b77f-f422-4dd1-b7cc-29d5c82afb2&amp;title=&amp;width=1380" alt="image.png"></p> <h4 id="删除数据">删除数据</h4> <p><img decoding="async" src="https://gitee.com/didiplus/imgbed/raw/master/static/20220504220855.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=P3vFp&amp;originHeight=344&amp;originWidth=1583&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=" alt="" loading="lazy"></p> </h1> <p>原理:</p> <ul> <li>实现元对象处理器接口：<code>com.baomidou.mybatisplus.core.handlers.MetaObjectHandler</code> </li> <li>注解填充字段 <code>@TableField(.. fill = FieldFill.INSERT) </code>生成器策略部分也可以配置！</li> </ul> <h2 id="自定义实现类-domaininterceptor">自定义实现类 DomainInterceptor</h2> <pre><code class="language-java">package com.didiplus.common.web.interceptor;  import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler; import org.apache.ibatis.reflection.MetaObject; import org.springframework.stereotype.Component;  import java.time.LocalDateTime;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/5/4  * Desc: 字 段 填 充 拦 截 器  */ @Component public class DomainInterceptor implements MetaObjectHandler {     @Override     public void insertFill(MetaObject metaObject) {         createField(metaObject);     }      @Override     public void updateFill(MetaObject metaObject) {         updateField(metaObject);     }      /**      * @Field 创建时间      * */     public void createField(MetaObject metaObject){         this.strictInsertFill(metaObject,"createTime", LocalDateTime.class,LocalDateTime.now());     }       /**      * @Field 修改时间      * */     public void updateField(MetaObject metaObject) {         this.strictUpdateFill(metaObject,"updateTime",LocalDateTime.class,LocalDateTime.now());     } } </code></pre> </h1> <h2 id="添加分页插件">添加分页插件</h2> <pre><code class="language-java">package com.didiplus.common.config;  import com.baomidou.mybatisplus.annotation.DbType; import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor; import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/5/4  * Desc: mybatis-plus分页插件  */ @Configuration public class MyBatisPlusConfig {      /**      * mybatis-plus分页插件      */     @Bean     public MybatisPlusInterceptor  mybatisPlusInterceptor() {         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));         return interceptor;     } } </code></pre> <h2 id="定义分页接口">定义分页接口</h2> <pre><code class="language-java">package com.didiplus.modules.sys.service;  import com.baomidou.mybatisplus.core.metadata.IPage; import com.baomidou.mybatisplus.extension.service.IService; import com.didiplus.common.web.domain.PageDomain; import com.didiplus.modules.sys.domain.SysDictType;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc: 数据字典类型服务类  */ public interface SysDictTypeService extends IService&lt;SysDictType&gt; {      IPage&lt;SysDictType&gt; page(PageDomain pageDomain); } </code></pre> <h2 id="实现分页接口">实现分页接口</h2> <pre><code class="language-java">package com.didiplus.modules.sys.service.impl;  import com.baomidou.mybatisplus.core.metadata.IPage; import com.baomidou.mybatisplus.extension.plugins.pagination.Page; import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl; import com.didiplus.common.web.domain.PageDomain; import com.didiplus.modules.sys.domain.SysDictType; import com.didiplus.modules.sys.mapper.SysDictTypeMapper; import com.didiplus.modules.sys.service.SysDictTypeService; import org.springframework.stereotype.Service;  import javax.annotation.Resource;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/4/29  * Desc:  */ @Service public class SysDictTypeServiceImpl extends ServiceImpl&lt;SysDictTypeMapper, SysDictType&gt; implements SysDictTypeService {     @Resource     SysDictTypeMapper sysDictTypeMapper;     @Override     public IPage&lt;SysDictType&gt; page(PageDomain pageDomain) {         IPage&lt;SysDictType&gt; page = new Page&lt;&gt;(pageDomain.getPage(),pageDomain.getLimit());         return sysDictTypeMapper.selectPage(page,null);     } } </code></pre> <h2 id="控制层调用">控制层调用</h2> <pre><code class="language-java">@RestController @Api(tags = "数据字典") @RequestMapping("/api/sys/dictType") public class SysDictTypeController {      @Autowired     SysDictTypeService sysDictTypeService;      @ApiOperation("字典分页查询")     @GetMapping     public IPage list(@RequestBody PageDomain pageDomain){         return sysDictTypeService.page(pageDomain);     } } </code></pre> <blockquote> <p>PageDomain定义了分页接收的两个参数</p> </blockquote> <p><strong>PageDomain类</strong></p> <pre><code class="language-java">package com.didiplus.common.web.domain;  import lombok.Data;  /**  * Author: didiplus  * Email: 972479352@qq.com  * CreateTime: 2022/5/4  * Desc: 分 页 参 数 封 装  */ @Data public class PageDomain {     /**      * 当前页      */     private  Integer page;     /**      * 每页数量      */     private  Integer limit;  } </code></pre> <h2 id="体验效果-1">体验效果</h2> <p><img decoding="async" src="https://gitee.com/didiplus/imgbed/raw/master/static/20220505104744.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=vj5n3&amp;originHeight=532&amp;originWidth=1575&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=" alt="" loading="lazy"><br /> 下一篇，我们继续来学习mybatisPlus的代码生成器</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66849.htm">利用 onnxruntime 库同时推理多个模型的效率研究</a></p>
+                                        <p>下一个：<a href="/news/article-67480.htm">小程序进阶-如何去除或隐藏页面滚动条</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-high-speed-nodes.htm" title="「2月3日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅源">「2月3日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-clash-node.htm" title="「1月20日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月20日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-62547.htm" title="上海宠物领养中心免费领养狗狗（上海领养宠物狗的平台）">上海宠物领养中心免费领养狗狗（上海领养宠物狗的平台）</a></li>
+                        <li class="py-2"><a href="/news/article-55632.htm" title="怎么给猫&#25171;&#38024;打在哪里（怎样给猫&#25171;&#38024;需要扎入多深）">怎么给猫&#25171;&#38024;打在哪里（怎样给猫&#25171;&#38024;需要扎入多深）</a></li>
+                        <li class="py-2"><a href="/news/article-38838.htm" title="宠物粮食品牌排名前十有哪些品种（宠物粮厂家）">宠物粮食品牌排名前十有哪些品种（宠物粮厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-61948.htm" title="被猫抓伤6天了打针还有用吗（被猫抓6天了猫没事）">被猫抓伤6天了打针还有用吗（被猫抓6天了猫没事）</a></li>
+                        <li class="py-2"><a href="/news/article-59005.htm" title="宠物粮食店铺名称怎么取名（宠物粮食店一年利润怎么样）">宠物粮食店铺名称怎么取名（宠物粮食店一年利润怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-61356.htm" title="动物疫苗属于疫苗分类吗为什么没有营养（动物疫苗包括哪些）">动物疫苗属于疫苗分类吗为什么没有营养（动物疫苗包括哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-free-subscribe-node.htm" title="「1月14日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月14日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-41816.htm" title="义乌福利院领养孩子条件（义乌福利院领养孩子条件要求）">义乌福利院领养孩子条件（义乌福利院领养孩子条件要求）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

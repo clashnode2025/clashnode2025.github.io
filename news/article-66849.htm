@@ -1,0 +1,197 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-66849.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>利用 onnxruntime 库同时推理多个模型的效率研究</title>
+        <meta name="description" content="1. 背景 需求：针对视频形式的数据输入，对每一帧图像，有多个神经网络模型需要进行推理并获得预测结果。如何让整个推理过程更加高效，尝试了几种不同的方案。 硬件：单显卡主机。 2. 方案 由于存在多个模" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-66849.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="利用 onnxruntime 库同时推理多个模型的效率研究" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/62e40d419d1aa77899fef0974cf293a1.webp" />
+        <meta property="og:release_date" content="2025-03-04T10:13:15" />
+    <meta property="og:updated_time" content="2025-03-04T10:13:15" />
+        <meta property="og:description" content="1. 背景 需求：针对视频形式的数据输入，对每一帧图像，有多个神经网络模型需要进行推理并获得预测结果。如何让整个推理过程更加高效，尝试了几种不同的方案。 硬件：单显卡主机。 2. 方案 由于存在多个模" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="利用 onnxruntime 库同时推理多个模型的效率研究">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">利用 onnxruntime 库同时推理多个模型的效率研究</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="1-背景">1. 背景</h2> <p><strong>需求</strong>：针对视频形式的数据输入，对每一帧图像，有多个神经网络模型需要进行推理并获得预测结果。如何让整个推理过程更加高效，尝试了几种不同的方案。</p> <p><strong>硬件</strong>：单显卡主机。</p> <h2 id="2-方案">2. 方案</h2> <p>由于存在多个模型需要推理，但模型之间没有相互依赖关系，因此很容易想到通过<strong>并行</strong>的方式来提高运行效率。</p> <p>对比了如下几种方案的结果，包括：</p> <ol> <li>串行</li> <li>线程</li> <li>进程</li> <li>协程</li> </ol> <h2 id="3-实现">3. 实现</h2> <h3 id="31-整体流程">3.1 整体流程</h3> <p>配置了 4 个体量相近的模型。<br /> 为了屏蔽读取和解码的时间消耗对最终结果的影响，提前读取视频并准备输入。<br /> 统计每个单独模型执行推理的累积时间，以及整体的运行时间。</p> <pre><code class="language-python">import asyncio from time import time  def main():     frames = load_video()     weights = load_weights()      print('串行：')     one_by_one(weights, frames)     print('多线程：')     multit_thread(weights, frames)     print('多进程：')     multi_process(weights, frames)     print('协程：')     asyncio.run(coroutine(weights, frames))</code></pre> <h3 id="32-串行">3.2 串行</h3> <p>读取到当前帧数据后，所有模型依次运行。</p> <pre><code class="language-python">def one_by_one(weights, frames):     sessions = [init_session(weight) for weight in weights]     costs = [[] for _ in range(len(weights))]     since_infer = time()     for frame in frames:         for session in sessions:             since = time()             _ = session.run('output', {'input': frame})             cost = time() - since             costs[idx].append(cost)     print([sum(cost) for cost in costs])     print("infer:", time() - since_infer)     return</code></pre> <h3 id="33-多线程">3.3 多线程</h3> <p>为每一个模型分配一个线程。</p> <pre><code class="language-python">from threading import Thread  def multit_thread(weights, frames):     sessions = [init_session(weight) for weight in weights]     threads = []     since_infer = time()     for session in sessions:         thread = Thread(target=run_session_thread, args=(session, frames))         thread.start()         threads.append(thread)     for thread in threads:         thread.join()     print("infer:", time() - since_infer)     return  def run_session_thread(session, frames):     costs = []     for frame in frames:         since = time()         _ = session.run('output', {'input': frame})         costs.append(time() - since)     print(sum(costs))     return</code></pre> <h3 id="34-多进程">3.4 多进程</h3> <p>为每一个模型分配一个进程。<br /> 由于 session 不能在进程间传递，因此需要在每个进程的内部单独初始化。如果数据较多，这部分初始化的时间消耗基本可以忽略不急。</p> <pre><code class="language-python">from multiprocessing import Manager, Process  def multi_process(weights, frames):     inputs = Manager().list(frames)     processes = []     since_infer = time()     for weight in weights:         process = Process(target=run_session_process, args=(weight, inputs))         process.start()         processes.append(process)     for process in processes:         process.join()     print("infer:", time() - since_infer)     return  def run_session_process(weight, frames):     session = init_session(weight)     costs = []     for frame in frames:         since = time()         _ = session.run('output', {'input': frame})         costs.append(time() - since)     print(sum(costs))     return</code></pre> <h3 id="35-协程">3.5 协程</h3> <p>为每一个模型分配一个协程。</p> <pre><code class="language-python">async def coroutine(weights, frames):     sessions = [init_session(weight) for weight in weights]     since_infer = time()     tasks = [         asyncio.create_task(run_session_coroutine(session, frames))         for session in sessions     ]     for task in tasks:         await task     print("infer:", time() - since_all)     return  async def run_session_coroutine(session, frames):     costs = []     for frame in frames:         since = time()         _ = session.run('output', {'input': frame})         costs.append(time() - since)     print(sum(costs))     return</code></pre> <h3 id="36-其他辅助函数">3.6 其他辅助函数</h3> <pre><code class="language-python">import cv2 import numpy as np import onnxruntime as ort  def init_session(weight):     provider = "CUDAExecutionProvider"     session = ort.InferenceSession(weight, providers=[provider])     return session  def load_video():     # 为了减少读视频的时间，复制相同的图片组成batch     vcap = cv2.VideoCapture('path_to_video')     count = 1000     batch_size = 4     frames = []     for _ in range(count):         _, frame = vcap.read()         frame = cv2.resize(frame, (256, 256)).transpose((2, 0, 1))         frame = np.stack([frame] * batch_size, axis=0)         frames.append(frame.astype(np.float32))     return frames  def load_weights():     return ['path_to_weights_0',             'path_to_weights_1',             'path_to_weights_2',             'path_to_weights_3',]</code></pre> <h2 id="4-结果及分析">4. 结果及分析</h2> <h3 id="41-执行结果">4.1 执行结果</h3> <p>以<code>batch_size=4</code>共运行 1000 帧数据，推理结果如下：</p> <table> <thead> <tr> <th>方案</th> <th>串行</th> <th>线程</th> <th>进程</th> <th>协程</th> </tr> </thead> <tbody> <tr> <td>单模型累积时间/s</td> <td>7.9/5.3/5.2/5.2</td> <td>13.5/13.5/15.6/15.7</td> <td>13.5/13.8/13.7/13.6</td> <td>6.5/5.2/5.3/5.3</td> </tr> <tr> <td>总时间/s</td> <td>23.7</td> <td>15.8</td> <td>30.1</td> <td>22.5</td> </tr> <tr> <td>显存占用/MB</td> <td>1280</td> <td>1416</td> <td>3375</td> <td>1280</td> </tr> <tr> <td>平均<strong>GPU-Util</strong></td> <td>约 60%</td> <td>约 85%</td> <td>约 70%</td> <td>约 55%</td> </tr> </tbody> </table> <ul> <li>在这个场景下，<strong>多线程</strong>是综合效率最高的方式（时间最短、显存占用合理、GPU 利用率最高）；</li> <li>串行作为最基础的方案，总时间就是每个模型执行时间之和；</li> <li>多进程的方式，单模型的累积时间与多线程类似，但是总时间有明显增加，且极大增加了显存占用；</li> <li>用协程的方式，总结果看，与串行模式本质上是一样的。</li> </ul> <h3 id="42-结果分析">4.2 结果分析</h3> <h4 id="421-关于线程方案">4.2.1 关于线程方案</h4> <p><strong>为什么多线程相比串行可以提高运行效率？</strong></p> <ul> <li>基本的判断是，<code>session.run()</code>函数运行时，既有 CPU 执行的部分，又有 GPU 执行的部分；</li> <li>如果是串行方案，则 CPU 运行时，GPU 会等待，反之亦然；</li> <li>当换用多线程方案后，当一个线程从 CPU 执行切换到 GPU 执行后，会继续执行另一个线程的 CPU 部分，并等待 GPU 返回结果。</li> </ul> <h4 id="422-关于进程方案">4.2.2 关于进程方案</h4> <p><strong>为什么多进程反而降低了运行效率？</strong></p> <ul> <li>基本的判断是，整体执行的瓶颈并不在 CPU 的运算部分，而是在于 GPU 上模型前向推理的计算部分；</li> <li>因此，用多个进程并没有充分利用系统资源，多个 CPU 核心会争夺同一个 GPU 的计算资源，并增加了调度消耗。</li> </ul> <h4 id="423-关于协程方案">4.2.3 关于协程方案</h4> <p><strong>为什么看起来协程与串行的效果一样？</strong></p> <p>协程方案在执行过程中，从表现上来看：</p> <ul> <li>单个模型的累积时间是逐步<code>print</code>出来的，间隔大致等于每个模型的累积时间（而线程和进程方案中，几乎是同时输出 4 个模型的累积时间，说明是同时运行结束）；</li> <li>显存占用是逐步增加的，最后达到与串行方案一致。</li> </ul> <p>可能的原因：</p> <ul> <li>CPU 和 GPU 的任务切换，可能无法触发协程的切换，导致最终的效果是，一个模型完成了所有数据的推理后，再进行下一个模型的推理。</li> </ul> <p>使用协程的必要性：</p> <ul> <li>从线程改为协程，是为了进一步降低线程切换的消耗；</li> <li>在这个场景下，需要同时执行推理的模型数量一般不会太多，建立同样数量的线程，系统资源的消耗是可控的；</li> <li>因此，没有使用协程的必要性。</li> </ul> <blockquote> <p>关于<strong>协程</strong>的使用，也是现学，有可能因为使用方法不当而得出以上的结论。如有错误，欢迎指正。</p> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66221.htm">中国宠物食品排名（中国宠物食品排名榜）</a></p>
+                                        <p>下一个：<a href="/news/article-66852.htm">SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-52899.htm" title="做梦梦见抱着小女孩是什么意思啊（梦里梦见抱着小女孩）">做梦梦见抱着小女孩是什么意思啊（梦里梦见抱着小女孩）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-21-shadowrocket-node.htm" title="「2月21日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「2月21日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-44298.htm" title="上海有什么宠物救助机构（上海有宠物救助中心吗）">上海有什么宠物救助机构（上海有宠物救助中心吗）</a></li>
+                        <li class="py-2"><a href="/news/article-52366.htm" title="动物医院诊疗活动范围是什么意思（动物医院诊疗活动范围是什么意思呀）">动物医院诊疗活动范围是什么意思（动物医院诊疗活动范围是什么意思呀）</a></li>
+                        <li class="py-2"><a href="/news/article-43801.htm" title="兰州宠物交易平台电话（兰州宠物交易市场）">兰州宠物交易平台电话（兰州宠物交易市场）</a></li>
+                        <li class="py-2"><a href="/news/article-55631.htm" title="山东联美实业集团有限公司郑强（联美集团高管）">山东联美实业集团有限公司郑强（联美集团高管）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-node-subscribe-links.htm" title="「1月27日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月27日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-60769.htm" title="北京宠物医院（北京宠物医院招聘）">北京宠物医院（北京宠物医院招聘）</a></li>
+                        <li class="py-2"><a href="/news/article-57314.htm" title="宠物粮公司排名前十名企业（宠物粮公司排名前十名企业有哪些）">宠物粮公司排名前十名企业（宠物粮公司排名前十名企业有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-36889.htm" title="动物美容院的图片（小动物美容院）">动物美容院的图片（小动物美容院）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
