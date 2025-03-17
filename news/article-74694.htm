@@ -1,0 +1,197 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-74694.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>RPC及Dubbo和ZooKeeper的安装</title>
+        <meta name="description" content="RPC   通信有两种方式：HTTP（无状态协议，通信协议），RPC（远程过程调用） 它两的本质没有区别，只是功能有点不一样   官方解释：   RPC是指远程过程调用，是一种进程间通信方式，他是一种" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-74694.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="RPC及Dubbo和ZooKeeper的安装" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/34e8b5cf328a5cf9548fdbac0e002920.webp" />
+        <meta property="og:release_date" content="2025-03-16T10:26:44" />
+    <meta property="og:updated_time" content="2025-03-16T10:26:44" />
+        <meta property="og:description" content="RPC   通信有两种方式：HTTP（无状态协议，通信协议），RPC（远程过程调用） 它两的本质没有区别，只是功能有点不一样   官方解释：   RPC是指远程过程调用，是一种进程间通信方式，他是一种" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RPC及Dubbo和ZooKeeper的安装">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">RPC及Dubbo和ZooKeeper的安装</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <h2 id="rpc">RPC</h2> <ul> <li> <p>通信有两种方式：HTTP（无状态协议，通信协议），RPC（远程过程调用）</p> <p>它两的本质没有区别，只是功能有点不一样</p> </li> <li> <p><strong>官方解释：</strong></p> </li> </ul> <p>RPC是指远程过程调用，是一种进程间通信方式，他是一种技术的思想，而不是规范，它允许程序调用另一个地址空间的过程和函数，而不是程序员显式编码这个远程调用的细节。即程序员无论是调用本地的还是远程的函数，本质上编写的调用代码基本相同。</p> <p>RPC两个核心模块：通讯（为了传输），序列化（方便我们的数据传输，数据传输需要转换）。</p> <h2 id="dubbo和zookeeper的安装">Dubbo和ZooKeeper的安装</h2> <ul> <li>Dubbo是一个高可用的RPC框架，就是通信框架（非常牛）</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a714cce44d62f79758d0da7b08242928.jpg" alt="RPC及Dubbo和ZooKeeper的安装"></p> <p><strong>安装ZooKeeper步骤：</strong></p> <ol> <li> <p>在ZooKeeper官网下载</p> </li> <li> <p>减压压缩包</p> </li> <li> <p>打开zkServer.cmd，此时我们发现它闪退了</p> </li> <li> <p>在zkServer.cmd中加入pause，查看报了什么错</p> </li> <li> <p>打开config文件，复制zoo_sample.cfg，改名为zoo.cfg，如图：</p> </li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/0c93d9550d6c9c32e8aa5acde0868b2d.jpg" alt="RPC及Dubbo和ZooKeeper的安装"></p> <ol start="6"> <li> <p>再次打开zkServer.cmd就成功了</p> </li> <li> <p>然后打开zkCli.cmd，客户端就连接上了服务端，这里zkServer.cmd要处于打开的状态，不然这里就会报错</p> </li> <li> <p>然后在zkCli.cmd中输入ls /，就会显示我们的节点</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/1153823ca7ee76ef9cb9538f1a64aec9.jpg" alt="RPC及Dubbo和ZooKeeper的安装"></p> </li> <li> <p>这个ZooKeeper就是节点，我们可以创建节点</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/76931db921bd32429fc4aae263d014c4.jpg" alt="RPC及Dubbo和ZooKeeper的安装"></p> </li> <li> <p>我们可以get节点的值</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9cdbf78cc6cea8eef3d72ddc5491c00a.jpg" alt="RPC及Dubbo和ZooKeeper的安装"></p> </li> </ol> <p>我们可以通过ZooKeeper来存值取值，到这里ZooKeeper就安装完成了。</p> <p><strong>Dubbo的安装步骤：</strong></p> <ol> <li> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/apache/dubbo-admin/tree/master"  target="_blank" rel="nofollow">GitHub - apache/dubbo-admin at master</a>，去这里下载</p> </li> <li> <p>减压压缩包</p> </li> <li> <p>在项目目录下打包dubbo-admin-master</p> <ul> <li> <p>cmd 进入dubbo-admin-master目录</p> </li> <li> <p>输入mvn clean package -Dmaven.test.skip=true</p> </li> </ul> <p><strong>第一次打包非常慢，请耐心等待！</strong></p> </li> <li> <p>执行dubbo-admin\target下的dubbo-admin-0.0.1-SNAPSHOT.jar</p> </li> <li> <p>执行完毕，我们去访问一下<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:7001/"  target="_blank" rel="nofollow">http://localhost:7001/</a> ， 这时候我们需要输入登录账户和密码，我们都是默认的root-root；</p> </li> </ol> <p>Dubbo admin安装完成！</p> <hr/> <p>dubbo-admin是一个监控管理后台，查看我们注册了哪些服务，哪些服务被消费了（可以不要，因为它只是监控功能）</p> <p>zookeeper：注册中心（必须要）</p> <p>Dubbo：jar包（必须要）</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-74693.htm">Java设计模式——单例设计模式(八种实例)</a></p>
+                                        <p>下一个：<a href="/news/article-75375.htm">func-spring-boot-starter 匿名函数托管</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-clash.htm" title="「1月13日」2025年最新高速Clash/Shadowrocket/V2ray/SSR免费节点链接订阅，推荐便宜订阅源">「1月13日」2025年最新高速Clash/Shadowrocket/V2ray/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-52366.htm" title="动物医院诊疗活动范围是什么意思（动物医院诊疗活动范围是什么意思呀）">动物医院诊疗活动范围是什么意思（动物医院诊疗活动范围是什么意思呀）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-clash-node.htm" title="「1月20日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「1月20日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-node-subscribe-links.htm" title="「2月5日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「2月5日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-66852.htm" title="SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具">SpringBoot整合MybatisPlus基本的增删改查，保姆级教程_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-61948.htm" title="被猫抓伤6天了打针还有用吗（被猫抓6天了猫没事）">被猫抓伤6天了打针还有用吗（被猫抓6天了猫没事）</a></li>
+                        <li class="py-2"><a href="/news/article-51318.htm" title="高薪程序员&amp;面试题精讲系列17之Java代码中如果有太多if语句该如何优化？">高薪程序员&amp;面试题精讲系列17之Java代码中如果有太多if语句该如何优化？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-node-share.htm" title="「1月24日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「1月24日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-42803.htm" title="动物疫苗品牌排行榜 动物疫苗品牌排行榜前十名">动物疫苗品牌排行榜 动物疫苗品牌排行榜前十名</a></li>
+                        <li class="py-2"><a href="/news/article-46281.htm" title="北京观赏动物医院电话号码查询是多少啊（北京观赏动物医院电话地址）">北京观赏动物医院电话号码查询是多少啊（北京观赏动物医院电话地址）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
