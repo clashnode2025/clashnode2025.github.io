@@ -1,0 +1,197 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-78768.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Bootstrap Blazor Table 组件手动刷新组件数据详解</title>
+        <meta name="description" content="官网连接：https://www.blazor.zone 很多小伙伴在使用 Bootstrap Blazor Table组件的时候，都会有这样的一个需求： 　　我怎么在代码中重新加载Table组件的数" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-78768.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="Bootstrap Blazor Table 组件手动刷新组件数据详解" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/48d36459087cf0b12251867f380f20ca.webp" />
+        <meta property="og:release_date" content="2025-03-22T08:45:52" />
+    <meta property="og:updated_time" content="2025-03-22T08:45:52" />
+        <meta property="og:description" content="官网连接：https://www.blazor.zone 很多小伙伴在使用 Bootstrap Blazor Table组件的时候，都会有这样的一个需求： 　　我怎么在代码中重新加载Table组件的数" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bootstrap Blazor Table 组件手动刷新组件数据详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Bootstrap Blazor Table 组件手动刷新组件数据详解</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p><span style="font-size: 1em;">官网连接：</span><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.blazor.zone"  target="_blank" rel="nofollow" style="font-size: 1em;">https://www.blazor.zone</a></p> <p>很多小伙伴在使用 Bootstrap Blazor Table组件的时候，都会有这样的一个需求：</p> <p>　　我怎么在代码中重新加载Table组件的数据？</p> <p>　　然后小伙伴们都不约而同的想方设法去调用 OnQueryAsyc 函数，结果都卡在了&nbsp;QueryPageOptions options 这个参数怎么传的问题上，直接 new 一个吧，是一个好想法，但是这么调用跟 Table 组件是一点关系没有，一样无法达到 “重新加载Table组件的数据”的期望</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">private</span> Task&lt;QueryData&lt;ITem&gt;&gt;<span style="color: rgba(0, 0, 0, 1)"> OnQueryAsync(QueryPageOptions options) {</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 设置记录总数</span><span style="color: rgba(0, 0, 255, 1)">var</span> total =<span style="color: rgba(0, 0, 0, 1)"> Items.Count();</span><span style="color: rgba(0, 0, 255, 1)">return</span> Task.FromResult(<span style="color: rgba(0, 0, 255, 1)">new</span> QueryData&lt;ITem&gt;<span style="color: rgba(0, 0, 0, 1)">()     {         Items</span>=<span style="color: rgba(0, 0, 0, 1)"> Items,         TotalCount</span>=<span style="color: rgba(0, 0, 0, 1)"> total     });<br/>}</span></pre> </div> <p>　　那我们需求怎么做才能达到 “重新加载Table组件的数据” 这个期望呢？其实非常简单，因为我们是要刷新 Table 组件的数据，那我们首先肯定是需要拿到 Table 组件这个实例，这里我们用到了 @ref，这个是 razor 的东西，不清楚的小伙伴可以先去看看下面这两个链接：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.microsoft.com/zh-cn/aspnet/core/mvc/views/razor?view=aspnetcore-6.0&amp;WT.mc_id=DT-MVP-5004174#ref"  rel="nofollow">ASP.NET Core 的 Razor 语法参考 | Microsoft Docs</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.microsoft.com/zh-cn/dotnet/architecture/blazor-for-web-forms-developers/components?WT.mc_id=DT-MVP-5004174"  rel="nofollow">使用 Blazor 生成可重用的 UI 组件 | Microsoft Docs</a></p> <p>下面是完整的代码展示</p> <p>razor页面</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Button</span><span style="color: rgba(255, 0, 0, 1)">OnClick</span><span style="color: rgba(0, 0, 255, 1)">="@OnRefreshTableAsync"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span>刷新Table<span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">Button</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;</span><span style="color: rgba(128, 0, 0, 1)">Table</span><span style="color: rgba(255, 0, 0, 1)">TItem</span><span style="color: rgba(0, 0, 255, 1)">="TItem"</span><span style="color: rgba(255, 0, 0, 1)">        @ref</span><span style="color: rgba(0, 0, 255, 1)">="@Table"</span><span style="color: rgba(255, 0, 0, 1)">        AutoGenerateColumns</span><span style="color: rgba(0, 0, 255, 1)">="true"</span><span style="color: rgba(255, 0, 0, 1)">        OnQueryAsync</span><span style="color: rgba(0, 0, 255, 1)">="@OnQueryAsync"</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span><span style="color: rgba(0, 0, 255, 1)">&lt;/</span><span style="color: rgba(128, 0, 0, 1)">Table</span><span style="color: rgba(0, 0, 255, 1)">&gt;</span></pre> </div> <p>razor.cs</p> <p>主要就是 OnRefreshTableAsync 函数</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">[NotNull]</span><span style="color: rgba(0, 0, 255, 1)">private</span> Table&lt;TItem&gt;? Table {<span style="color: rgba(0, 0, 255, 1)">get</span>;<span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }</span><span style="color: rgba(0, 0, 255, 1)">private</span><span style="color: rgba(0, 0, 255, 1)">async</span><span style="color: rgba(0, 0, 0, 1)"> Task OnRefreshTableAsync() {</span><span style="color: rgba(0, 0, 255, 1)">await</span><span style="color: rgba(0, 0, 0, 1)"> Table.QueryAsync(); }</span><span style="color: rgba(0, 0, 255, 1)">private</span> Task&lt;QueryData&lt;TItem&gt;&gt;<span style="color: rgba(0, 0, 0, 1)"> OnQueryAsync(QueryPageOptions options) {</span><span style="color: rgba(0, 0, 255, 1)">var</span> total =<span style="color: rgba(0, 0, 0, 1)"> Items.Count();</span><span style="color: rgba(0, 0, 255, 1)">return</span> Task.FromResult(<span style="color: rgba(0, 0, 255, 1)">new</span> QueryData&lt;TItem&gt;<span style="color: rgba(0, 0, 0, 1)">()     {         Items</span>=<span style="color: rgba(0, 0, 0, 1)"> Items,         TotalCount</span>=<span style="color: rgba(0, 0, 0, 1)"> total     }); }</span></pre> </div> </h1> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-78094.htm">宠物买卖纠纷找哪个部门协调处理 宠物买卖纠纷找哪个部门协调处理呢</a></p>
+                                        <p>下一个：<a href="/news/article-78769.htm">动物疫苗证 动物疫苗证明</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45780.htm" title="宠物医生在线问诊免费（宠物免费咨询24小时在线医生）">宠物医生在线问诊免费（宠物免费咨询24小时在线医生）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-node-daily-updates.htm" title="「2月11日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源">「2月11日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-free-v2ray-subscribe.htm" title="「2月12日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「2月12日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-ssr-node.htm" title="「1月7日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「1月7日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-53439.htm" title="哈尔滨王春生***2（哈尔滨市王春生判决书）">哈尔滨王春生***2（哈尔滨市王春生判决书）</a></li>
+                        <li class="py-2"><a href="/news/article-56189.htm" title="Springboot过滤器和拦截器详解及使用场景">Springboot过滤器和拦截器详解及使用场景</a></li>
+                        <li class="py-2"><a href="/news/article-39831.htm" title="C语言多文件编程详解">C语言多文件编程详解</a></li>
+                        <li class="py-2"><a href="/news/article-71364.htm" title="助理宠物医师资格证报考条件要求（助理宠物医生资格证怎么考）">助理宠物医师资格证报考条件要求（助理宠物医生资格证怎么考）</a></li>
+                        <li class="py-2"><a href="/news/article-56750.htm" title="三国杀动态皮肤为什么没有特效（三国杀手游我动态皮肤为什么没有特效）">三国杀动态皮肤为什么没有特效（三国杀手游我动态皮肤为什么没有特效）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-v2ray.htm" title="「1月8日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「1月8日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
