@@ -1,0 +1,197 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-80847.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>UnityUI中绘制线状统计图_C#教程_</title>
+        <meta name="description" content="先来个效果图 觉得不好看可以自己调整 1.绘制数据点 线状图一般由数据点和连线组成在绘制连线之前，我们先标出数据点这里我选择用Image图片来绘制数据点 新建Canvas，添加空物体Graph在Gra" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-80847.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="UnityUI中绘制线状统计图_C#教程_" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/a5a9215615fc6b70db3c926aa2269cf1.webp" />
+        <meta property="og:release_date" content="2025-03-25T08:16:45" />
+    <meta property="og:updated_time" content="2025-03-25T08:16:45" />
+        <meta property="og:description" content="先来个效果图 觉得不好看可以自己调整 1.绘制数据点 线状图一般由数据点和连线组成在绘制连线之前，我们先标出数据点这里我选择用Image图片来绘制数据点 新建Canvas，添加空物体Graph在Gra" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="UnityUI中绘制线状统计图_C#教程_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">UnityUI中绘制线状统计图_C#教程_</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2>先来个效果图</h2> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/6d465e9291caa24976166ceb2203ca1b.jpg"><br />觉得不好看可以自己调整</p> <h2>1.绘制数据点</h2> <p>线状图一般由数据点和连线组成<br />在绘制连线之前，我们先标出数据点<br />这里我选择用Image图片来绘制数据点</p> <p>新建Canvas，添加空物体Graph<br />在Graph上添加空物体 GraphContainer 和 Image BackGround<br />在 GraphContainer 上添加 Image BackGround</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/b035cc5f624fb47a4898332c6381ca99.jpg"></p> <p>修改两个BackGround的大小和颜色制作背景</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/27ba3648c39c3a609ad102c38f235235.jpg"></p> <p>注意：这里GraphContainer 锚点为左下角<br />左下角默认为原点(0，0)，之后所有的图形绘制都会在GraphContainer之内</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/891b3d0f35676c549dc008c78007073b.jpg"></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/75f252863ba7099530d2752317433bf1.jpg"></p> <p>在Graph上新建脚本MyGraph</p> <div class="ay1code"> <pre class="brush:csharp;">public class MyGraph : MonoBehaviour  {      [SerializeField]      private Sprite circleSprite;	//需要画的图像，这里赋值为了一个Unity自带的圆形，也可改为其它图形        private RectTransform graphContainer;	//声明一个 RectTransform，用于修改图片的大小            private void Awake()      {          //获取graphContainer的RectTransform并赋值，为内侧的小矩形，会作为我们的画板          graphContainer = transform.Find("GraphContainer").GetComponent&lt;RectTransform&gt;();          CreateCircle(new Vector2(200, 200));	//在(200，200)的地方创建圆，用于测试      }        private void CreateCircle(Vector2 anchoredPosition)      {          GameObject gameObject = new GameObject("circle", typeof(Image));	//生成新物体，该物体包含一个图片组件          gameObject.transform.SetParent(graphContainer, false);			//将图片设为graphContainer的子物体          gameObject.GetComponent&lt;Image&gt;().sprite = circleSprite;			//将图片赋值为Inspector中设置的图片            //获取新建图片物体的RectTransform并赋值          RectTransform rectTransform = gameObject.GetComponent&lt;RectTransform&gt;();          rectTransform.anchoredPosition = anchoredPosition;			//设置图片位置          rectTransform.sizeDelta = new Vector2(20, 20);				//设置图片大小，可设为公共变量来修改                    //下面两句将生成图片的锚点设为了父物体左下角(原点)          rectTransform.anchorMin = new Vector2(0, 0);          rectTransform.anchorMax = new Vector2(0, 0);      }  }  </pre> </div> <p>运行后便会出现一个点</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/508c5d450abfecbcb8531cd6f7eb2fe8.jpg"></p> <h2>2.根据List列表输入绘制出多个圆点</h2> <p>继续修改MyGraph</p> <div class="ay1code"> <pre class="brush:csharp;">public class MyGraph : MonoBehaviour  {      //[SerializeField]      //private Sprite circleSprite;        //private RectTransform graphContainer;      private void Awake()      {          //graphContainer = transform.Find("GraphContainer").GetComponent&lt;RectTransform&gt;();          //声明一个列表用于测试          List&lt;int&gt; valueList = new List&lt;int&gt;() { 1, 2, 4, 9, 16, 25, 36, 49, 64, 81, 100, 80, 50, 20, 10 };          ShowGraph(valueList);      }        private void CreateCircle(Vector2 anchoredPosition)      {          ......      }        private void ShowGraph(List&lt;int&gt; valueList)      {          int maxValue = 0;          foreach (int value in valueList)	//找出列表中的最大值          {              if (maxValue &lt;= value)              {                  maxValue = value;              }          }                    float graphWidth = graphContainer.sizeDelta.x;	    //获取画布graphContainer的宽度          float graphHeight = graphContainer.sizeDelta.y;	    //获取画布graphContainer的高度            float xSpace = graphWidth / (valueList.Count - 1);  //数据点x坐标的间距          float ySpace = graphHeight / maxValue;		    //数据的y坐标的比例            for (int i = 0; i &lt; valueList.Count; i++)          {              float xPos = i * xSpace;			    //x坐标为线性固定增长              float yPos = ySpace * valueList[i];		    //y坐标是以列表中最大值为画布高度，按值的大小与最大值的比例取高度              CreateCircle(new Vector2(xPos, yPos));	    //画出点          }      }  }  </pre> </div> <p>运行显示结果</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/6440119c4b1dbbf0c7e79b8756af9485.jpg"></p> <p>为了好看点，可以将内侧灰色的背景放大点</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/bb2b83a7c7a5ec779802366c9db1d29a.jpg"></p> <p>所有点都在 GraphContainer 之内，点在x坐标平均分布，最高点为列表中的最大值</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/e990b9d599e1b39e0528a2a2d826c95b.jpg"></p> <h2>3.绘制点之间的连线</h2> <p>这里点之间的连线我仍然使用Image，只要Image足够细就能够看作线条<br />之后我会尝试能否使用LineRenderer<br />这里画线的想法是在两点中点创建一个线条状的Image，然后旋转一定角度</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/109890cb45e77d4131a2bcab2287d5e5.jpg"></p> <p>继续修改MyGraph</p> <div class="ay1code"> <pre class="brush:csharp;">public class MyGraph : MonoBehaviour  {      ......      private void ShowGraph(List&lt;int&gt; valueList)      {          ......            float xSpace = graphWidth / (valueList.Count - 1);          float ySpace = graphHeight / maxValue;            GameObject lastPoint = null;	//用于保存上一个点，画出上一个点到现在点的连线，这样就不用管最后一个点          for (int i = 0; i &lt; valueList.Count; i++)          {              //float xPos = i * xSpace;              //float yPos = ySpace * valueList[i];                            GameObject circleGameobject = CreateCircle(new Vector2(xPos, yPos));//获取创建的点              if (lastPoint != null)              {                  //画线，参数为上一个点的位置，和当前点的位置                  DrawLine(lastPoint.GetComponent&lt;RectTransform&gt;().anchoredPosition, circleGameobject.GetComponent&lt;RectTransform&gt;().anchoredPosition);              }              lastPoint = circleGameobject;	//画完连线之后，变为上一个点          }      }        private void DrawLine(Vector2 pointA, Vector2 pointB)	//画线方法      {          GameObject gameObject = new GameObject("line", typeof(Image));//新建一个物体包含一个Image组件          gameObject.transform.SetParent(graphContainer, false);		 //将该图片设为graphContainer的子物体  																//就是在画板内画线          RectTransform rectTransform = gameObject.GetComponent&lt;RectTransform&gt;();	//获取 RectTransform 组件          Vector2 dir = pointB - pointA;	//两点间的向量            //同样将线段锚点设为画板左下角(原点)          rectTransform.anchorMin = new Vector2(0, 0);          rectTransform.anchorMax = new Vector2(0, 0);          rectTransform.sizeDelta = new Vector2(dir.magnitude, 3f);	//线段的长宽，长为两点间向量的长度，就是两点间距离            rectTransform.anchoredPosition = pointA + dir / 2;			//线段的中心点，为两点间的中心点          float angle = RotateAngle(dir.x, dir.y);				   //线段的旋转角度          rectTransform.localEulerAngles = new Vector3(0, 0, angle);	//旋转线段      }      private float RotateAngle(float x, float y)	//旋转方法      {          float angle = Mathf.Atan2(y, x) * 180 / 3.14f;//Atan2返回的是弧度，需要乘以180/PI得到角度，这里PI直接用了3.14          return angle;      }  }  </pre> </div> <p>在<code>RotateAngle()</code>方法中Mathf.Atan2会返回角θ的弧度</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/59491e81c1456f11b92110265a4310d0.jpg"></p> <p>图片所示情况会返回正数，如果右边的点更矮则是负数，可以直接用于旋转</p> <p>运行后显示效果：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220415/93d9cd7633eedb01103c7e5f3bda6028.jpg"></p> <p>实际自己需要输入的数据列表建议自己进行修改<br />线状图2.0会加上坐标轴</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80144.htm">被猫抓了把血挤出来了并打疫苗（被猫抓了把血挤出来了并打疫苗可以吗）</a></p>
+                                        <p>下一个：<a href="/news/article-80848.htm">网球服有什么要求(网球服平时能穿吗)</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-66221.htm" title="中国宠物食品排名（中国宠物食品排名榜）">中国宠物食品排名（中国宠物食品排名榜）</a></li>
+                        <li class="py-2"><a href="/news/article-77396.htm" title="v-model.trim使用">v-model.trim使用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-node-subscribe.htm" title="「3月10日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源">「3月10日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-52366.htm" title="动物医院诊疗活动范围是什么意思（动物医院诊疗活动范围是什么意思呀）">动物医院诊疗活动范围是什么意思（动物医院诊疗活动范围是什么意思呀）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-free-ssr-node.htm" title="「2月20日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「2月20日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-38352.htm" title="Vue指令之v-for的使用说明_vue.js">Vue指令之v-for的使用说明_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-74693.htm" title="Java设计模式——单例设计模式(八种实例)">Java设计模式——单例设计模式(八种实例)</a></li>
+                        <li class="py-2"><a href="/news/article-60768.htm" title="动物疫苗接种时间表最新消息查询（动物疫苗法最新消息2019）">动物疫苗接种时间表最新消息查询（动物疫苗法最新消息2019）</a></li>
+                        <li class="py-2"><a href="/news/article-54529.htm" title="建议穷人养的10种猫母猫和公猫混养（母猫和公猫哪个好养知乎）">建议穷人养的10种猫母猫和公猫混养（母猫和公猫哪个好养知乎）</a></li>
+                        <li class="py-2"><a href="/news/article-45782.htm" title="宠物粮食品牌排名前十名有哪些呢视频（宠物粮品牌大全）">宠物粮食品牌排名前十名有哪些呢视频（宠物粮品牌大全）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
