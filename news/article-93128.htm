@@ -1,0 +1,196 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-93128.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Springboot  文件上传(base64方式)</title>
+        <meta name="description" content="使用场景： 对于互联网项目，基本都会采用分布式的文件存储方式，比如fastdfs,&nbsp; 保证高用户量的时候 文件操作效率(上传，读取)。 但是对于小型产品来说，一般用户使用量不大，并且对文件的" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-93128.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="Springboot  文件上传(base64方式)" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/ab1c8fd2f4ae161daad7f62ddc08a3dc.webp" />
+        <meta property="og:release_date" content="2025-04-11T08:56:26" />
+    <meta property="og:updated_time" content="2025-04-11T08:56:26" />
+        <meta property="og:description" content="使用场景： 对于互联网项目，基本都会采用分布式的文件存储方式，比如fastdfs,&nbsp; 保证高用户量的时候 文件操作效率(上传，读取)。 但是对于小型产品来说，一般用户使用量不大，并且对文件的" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Springboot  文件上传(base64方式)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Springboot  文件上传(base64方式)</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>使用场景：</h2> <p>对于互联网项目，基本都会采用分布式的文件存储方式，比如fastdfs,&nbsp; 保证高用户量的时候</p> <p>文件操作效率(上传，读取)。</p> <p><strong>但是对于小型产品来说，一般用户使用量不大，并且对文件的操作量也不大，甚至很小。</strong></p> <p><strong>如果去给客户部署一套吹牛逼的分布式存储方案，无疑增大了维护成本，得不偿失。</strong></p> <p>针对上述场景，可以考虑使用base64的方式存储。代码如下：</p> <pre class="has"><code>import io.swagger.annotations.Api; import io.swagger.annotations.ApiOperation; import io.swagger.annotations.ApiResponses; import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController; import org.springframework.web.multipart.MultipartFile;  import java.io.File; import java.io.FileInputStream; import java.util.HashMap; import java.util.Map;  @RestController @RequestMapping({"/upload"}) @Api(tags="文件上传") public class UploadController {      @PostMapping({"doUpload"})     @ApiOperation("文件上传(不需要token令牌)")     @ApiResponses({@io.swagger.annotations.ApiResponse(code=200, message="请求成功,返回结果result:{filename 文件名},{base64 base64编码}"), @io.swagger.annotations.ApiResponse(code=400, message="请求失败")})     public Map&lt;String, Object&gt; doUpload(@RequestParam("file") MultipartFile file) throws Exception {         if (file == null) {             return new HashMap(0);         }          Map map = new HashMap(2);          // 原文件名称         String filename = file.getOriginalFilename();          // 创建临时文件         File tempFile = File.createTempFile("tem", null);         file.transferTo(tempFile);         tempFile.deleteOnExit();          // 文件输入流         FileInputStream inputStream = new FileInputStream(tempFile);          byte[] buffer = new byte[(int)tempFile.length()];         inputStream.read(buffer);         inputStream.close();          // 转换为base64编码格式         String base64 = new sun.misc.BASE64Encoder().encode(buffer);          // 上面方法中获得的base64编码中，包含有换行符，统一全部替换掉         base64 = base64.replaceAll("[\\s*\t\n\r]", "");          // 返回值         map.put("filename", filename);         map.put("base64", base64);          return map;     } }</code></pre> <p>关于上述做几点说明：</p> <p><strong>1. 上述文件上传的时候，文件越大，产生的base64值也越大</strong></p> <p>故需要针对系统来评估数据库中对应字段的设计，存储长达，比如是&nbsp; text还是longtext(做个关联表，一般不会频繁操作，优化下查询效率)</p> <p><strong>2. 返回值</strong></p> <p>返回 原文件名称和base64编码</p> <p><strong>3.&nbsp; 页面传值保存</strong></p> <p>尽量采用body的形式传值，因为如果是以拼接的方式，由于值太长太大，会卡死浏览器</p> <p><strong>4.&nbsp; 关于图片 base64方式的显示</strong></p> <pre class="has"><code>// 把下面逗号后面的 base64编码 的文字替换成真正的base64码即可 // 然后放入到html文件中即可显示 &lt;img src="https://img-blog.csdnimg.cn/2022010621212522899.png" alt="Springboot  文件上传(base64方式)"&gt;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-92379.htm">动物医院英语翻译怎么写 动物医院英语翻译怎么写的</a></p>
+                                        <p>下一个：<a href="/news/article-93129.htm">动物疫苗定义及分类表（动物疫苗属于疫苗分类吗）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-clash-node-daily-updates.htm" title="「3月26日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「3月26日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-clash-subscribe.htm" title="「3月17日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅源">「3月17日」2025年最新高速Clash/Shadowrocket/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-clash-node-daily-updates.htm" title="「3月27日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源">「3月27日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-74694.htm" title="RPC及Dubbo和ZooKeeper的安装">RPC及Dubbo和ZooKeeper的安装</a></li>
+                        <li class="py-2"><a href="/news/article-89424.htm" title="布偶猫最忌讳吃什么（布偶一般活多少岁）">布偶猫最忌讳吃什么（布偶一般活多少岁）</a></li>
+                        <li class="py-2"><a href="/news/article-80848.htm" title="网球服有什么要求(网球服平时能穿吗)">网球服有什么要求(网球服平时能穿吗)</a></li>
+                        <li class="py-2"><a href="/news/article-70060.htm" title="修改docker 默认镜像存储路径">修改docker 默认镜像存储路径</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-v2ray.htm" title="「3月30日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅源">「3月30日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-67480.htm" title="小程序进阶-如何去除或隐藏页面滚动条">小程序进阶-如何去除或隐藏页面滚动条</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-high-speed-nodes.htm" title="「3月14日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「3月14日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">37</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
