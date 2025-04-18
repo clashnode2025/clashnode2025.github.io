@@ -1,0 +1,196 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-95432.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>Git基础之协作模式详解</title>
+        <meta name="description" content="目录  1、分布式工作流程 2、集中式工作流 3、分支工作流 4、GitFlow 工作流(最流行) 5、Forking 工作流(偶尔使用) 6、总结   1、分布式工作流程 与传统的集中式版本控制系统" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-95432.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="Git基础之协作模式详解" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/ca878f612787b29343ab548ba24df5ea.webp" />
+        <meta property="og:release_date" content="2025-04-14T08:02:05" />
+    <meta property="og:updated_time" content="2025-04-14T08:02:05" />
+        <meta property="og:description" content="目录  1、分布式工作流程 2、集中式工作流 3、分支工作流 4、GitFlow 工作流(最流行) 5、Forking 工作流(偶尔使用) 6、总结   1、分布式工作流程 与传统的集中式版本控制系统" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Git基础之协作模式详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">Git基础之协作模式详解</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1%E5%88%86%E5%B8%83%E5%BC%8F%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" rel="nofollow">1、分布式工作流程</a></li> <li><a href="#2%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%B7%A5%E4%BD%9C%E6%B5%81" rel="nofollow">2、集中式工作流</a></li> <li><a href="#3%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81" rel="nofollow">3、分支工作流</a></li> <li><a href="#4gitflow-%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%9C%80%E6%B5%81%E8%A1%8C" rel="nofollow">4、GitFlow 工作流(最流行)</a></li> <li><a href="#5forking-%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%81%B6%E5%B0%94%E4%BD%BF%E7%94%A8" rel="nofollow">5、Forking 工作流(偶尔使用)</a></li> <li><a href="#6%E6%80%BB%E7%BB%93" rel="nofollow">6、总结</a></li> </ul> </div> <h2 id="1分布式工作流程">1、分布式工作流程</h2> <p>与传统的集中式版本控制系统（CVCS）相反，Git 的分布式特性，使开发者间的协作变得更加灵活多样。</p> <p>在集中式版本控制系统中，每个开发者就像是连接在集线器上的节点，彼此的工作方式大体相像。 而在 Git 中，每个开发者同时扮演着节点和集线器的角色。也就是说， 每个开发者既可以将自己的代码贡献到其他的仓库中，同时也能维护自己的公开仓库， 让其他人可以在其基础上工作并贡献代码。</p> <p>由此，Git 的分布式协作可以为你的项目和团队，衍生出种种不同的工作流程， 接下来会介绍几种常见Git工作流程。</p> <p>你可以选择使用其中的某一种，或者将它们的特性混合搭配使用。</p> <h2 id="2集中式工作流">2、集中式工作流</h2> <p>Git为了便于客户机之间的协同工作，Git版本控制系统一般会设置一个中央版本库服务器，目的是让所有客户机都从该主机更新版本，提交最新版本，该工作模式下的客户机地位都平等。</p> <p>集中式工作流像SVN一样，以中央仓库作为项目所有修改的单点实体，所有修改都提交到<code>Master</code>分支上。这种方式与 SVN 的主要区别就是开发人员有本地库，但是Git 很多特性并没有用到。</p> <p>如下图：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/14d852b39670524d5989c2421a7e24c9.jpg" alt="Git基础之协作模式详解"></p> <p>上图说明：</p> <ul> <li>一个远程仓库。</li> <li>一个主分支<code>master</code>。</li> <li>团队每个成员都有一个本地仓库，在本地仓库中进行代码的编辑、暂存和提交工作。</li> </ul> <p><strong>集中式工作流总结：</strong></p> <ul> <li>适用人群：小型开发小团队，习惯使用SVN工具的小团队。</li> <li>工作方式： <ul> <li>团队组长创建远程仓库，创建一个<code>master</code>分支，组员可读可写。</li> <li>每个开发人员都<code>git clone</code>远程仓库到本地仓库，在<code>master</code>分支上开发。</li> <li>每次开发都要<code>git pull</code>更新远程仓库的<code>master</code>分支版本到本地。</li> <li>每次开发完成就<code>git commit</code>到本地仓库， 接着<code>git push</code>到远程仓库。</li> </ul> </li> <li>缺点： <ul> <li>忘了<code>git push</code>，一直会提交到本地仓库，没有推送到远程仓库。</li> <li>忘了<code>git pull</code>，导致本地仓库与中央仓库不一致，发生文件冲突。</li> <li>大量操作<code>git pull</code>，导致增加Git分支合并次数，增加了Git变基次数，降低了Git的性能。</li> </ul> </li> </ul> <h2 id="3分支工作流">3、分支工作流</h2> <p>功能分支工作流在集中式工作流的基础上，为各个新功能分配一个专门的分支来开发，即在<code>master</code>主分支外在创建一个分支，程序员开发的新功能全部<code>push</code>到此分支上，等到功能成熟的时候，再把此分支合并到主分支<code>master</code>上。</p> <p>如下图：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d155620202148844d2f8f55884807563.jpg" alt="Git基础之协作模式详解"></p> <p><strong>分支工作流总结：</strong></p> <ul> <li>适用人群：小型开发团队，熟悉Git分支的团队。</li> <li>工作方式： <ul> <li>团队组长创建远程仓库，创建一个<code>master</code>分支，组员可读不可写。</li> <li>每个开发人员都<code>git clone</code>远程仓库到本地仓库。</li> <li>每个开发人员创建自己的<code>feature</code>分支，在<code>feature</code>分支上开发。（记住，<code>feature</code>分支是基于<code>master</code>分支）</li> <li>每个开发人员每次开发完成就<code>git commit</code>到本地仓库中自己的<code>feature</code>分支， 接着<code>git push</code>到远程仓库。</li> <li>通过<code>pull request</code>提醒团队组长，浏览组员提交<code>feature</code>分支。</li> <li>组长把<code>feature</code>分支拉下来，然后合并到自己本地仓库的<code>master</code>分支上测试。</li> <li>组长测试<code>feature</code>分支通过之后，由组长负责把<code>feature</code>分支合并到远程仓库的<code>master</code>分支上。</li> <li>组长在远程仓库把合并过的<code>feature</code>分支删除。</li> <li>组员在本地仓库把合并过的<code>feature</code>分支删除。</li> <li>组员将本地仓库分支切换为<code>master</code>分支，然后<code>git pull</code>将本地仓库的<code>master</code>分支更新到远程仓库的<code>master</code>分支版本。</li> </ul> </li> <li>缺点： <ul> <li>增加团队组长的工作量。</li> <li>增加团队组员提交步骤。</li> </ul> </li> </ul> <blockquote> <p>说明：<code>Pull Request</code>作用是可以让其他组员或组长可以查看你的代码，并可以提出代码修改意见或者讨论。</p> </blockquote> <h2 id="4gitflow-工作流最流行">4、GitFlow 工作流(最流行)</h2> <p><strong>Gitflow工作流</strong>没有用超出上面<strong>功能分支工作流</strong>的概念和命令，而是为不同的分支，分配一个很明确的角色，并定义分支之间如何交互，和什么时候进行交互。</p> <ul> <li>除了有<code>master</code>主分支（用于存储正式发布的历史版本）外，还有一个作为功能集成分支的<code>develop</code>分支。<br /> 当初始化完成后，某个程序员想要开发一个功能，并不是直接从<code>master</code>分支上拉出新分支，而是使用<code>develop</code>分支作为父分支来拉出新分支。<br /> 当新功能完成后，再合并回父分支，<strong>新功能的提交并不与<code>master</code>分支直接交互</strong>。</li> <li>一旦<code>develop</code>分支上有了做一次发布（或者说快到了既定的发布日）的足够功能，就从<code>develop</code>分支上<code>checkout</code>一个发布分支。<br /> 新建的发布分支用于开始发布循环，所以从这个时间点开始之后新的功能，不能再加到这个分支上，该分支只应该做Bug修复、文档生成和其它面向发布任务。<br /> 一旦对外发布的工作都完成了，发布分支合并到<code>master</code>分支，并分配一个版本号打好<code>Tag</code>。<br /> 另外，这些从新建发布分支以来的做的修改，要合并回<code>develop</code>分支上。</li> <li>维护分支或说是热修复（<code>hotfix</code>）分支用于，快速给产品发布版本（<code>production releases</code>）打补丁，这是唯一可以直接从<code>master</code>分支<code>fork</code>出来的分支。<br /> 修复完成，修改应该马上合并回<code>master</code>分支和<code>develop</code>分支（当前的发布分支），<code>master</code>分支应该用新的版本号打好<code>Tag</code>。<br /> 为Bug修复使用专门分支，让团队可以快速处理掉问题，而不用打断其它工作或是等待下一个发布循环。<br /> 你可以把维护分支想成是一个直接在<code>master</code>分支上处理的临时发布。</li> </ul> <p><strong>总结就是</strong>：<code>Gitflow</code> 工作流通过为<strong>功能开发</strong>、<strong>发布准备</strong>和<strong>维护</strong>设立了独立的分支，让发布迭代过程更流畅，充分的利用了分支的特点。严格的分支模型也为大型项目提供了一些非常必要的结构。</p> <p>下图是完整的<code>Gitflow</code> 工作流开发方式图，但实际开发工作环境可能会精简：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/128079da63c4d3c8fe3d658b95391160.jpg" alt="Git基础之协作模式详解"></p> <p><strong>Gitflow工作流总结：</strong></p> <ul> <li>适用人群：任何开发团队，熟悉Git分支的团队。</li> <li>工作方式： <ul> <li>项目维护者创建项目维护者的远程仓库，创建<code>master</code>分支与<code>develop</code>分支，贡献者可读不可写。</li> <li>每个贡献者<code>git clone</code>远程仓库中的<code>develop</code>分支到本地仓库。（记住，<code>develop</code>分支相当于<code>master</code>的分支，包括功能开发，修改，测试。<code>master</code>分支相当于最终分支）</li> <li>每个贡献者在本地仓库创建自己的<code>feature</code>分支，在<code>feature</code>分支上开发。</li> <li>在<code>feature</code>分支又可以创建多个<code>feature</code>分支，继续开发项目。</li> <li>每个贡献者每次开发完成就<code>git commit</code>到本地仓库中自己的<code>feature</code>分支， 接着<code>git push</code>到远程仓库。</li> <li>通过<code>pull request</code>提醒项目维护者，浏览贡献者提交<code>feature</code>分支。</li> <li>项目维护者把<code>feature</code>分支拉下来，然后合并到自己本地仓库的<code>develop</code>分支上测试。</li> <li>组长测试<code>feature</code>分支通过之后，由组长负责把<code>feature</code>分支合并到远程仓库的<code>develop</code>分支上。</li> <li>项目维护者会<code>release</code>分支上<code>git tag</code>打上版本号。</li> <li>项目维护者可以从<code>develop</code>分支创建<code>release</code>分支，接着把<code>release</code>分支合并到<code>master</code>分支上，同时<code>master</code>分支同步到<code>develop</code>分支。</li> <li>项目维护者在远程仓库把合并过的<code>feature</code>分支删除。</li> <li>每个贡献者在本地仓库把合并过的<code>feature</code>分支删除。</li> <li>每个贡献者将本地仓库分支切换为<code>develop</code>分支，然后<code>git pull</code>将本地仓库的<code>master</code>分支更新到远程仓库的<code>develop</code>分支版本。</li> </ul> </li> </ul> <blockquote> <p>说明：Gitflow工作流是<code>Vincent Driessen</code>工程师提出的多分支工作流。</p> </blockquote> <h2 id="5forking-工作流偶尔使用">5、Forking 工作流(偶尔使用)</h2> <p>分叉(<code>Forking</code>)工作流也可以叫做分布式工作流，是在 GitFlow工作流的基础上的衍生，充分利用了Git在分支和克隆上的优势，再加上<code>pull request</code> 的功能，以达到代码审核的目的。既可以管理大团队的开发者（<code>developer</code>）的提交，也可以接受不信任贡献者（<code>contributor</code>）的提交。</p> <p><strong>这种工作流使得每个开发者都有一个服务端仓库（此仓库只有自己可以<code>push</code>推送，但是所有人都可以<code>pull</code>拉取修改）</strong>，每个程序员都<code>push</code>代码到自己的服务端仓库，但不能<code>push</code>到正式仓库，只有项目维护者才能<code>push</code>到正式仓库，这样项目维护者可以接受任何开发者的提交，但无需给他正式代码库的写权限。</p> <p>这种工作流适合开源社区的开源项目，大家统一对项目做贡献，但是有一个人或一个团队作为开发者来管理项目，所有的贡献者的代码由开发者审核，其功能完善之后再由开发者<code>push</code>到正式仓库中。</p> <p><strong>总结：</strong></p> <ul> <li>分叉(<code>Forking</code>)工作流更适合安全可靠地管理大团队的开发者，而且能接受不信任贡献者的提交。</li> <li>在实际工作中，如果偶尔有需要团队外的成员帮我们解决问题时，可能会用到。</li> <li>这种工作流程并不常用，只有当项目极为庞杂，或者需要多级别管理时，才会体现出优势。 利用这种方式，项目总负责人（即主管）可以把大量分散的集成工作，委托给不同的小组负责人分别处理，然后在不同时刻将大块的代码子集统筹起来，用于之后的整合。</li> </ul> <p>图示如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/1164f0fa7eda7f6ee4a1e60d4f7cf0a2.jpg" alt="Git基础之协作模式详解"></p> <blockquote> <p>提示：</p> <ul> <li>每个成员都可以从中央版本库中拉取代码。</li> <li>每级成员都只能向上一级提交代码。</li> <li>上一级合并代码之后继续向上级提交代码。</li> <li>最后只有独裁者才能向中央版本库提交代码。</li> </ul> </blockquote> <p><strong>分叉工作流（分布式仓库工作流）总结：</strong></p> <ul> <li>适用人群：大型开发团队，熟悉Git分支的团队。</li> <li>工作方式： <ul> <li>主项目维护者创建远程仓库，创建一个<code>master</code>分支，从项目维护者可读不可写。</li> <li>从项目维护者通过<code>fork</code>主项目维护者的远程仓库的副本，到自己的远程仓库，包括<code>master</code>分支。（记住，从项目维护者的远程仓库独立于主项目维护者的远程仓库）</li> <li>从项目维护者<code>git clone</code>主项目维护者的远程仓库的副本到本地仓库。</li> <li>从项目维护者创建自己的<code>feature</code>分支，在<code>feature</code>分支上开发。</li> <li>从项目维护者每次开发完成就<code>git commit</code>到本地仓库中自己的<code>feature</code>分支， 接着<code>git push</code>到远程仓库。</li> <li>通过<code>pull request</code>命令，从项目维护者合并自己<code>feature</code>分支，到从项目维护者的远程仓库的<code>master</code>分支上。</li> <li>从项目维护者在远程仓库把合并过的<code>feature</code>分支删除。</li> <li>从项目维护者在本地仓库把合并过的<code>feature</code>分支删除。</li> <li>从项目维护者在远程仓库通过<code>pull request</code>向主项目维护者的远程仓库的推送。</li> <li>主项目维护者通过<code>pull request</code>获取从项目维护者的远程仓库的推送。</li> <li>主项目维护者进行从项目维护者的远程仓库代码审查，测试。</li> <li>主项目维护者确认无误后，可以直接合并到主项目维护者的远程仓库。</li> </ul> </li> </ul> <h2 id="6总结">6、总结</h2> <p>上面介绍了在Git分布式系统中经常使用的工作流程，但是在实际的开发中，你会遇到许多可能适合你的特定工作流程的变种，你可以按照实际的情况，灵活的进行组合和拓展。</p> <blockquote> <p>参考：</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/shengzhu1/article/details/77990582"  target="_blank" rel="nofollow">https://blog.csdn.net/shengzhu1/article/details/77990582</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43691058/article/details/106427915"  target="_blank" rel="nofollow">https://blog.csdn.net/weixin_43691058/article/details/106427915</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_30344795/article/details/96683694"  target="_blank" rel="nofollow">https://blog.csdn.net/weixin_30344795/article/details/96683694</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://git-scm.com/book/zh/v2/"  target="_blank" rel="nofollow">https://git-scm.com/book/zh/v2/</a></li> </ul> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-94659.htm">java建立tcp连接 netty_使用Netty处理Java中成千上万个连接的原理 -DZone性能</a></p>
+                                        <p>下一个：<a href="/news/article-95433.htm">标题动物临床常用的注射技术有哪些种类（动物常用的注射方法有）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-clash-windows.htm" title="「3月2日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「3月2日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-85805.htm" title="太原有没有领养猫的地方（太原有没有领养猫的地方啊）">太原有没有领养猫的地方（太原有没有领养猫的地方啊）</a></li>
+                        <li class="py-2"><a href="/news/article-70708.htm" title="免费领养宠物平台有哪些可靠（免费领养宠物的平台）">免费领养宠物平台有哪些可靠（免费领养宠物的平台）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-node-subscribe.htm" title="「3月10日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源">「3月10日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-free-clash-subscribe.htm" title="「4月14日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「4月14日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-free-ssr-subscribe.htm" title="「3月29日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「3月29日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-clash-v2ray-ss-ssr.htm" title="「3月4日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「3月4日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-shadowrocket-node.htm" title="「4月9日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「4月9日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-88690.htm" title="宠物零食加工厂都需要什么执照 宠物零食加工厂都需要什么执照呢">宠物零食加工厂都需要什么执照 宠物零食加工厂都需要什么执照呢</a></li>
+                        <li class="py-2"><a href="/news/article-84375.htm" title="小型宠物食品加工厂需要多少资金才能开 小型宠物食品加工厂需要多少资金才能开业">小型宠物食品加工厂需要多少资金才能开 小型宠物食品加工厂需要多少资金才能开业</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">43</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
