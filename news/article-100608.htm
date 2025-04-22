@@ -1,0 +1,199 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-100608.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>字符集与编码详解</title>
+        <meta name="description" content="一个比特(bit)可以是0，或者是1，8个比特(bit)，组成一个字节(byte)。全为0时代表数字0，全为1时代表数字255。  一个字节可以表示256个数字，两个字节可以表示65536个数字。  " />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-100608.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="字符集与编码详解" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/f7315bfbc20b263aba8d128111739859.webp" />
+        <meta property="og:release_date" content="2025-04-21T06:49:27" />
+    <meta property="og:updated_time" content="2025-04-21T06:49:27" />
+        <meta property="og:description" content="一个比特(bit)可以是0，或者是1，8个比特(bit)，组成一个字节(byte)。全为0时代表数字0，全为1时代表数字255。  一个字节可以表示256个数字，两个字节可以表示65536个数字。  " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="字符集与编码详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">字符集与编码详解</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<p>一个比特(bit)可以是0，或者是1，8个比特(bit)，组成一个字节(byte)。全为0时代表数字0，全为1时代表数字255。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/72a2ae6e76b86cefca190ac717ceb191.jpg" alt="字符集与编码详解"></p> <p>一个字节可以表示256个数字，两个字节可以表示65536个数字。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9d642572984438c16f811efa8e1792ee.jpg" alt="字符集与编码详解"></p> <p>更多的字节，可以有更多的组合，就可以表示更大的数值范围。</p> <p>整数可以这么存，那字符呢？一堆二进制的0和1，怎么也算不出字母A吧。不能直接表示，那就通过数字中转一下。只要给它指定一个数值编号，要存储字符时，就存储这个数值。要读取时，按照映射关系找到这个字符。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9fd07a8084e3fcfd942b3c8078ebc331.jpg" alt="字符集与编码详解"></p> <p>像这样收录许多字符然后给它们一一编号，得到一个字符编号对照表，这就是“字符集”。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e2457525ae7734e4266d51f64cf52f27.jpg" alt="字符集与编码详解"></p> <p>ASCII字符集只收录了128个字符，其扩展字符集也只有256个。(ASCII最初被设计的目的也只是用来映射英文体系所需要的字符)</p> <p>这在只使用英文的国家貌似没什么问题，但是随着世界的互联，其它非英语母语的国家该怎么办呢？比如汉字、日文等。</p> <p>针对汉字，最先设计了GB2312字符集、但是GB2312不包含繁体字，所以又设计了BIG5字符集，但是依然有很多字符没有被收录，其它国家的字体也不在其中</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/f05ed1e5caf37e7f077782efc8b0731b.jpg" alt="字符集与编码详解"></p> <p>与其不断推出收录更多字符的字符集，还不如本着全球化统一标准的目的，制作一个通用字符集，Unicode学术学会就是这样做的，这个字符集就是Unicode，它于1990年开始研发并于1994年正式公布，实现了跨语言跨平台的文本转换与处理，字符集促成了字符与二进制的合作。但是有了字符集就万事大吉了吗？那怎么存储(eggo世界)这个内容呢？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/49b42fd1c283de57966957588f2004e1.jpg" alt="字符集与编码详解"></p> <p>直接的想法是，找到每个字符对应的编号，存成二进制，如果使用unicode字符集，拿到他们的编号，直接组合会得到这样一大串二进制位</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/29c0044bc85a4769109e751c6d5609fd.jpg" alt="字符集与编码详解"></p> <p>问题出现了，该怎么知道这一长串内容是要按照下面的方式划分的呢？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d949208baf16c1de5e2cf243204ec5f2.jpg" alt="字符集与编码详解"></p> <p>也可以按照下面的方式划分呀</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/43c77982d7d437c112d445b108e37bd5.jpg" alt="字符集与编码详解"></p> <p>所以，照搬编号的方式，行不通！！！</p> <p>那现在我们可以知道了，编码完成之后还需要解决的一个问题是如何划分字符边界。</p> <p>其中一个方法可以这样，不管编号多大多小，统一按照最长的编码的来，位数不够的高位补0嘛</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/6996867cac1d3f13e1a98e03a4eb79c7.jpg" alt="字符集与编码详解"></p> <p>这就是定长编码，这样就可以解决字符边界的问题，但是可以发现，这样就太浪费内存了，而且字符集收录的符号越多，编号跨度就越大，定长编码造成的浪费就越显著，还得再想办法，定长编码不行，那就“变长编码”，小编号少占字节，大编号多占字节。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e0aba195e0f30f1bebcdf5f9f7578f6b.jpg" alt="字符集与编码详解"></p> <p>但是怎么划分字符边界呢？来看一种解决方案，如果编号属于[0,127]，就占用一个字节，且最高位固定标识为0。如果属于[128,2047]，就占用两个字节，且有固定标识位110和10，三个以及更多字节的编码也遵循这样的规则</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/0d2df87498ee8a8bf0e29ca80e3b50d5.jpg" alt="字符集与编码详解"></p> <p>以二进制数字01100101，这个字节最高位是零，就表示这个字符只占一个字节，除去标识位，剩下的7位就是该字符的二进制编号，转换成十进制就是101，对应字符e，“世”字同理。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/96a62e331650a431e98a52cb442f58a0.jpg" alt="字符集与编码详解"></p> <p>这样划分字符就不成问题了。刚刚我们做的是解码，现在来编码试试，世界的“界”字在Unicode字符集中编号为30028，符合区间[2048,65535]，所以要占用三字节，使用下面这个模板。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/b96f05889b25682960276ca804f53b03.jpg" alt="字符集与编码详解"></p> <p>然后将编号30028转换成二进制01110101 01001100，再对应填到模板中</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/b495c7d69f3405c3c1df1989743567eb.jpg" alt="字符集与编码详解"></p> <p>好的，这样就编码完成了， 我们刚刚用的其实就是UTF-8编码，也就是Go语言默认的编码方式。</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-99838.htm">react项目配置postcss-px2rem-exclude</a></p>
+                                        <p>下一个：<a href="/news/article-100609.htm">成都宠物运输快递公司免费吗（成都宠物邮寄）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-91648.htm" title="海拉鲁大陆怎么没有城市 海拉鲁大陆外面">海拉鲁大陆怎么没有城市 海拉鲁大陆外面</a></li>
+                        <li class="py-2"><a href="/news/article-77396.htm" title="v-model.trim使用">v-model.trim使用</a></li>
+                        <li class="py-2"><a href="/news/article-96163.htm" title="狗为什么不能喂三餐（狗狗一天喂几顿合适）">狗为什么不能喂三餐（狗狗一天喂几顿合适）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-17-free-high-speed-nodes.htm" title="「4月17日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源">「4月17日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-90150.htm" title="1970年阴历4月24的女人婚姻（1970年农历4月24日是什么星座）">1970年阴历4月24的女人婚姻（1970年农历4月24日是什么星座）</a></li>
+                        <li class="py-2"><a href="/news/article-78768.htm" title="Bootstrap Blazor Table 组件手动刷新组件数据详解">Bootstrap Blazor Table 组件手动刷新组件数据详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-ssr-subscribe.htm" title="「3月21日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源">「3月21日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-v2ray.htm" title="「3月8日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「3月8日」2025年最新高速V2ray/SSR/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-68112.htm" title="宠物医院好评模板100字内容图片高清（宠物医院好评模版）">宠物医院好评模板100字内容图片高清（宠物医院好评模版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-node-share.htm" title="「3月24日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源">「3月24日」2025年最新高速Shadowrocket/V2ray/SSR/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
