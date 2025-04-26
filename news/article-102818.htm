@@ -1,0 +1,199 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-102818.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>vue之prop与$emit的用法说明_vue.js_</title>
+        <meta name="description" content="目录  prop与$emit的用法  1.vue组件Prop传递数据 2.子组件可以使用$emit触发父组件的自定义事件  今天遇到的坑--this.$emit  我的实现方法 效果 问题来了,问题解" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-102818.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="vue之prop与$emit的用法说明_vue.js_" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/65b0e6371f5a2dba970c35e7bf7a7f29.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:16:11" />
+    <meta property="og:updated_time" content="2025-04-24T09:16:11" />
+        <meta property="og:description" content="目录  prop与$emit的用法  1.vue组件Prop传递数据 2.子组件可以使用$emit触发父组件的自定义事件  今天遇到的坑--this.$emit  我的实现方法 效果 问题来了,问题解" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue之prop与$emit的用法说明_vue.js_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">vue之prop与$emit的用法说明_vue.js_</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li>prop与$emit的用法</li> <ul class="second_class_ul"> <li>1.vue组件Prop传递数据</li> <li>2.子组件可以使用$emit触发父组件的自定义事件</li> </ul> <li>今天遇到的坑--this.$emit</li> <ul class="second_class_ul"> <li>我的实现方法</li> <li>效果</li> <li>问题来了,问题解决</li> </ul> </ul> </div> <p class="maodian"></p> <h2>prop与$emit的用法</h2> <p class="maodian"></p> <h3>1.vue组件Prop传递数据</h3> <p> 组件实例的作用域是孤立的，这意味着不能在子组件的模板内直接引父组件的数据，如果要让子组件使用父组件的数据，则需要通过子组件的prop选项；prop是单向绑定的，当父组件的属性变化时，将传递给子组件，但是反过来不行；这样主要是防止子组件无意修改父组件的状态；每次父组件更新时，子组件的所有prop都会更新为最新值。这意味着你不能在子组件内部改变prop。</p> <p class="maodian"></p> <h3>2.子组件可以使用$emit触发父组件的自定义事件</h3> <ul> <li> <code>vm.$emit( event, arg )</code>：发送数据，第一个参数是发送数据的名称，接收时还用这个参数接收，第二个参数是这个数据现在的位置</li> </ul> <p><strong>拓展：</strong></p> <ul> <li> <code>vm.$on( event, fn )</code>：接收数据，第一个参数是数据的名称，与发送时的名字对应，第二个参数是一个方法，要对数据的操作</li> </ul> <p>注：vue模板只能有一个根对象 (在template中只能用一个标签来包裹全部元素)不然会报错如：</p> <blockquote> <p>Component template should contain exactly one root element. If you are using v-if on multiple elements, use v-else-if to chain them instead.</p> </blockquote> <p><strong>父组件：</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;       &lt;div&gt;父组件的addName：{{addrName}}&lt;/div&gt;      &lt;child-prop @showAddrName="updateAddrName" :sendData="addrName"&gt;&lt;/child-prop&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;    import childProp from "./childProp";    export default {      name:'index',      components: {childProp},      data () {        return {          addrName:"北京"        }      },      methods:{        updateAddrName(data){//触发子组件城市选择-选择城市的事件          console.log(data);          this.addrName = data.addrName;//改变了父组件的值          console.log('toCity:'+this.addrName)        }      }    }  &lt;/script&gt;</pre> </div> <p><strong>子组件：</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;      &lt;h3&gt;父组件传给子组件的addrName:{{sendData}}&lt;/h3&gt;      &lt;br/&gt;&lt;button @click='addr(`上海`)'&gt;点击此处将‘上海'发射给父组件&lt;/button&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;    export default {      name:'childProp',      props:["sendData"], // 用来接收父组件传给子组件的数据      methods:{        addr(val) {          let data = {            addrName: val          };          this.$emit('showAddrName',data);//select事件触发后，自动触发showCityName事件        }      }    }  &lt;/script&gt;</pre> </div> <p class="maodian"></p> <h2>今天遇到的坑--this.$emit</h2> <p><strong>写给赶时间的人</strong></p> <p>一句话</p> <p>this.$emit('xxx', input), input最好是字符串, 如果需要传一个对象, 那么, 建议您在父组件里面, JSON.parse(input), 或者不要传原始对象, 需要const一个对象, 深拷贝您需要传的对象</p> <p><strong>写给有点时间看的人</strong></p> <p>作为一个半路出家的伪前端, 遇到坑, 基本都是因为自己基础知识不牢固, 例如今天遇到这个this.$emit的坑</p> <p><strong>需求</strong></p> <p>一个简单的需求, 页面上面有一个搜索框, 里面需要填2个字段, 按确定进行搜索</p> <p><strong>实现</strong></p> <p>我是这样想的, 填两个字段, 那我就把他们写在一个对象里面, this.$emit的时候, 传这个对象的值就好了</p> <p class="maodian"></p> <h3>我的实现方法</h3> <p>search组件</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;      &lt;div&gt;search&lt;/div&gt;      &lt;input type="text" v-model="searchKey.key_apple"&gt;      &lt;input type="text" v-model="searchKey.key_blackBerry"&gt;      &lt;button @click="onSubmit"&gt;确定&lt;/button&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;  export default {    data() {      return {        searchKey: {          key_blackBerry: "",          key_apple: ""        }      };    },       methods: {      onSubmit() {        this.$emit("onSearchSubmit", this.searchKey);      }    }  };  &lt;/script&gt;</pre> </div> <p><strong>父组件：</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;section class="container"&gt;      &lt;div&gt;        &lt;Search @onSearchSubmit="onSearchSubmit"/&gt;        &lt;h1&gt;{{parent_search}}&lt;/h1&gt;      &lt;/div&gt;    &lt;/section&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;  import Search from "~/components/Search.vue";     export default {    components: {      Search    },       data() {      return {        parent_search: {}      };    },       methods: {      onSearchSubmit(input) {        this.parent_search = input;      }    }  };  &lt;/script&gt;</pre> </div> <p class="maodian"></p> <h3>效果</h3> <p>实际上也能达到要求, 但是, 出现了一个意想不到的结果: 当第一次点击确定之后, 我们再在搜索框里面输入, 预想的结果是什么都没变化, 例如h1里面的字符不会变化, 但是, 结果确发现, 双向绑定了, 这不是我想要的结果...我并没有实现父子组件间的双向绑定(例如通过复写组件的change方法)</p> <p class="maodian"></p> <h3>问题来了,问题解决</h3> <p>发生这个情况的原因在于, 我写的自组件this.$emit里面, 是一个对象, 其实传的是它的地址</p> <p>所以，后面这样改写子组件就ok了</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;      &lt;div&gt;search&lt;/div&gt;      &lt;input type="text" v-model="searchKey.key_apple"&gt;      &lt;input type="text" v-model="searchKey.key_blackBerry"&gt;      &lt;button @click="onSubmit"&gt;确定&lt;/button&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;  export default {    data() {      return {        searchKey: {          key_blackBerry: "",          key_apple: ""        }      };    },       methods: {      onSubmit() {        const input = JSON.parse(JSON.stringify(this.searchKey));        this.$emit("onSearchSubmit", input);      }    }  };  &lt;/script&gt;</pre> </div> <p>基础真的很重要~</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101976.htm">孕妇被猫抓了一点点血会影响胎儿（孕妇被猫抓流血了,会影响胎儿发育吗）</a></p>
+                                        <p>下一个：<a href="/news/article-102819.htm">宠物粮食行业发展前景如何知乎文章内容怎么写（宠物粮市场前景）</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-clash-node-daily-updates.htm" title="「4月1日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「4月1日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-78094.htm" title="宠物买卖纠纷找哪个部门协调处理 宠物买卖纠纷找哪个部门协调处理呢">宠物买卖纠纷找哪个部门协调处理 宠物买卖纠纷找哪个部门协调处理呢</a></li>
+                        <li class="py-2"><a href="/news/article-68113.htm" title="动物疫苗价格一览表图片高清大全集下载（动物 疫苗）">动物疫苗价格一览表图片高清大全集下载（动物 疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-high-speed-nodes.htm" title="「3月14日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「3月14日」2025年最新高速Clash/V2ray/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-75375.htm" title="func-spring-boot-starter 匿名函数托管">func-spring-boot-starter 匿名函数托管</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-v2ray.htm" title="「3月30日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅源">「3月30日」2025年最新高速Clash/SSR/Shadowrocket/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-104445.htm" title="动物防疫注射注意事项及要求是什么（动物防疫注射注意事项及要求是什么内容）">动物防疫注射注意事项及要求是什么（动物防疫注射注意事项及要求是什么内容）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-node-subscribe.htm" title="「3月10日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源">「3月10日」2025年最新高速Shadowrocket/SSR/V2ray/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-clash-v2ray-ss-ssr.htm" title="「3月4日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「3月4日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-74694.htm" title="RPC及Dubbo和ZooKeeper的安装">RPC及Dubbo和ZooKeeper的安装</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
