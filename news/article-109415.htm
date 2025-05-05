@@ -1,0 +1,199 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <!-- Required meta tags -->
+    <link rel="canonical" href="https://clashnode2025.github.io/news/article-109415.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/website/img/clashnode2025/favicon.ico" type="image/x-icon"/>
+    <title>vue组件间（父子、兄弟、跨级组件）的传值</title>
+        <meta name="description" content="大体可以分为这几种情况：  父子组件传值 子父组件传值 兄弟组件传值（不相干的两个组件） 跨组件传值  父组件给子组件传值 静态传值 父组件内： &lt;form-test title="elemen" />
+    
+    <meta name="author" content="ClashNode2025订阅分享站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashnode2025.github.io/news/article-109415.htm" />
+    <meta property="og:site_name" content="ClashNode2025订阅分享站" />
+    <meta property="og:title" content="vue组件间（父子、兄弟、跨级组件）的传值" />
+    <meta property="og:image" content="https://clashnode2025.github.io/uploads/20240303/a5a9215615fc6b70db3c926aa2269cf1.webp" />
+        <meta property="og:release_date" content="2025-05-02T09:22:09" />
+    <meta property="og:updated_time" content="2025-05-02T09:22:09" />
+        <meta property="og:description" content="大体可以分为这几种情况：  父子组件传值 子父组件传值 兄弟组件传值（不相干的两个组件） 跨组件传值  父组件给子组件传值 静态传值 父组件内： &lt;form-test title="elemen" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue组件间（父子、兄弟、跨级组件）的传值">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/website/fonts/clashnode2025/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/bootstrap.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/tiny-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashnode2025/style.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T7JR2LXH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2T7JR2LXH');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mt-3">
+        <div class="container">
+            <div class="site-navigation">
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                    </ul>
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-section body-page">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <h2 class="heading mb-3" data-aos="fade-up" data-aos-delay="100">新闻资讯</h2>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-wrap" data-aos="fade-left">
+                        <img src="/assets/website/img/clashnode2025/hero_1.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-aos="fade-up">
+                        <h1 class="mb-5 text-center">vue组件间（父子、兄弟、跨级组件）的传值</h1>
+                    </div>
+
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>大体可以分为这几种情况：</p> <ul> <li>父子组件传值</li> <li>子父组件传值</li> <li>兄弟组件传值（不相干的两个组件）</li> <li>跨组件传值</li> </ul> <h2>父组件给子组件传值</h2> <h3>静态传值</h3> <p>父组件内：</p> <pre><code>&lt;form-test title="element表单"&gt;&lt;/form-test&gt;</code></pre> <p>子组件使用props获取：</p> <pre><code>props:['title'],</code></pre> <p>子组件渲染在页面内：</p> <pre><code>&lt;h3&gt;{<!-- -->{title}}&lt;/h3&gt;</code></pre> <p>最后渲染效果：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220601/df15fab197a197b309ca7951bf34d859.jpg" alt="vue组件间（父子、兄弟、跨级组件）的传值"></p> <h3>动态传值</h3> <p>子组件内的东西与上方的一致，修改父组件内的组件：</p> <pre><code>&lt;form-test :title="titleVar"&gt;&lt;/form-test&gt;</code></pre> <p>获取方式一致，在data内声明<code>titleVar: 'element表单'</code>，也可达到传值目的。</p> <h2>传值校验</h2> <p>如果你在传值的时候，需要父组件一定给你传递过来值，可以在子组件的props内对传递进来的值进行判断。<br /> 将</p> <pre><code>props:['title'],</code></pre> <p>改为：</p> <pre><code>props:{             title: { type: String, required: true}         },</code></pre> <p>当父组件不传值时，会报错：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220601/2b87851b2eac88439b435081204a3480.jpg" alt="vue组件间（父子、兄弟、跨级组件）的传值"></p> <h2>子组件给父组件传值</h2> <p>子组件给父组件是通过事件传值的，派发自定义事件，父组件监听这个自定义事件。<br /> 在子组件内需要使用<code>$emit</code>触发事件<code>test</code>，将后面的参数<br /> 传递给父组件。<br /> 子组件<code>Button.vue</code>的内容：</p> <pre><code>&lt;template&gt;     &lt;div&gt;         &lt;button @click="handleClick"&gt;测试&lt;/button&gt;     &lt;/div&gt; &lt;/template&gt; &lt;script&gt;     export default {         methods: {             handleClick() {                 this.$emit('test',{msg: 'hello'})             }         },     } &lt;/script&gt;  &lt;style lang="scss" scoped&gt;  &lt;/style&gt;</code></pre> <p>父组件内容<br /> 父组件需要导入子组件<code>Button.vue</code>，添加下方内容：</p> <pre><code>import TButton from './components/Button.vue' export default{ 	components: { 		TButton 	} }</code></pre> <p>父组件监听传递过来的事件<code>test</code>，使用事件<code>handleClick</code>来获取，<code>obj</code>就是传递出来的那个对象。<br /> 最后，父组件的内容：</p> <pre><code>&lt;template&gt;   &lt;div id="app"&gt;     &lt;t-button @test="handleClick"&gt;&lt;/t-button&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; import TButton from './components/Button.vue' export default {   components: {     TButton   },   methods: {     handleClick(obj){       console.log(obj);     }   }, } &lt;/script&gt;  &lt;style&gt;  &lt;/style&gt;</code></pre> <p>最后的结果是：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220601/f7f7614d1efbe9b0777c02f243df6c09.jpg" alt="vue组件间（父子、兄弟、跨级组件）的传值"></p> <h2>非父子组件传值</h2> <h3>1.总线bus</h3> <p>创建派发消息的Vue实例：</p> <pre><code>Vue.prototype.$bus=  new Vue();</code></pre> <p>父组件内：<br /> 在相应发生事件位置，添加点击事件<code>addGood()</code>事件，</p> <pre><code>methods: {     addGood() {       this.$bus.$emit('addCart', good);  //第一个参数为事件名称，第二个参为需要派发的数据     }   },</code></pre> <p>子组件通过<code>this.$bus.$on</code>来接受这个动作，得到了需要添加的数据，然后将这些数据渲染或存储等。<br /> 子组件内对此过程的全部操作：</p> <pre><code>created(){             this.$bus.$on('addCart',good =&gt; {             	//dosomthing  对传递过来的参数的处理动作              })         },</code></pre> <h3>2.Vuex</h3> <p>适用于较大的项目<br /> 详细请查看文档</p> <h2>跨组件传值</h2> <h3>provide/inject</h3> <p>provide 和 inject 主要在开发高阶插件/组件库时使用。并不推荐用于普通应用程序代码中。<br /> 这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效。如果你熟悉 React，这与 React 的上下文特性很相似。</p> <p>provide 选项应该是一个对象或返回一个对象的函数。该对象包含可注入其子孙的 property。在该对象中你可以使用 ES2015 Symbols 作为 key，但是只在原生支持 Symbol 和 Reflect.ownKeys 的环境下可工作。</p> <pre><code>inject 选项应该是：     一个字符串数组，或     一个对象，对象的 key 是本地的绑定名，value 是：         在可用的注入内容中搜索用的 key (字符串或 Symbol)，或         一个对象，该对象的：             from property 是在可用的注入内容中搜索用的 key (字符串或 Symbol)             default property 是降级情况下使用的 value</code></pre> <blockquote> <p>提示：provide 和 inject 绑定并不是可响应的。这是刻意为之的。然而，如果你传入了一个可监听的对象，那么其对象的 property 还是可响应的。</p> </blockquote> <pre><code>// 父级组件提供 'foo' var Provider = {   provide: {     foo: 'bar'   },   // ... }  // 子组件注入 'foo' var Child = {   inject: ['foo'],   created () {     console.log(this.foo) // =&gt; "bar"   }   // ... }</code></pre> <p>参考官网链接https://cn.vuejs.org/v2/api/?#provide-inject</p> <h2>路由传参/值</h2> <p>如果路由传递参数也算组件间传值的话，可以参考Vue路由Vue Router创建、传递参数、路由守卫内的参数传递部分内容。</p> <p>推荐vue组件间通信六种方式（完整版），非目前参考文档，是写完了才看到。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109414.htm">Feign调用传输文件异常</a></p>
+                                        <p>下一个：<a href="/news/article-110242.htm">Java中List.contains(Object object)方法使用_java</a></p>
+                                    </div>
+                
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-95433.htm" title="标题动物临床常用的注射技术有哪些种类（动物常用的注射方法有）">标题动物临床常用的注射技术有哪些种类（动物常用的注射方法有）</a></li>
+                        <li class="py-2"><a href="/news/article-106034.htm" title="肯德基菜单图片（肯德基菜单图片大全）">肯德基菜单图片（肯德基菜单图片大全）</a></li>
+                        <li class="py-2"><a href="/news/article-91648.htm" title="海拉鲁大陆怎么没有城市 海拉鲁大陆外面">海拉鲁大陆怎么没有城市 海拉鲁大陆外面</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-4-free-ssr-subscribe.htm" title="「5月4日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源">「5月4日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-99837.htm" title="【impala】python通过kerberos连接impala操作hive，及解决遇到的问题">【impala】python通过kerberos连接impala操作hive，及解决遇到的问题</a></li>
+                        <li class="py-2"><a href="/news/article-87963.htm" title="1元店货源批发市场（五金批发去哪进货）">1元店货源批发市场（五金批发去哪进货）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-shadowrocket-node.htm" title="「4月2日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「4月2日」2025年最新高速V2ray/SSR/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-free-clash-subscribe.htm" title="「4月14日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「4月14日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/news/article-93846.htm" title="动物疫苗接种技术实训报告（动物疫苗接种技术实训报告总结）">动物疫苗接种技术实训报告（动物疫苗接种技术实训报告总结）</a></li>
+                        <li class="py-2"><a href="/news/article-86523.htm" title="新鲜出炉：appium2.0+ 单点触控和多点触控新的解决方案_在线工具">新鲜出炉：appium2.0+ 单点触控和多点触控新的解决方案_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        ClashNode2025订阅分享站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/website/js/frontend/clashnode2025/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/navbar.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/counter.js"></script>
+    <script src="/assets/website/js/frontend/clashnode2025/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
