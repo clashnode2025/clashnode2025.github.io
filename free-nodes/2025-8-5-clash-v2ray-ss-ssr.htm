@@ -71,7 +71,7 @@
     <nav class="site-nav mt-3">
         <div class="container">
             <div class="site-navigation">
-                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 2025</a>
+                                <a href="/" class="logo m-0 mt-2 float-start">Clash Node 免费节点中心2025</a>
                                 <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
                                         <li><a href="/">首页</a></li>
                                         <li><a href="/free-nodes/">免费节点</a></li>
@@ -107,7 +107,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <div data-aos="fade-up">
-                        <h1 class="mb-5 text-center">「8月5日」2025年最新高速V2ray/Shadowrocket/SSR/Clash免费节点链接订阅，推荐便宜订阅源</h1>
+                        <h1 class="mb-5 text-center">「8月5日」2025年最新高速V2ray节点/Shadowrocket节点/SSR/Clash免费节点链接订阅，推荐便宜订阅源</h1>
                     </div>
 
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
@@ -135,8 +135,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅文件链接</h2><p>&nbsp;</p><p><strong>Clash订阅链接</strong></p><p>https://clashnode2025.github.io/uploads/2025/08/0-20250805.yaml</p><p>https://clashnode2025.github.io/uploads/2025/08/1-20250805.yaml</p><p>https://clashnode2025.github.io/uploads/2025/08/2-20250805.yaml</p><p>https://clashnode2025.github.io/uploads/2025/08/3-20250805.yaml</p><p>https://clashnode2025.github.io/uploads/2025/08/4-20250805.yaml</p><p>&nbsp;</p><p><strong>V2ray订阅链接:</strong></p><p>https://clashnode2025.github.io/uploads/2025/08/0-20250805.txt</p><p>https://clashnode2025.github.io/uploads/2025/08/1-20250805.txt</p><p><strong>Sing-Box订阅链接</strong></p><p>https://clashnode2025.github.io/uploads/2025/08/20250805.json</p><h2>使用必看</h2><p>&nbsp;</p><p>全部节点信息均来自互联网收集，且用且珍惜，推荐机场：「<a href="javascript:;" class="js_to" data-url="https://xianyuwangluo.top/#/register?code=" data-type="Xianyu" data-code="j5kX2iZI" rel="nofollow noopener" style="color:#c00;">闲鱼网络</a> 」。仅针对用于学习研究的用户分享，请勿随意传播其他信息。免费节点有效时间比较短，遇到失效是正常现象。</p><h2>手把手教你用HC客户端搭建Vmess代理：从零开始实现安全科学上网</h2>  <p>在这个信息爆炸的时代，互联网已经成为我们获取知识、交流思想的重要渠道。然而，由于各种原因，我们有时会遇到网络访问受限的情况。本文将详细介绍如何使用HC客户端搭建Vmess代理，帮助你突破网络限制，安全高效地访问全球互联网资源。</p>  <h2>一、Vmess协议：安全上网的新选择</h2>  <p>Vmess是一种基于V2Ray项目的现代代理协议，它不同于传统的SS/SSR协议，采用了更加先进的加密和混淆技术。Vmess协议的核心优势在于其动态性和安全性——每次连接都会生成不同的ID和加密参数，使得流量特征难以被识别和封锁。这种特性让Vmess成为当前最可靠的代理协议之一。</p>  <p>与传统的HTTP/Socks代理相比，Vmess提供了更完整的传输层加密，支持多种加密算法如AES-128-GCM、Chacha20-Poly1305等。同时，Vmess还具备完善的流量伪装能力，可以将代理流量伪装成正常的HTTPS流量，大大降低了被检测和封锁的风险。</p>  <h2>二、搭建前的准备工作</h2>  <p>在开始搭建Vmess代理之前，我们需要做好充分的准备工作。首先，你需要准备一台位于境外的Linux服务器，推荐使用Ubuntu 18.04/20.04或CentOS 7/8系统。服务器的配置不需要太高，1核CPU、1GB内存、20GB硬盘空间就足够个人使用了，但网络带宽建议至少100Mbps。</p>  <p>其次，确保你的服务器已经安装了Node.js运行环境（建议版本12.x以上）和npm包管理器。你可以通过以下命令检查是否已安装：</p>  <p><code>bash node -v npm -v</code></p>  <p>如果没有安装，可以使用以下命令快速安装（以Ubuntu为例）：</p>  <p><code>bash curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - sudo apt-get install -y nodejs</code></p>  <p>最后，确保服务器的防火墙已经放行了你计划使用的端口（默认为443或80），并且服务器能够稳定连接互联网。你可以通过ping和traceroute等工具测试服务器的网络连通性。</p>  <h2>三、HC客户端安装指南</h2>  <p>HC客户端是一款轻量级的代理管理工具，支持多种代理协议包括Vmess、VLESS等。它的界面简洁、操作直观，特别适合代理服务的新手用户。</p>  <h3>Windows系统安装步骤</h3>  <ol> <li>访问HC客户端官方网站（注意从可信来源下载，避免恶意软件）</li> <li>下载最新版本的Windows安装包（通常是.exe文件）</li> <li>双击安装包，按照向导完成安装</li> <li>安装完成后，在开始菜单中找到HC客户端并启动</li> </ol>  <h3>macOS系统安装步骤</h3>  <ol> <li>从官网下载macOS版本的.dmg文件</li> <li>双击打开磁盘映像，将HC图标拖拽到Applications文件夹</li> <li>首次运行时，可能需要在"系统偏好设置->安全性与隐私"中允许运行</li> <li>在Launchpad中找到并启动HC客户端</li> </ol>  <h3>Linux系统安装步骤</h3>  <p>对于Linux用户，HC通常提供AppImage或deb/rpm包：</p>  <p>```bash</p>  <h1>对于Debian/Ubuntu系统  <p>wget https://example.com/hc-latest.deb sudo dpkg -i hc-latest.deb</p>  <h1>对于CentOS/RHEL系统  <p>wget https://example.com/hc-latest.rpm sudo rpm -ivh hc-latest.rpm ```</p>  <p>安装完成后，你可以在应用程序菜单中找到HC客户端，或者直接在终端输入<code>hc-gui</code>启动图形界面。</p>  <h2>四、详细配置Vmess服务器</h2>  <p>成功安装HC客户端后，我们就可以开始配置Vmess服务器了。以下是详细的配置步骤：</p>  <ol> <li>打开HC客户端，点击主界面左上角的"+"按钮</li> <li>在弹出的协议选择窗口中，选择"Vmess"选项</li> <li>在服务器配置页面中，填写以下关键信息：</li> </ol>  <ul> <li><strong>服务器地址(Address)</strong>: 输入你的VPS公网IP地址或域名</li> <li><strong>端口(Port)</strong>: 设置一个未被占用的端口（建议使用443或80以增强隐蔽性）</li> <li><strong>用户ID(UUID)</strong>: 可以使用在线UUID生成器生成一个唯一的标识符</li> <li><strong>额外ID(AlterId)</strong>: 通常设置为0或一个较小的数字（如10）</li> <li><strong>加密方式(Security)</strong>: 选择"aes-128-gcm"（兼顾安全性和性能）</li> <li><strong>传输协议(Network)</strong>: 选择"ws"(WebSocket)或"tcp"（前者隐蔽性更好）</li> <li><strong>伪装类型(Flow)</strong>: 选择"none"或"xtls-rprx-direct"（后者更安全）</li> <li><strong>TLS设置</strong>: 启用TLS并配置证书（建议使用ACME自动申请证书）</li> </ul>  <ol> <li>点击"高级设置"可以配置更多选项：</li> </ol>  <ul> <li><strong>伪装域名</strong>: 填写一个常见的域名如"www.cloudflare.com"</li> <li><strong>路径(Path)</strong>: 设置如"/ray"这样的自定义路径</li> <li><strong>Mux</strong>: 启用可以提升多连接性能</li> </ul>  <ol> <li>配置完成后，点击"保存"按钮返回主界面</li> </ol>  <p><strong>专业建议</strong>：对于追求更高安全性的用户，可以考虑使用VLESS协议代替Vmess，它减少了不必要的功能，安全性更高。同时，定期更换UUID和端口也是良好的安全习惯。</p>  <h2>五、连接测试与优化</h2>  <p>配置完成后，我们需要测试Vmess连接是否正常工作：</p>  <ol> <li>在HC客户端主界面，选择刚刚配置的Vmess服务器</li> <li>点击"连接"按钮，观察状态栏变化</li> <li>连接成功后，状态会显示为"已连接"并显示延迟时间</li> <li>打开浏览器，访问https://www.google.com测试网络连通性</li> <li>使用https://www.speedtest.net测试代理速度</li> </ol>  <p>如果连接失败，可以按照以下步骤排查：</p>  <ol> <li>检查服务器防火墙是否放行了配置的端口 <code>bash sudo ufw allow 443/tcp</code></li> <li>确认V2Ray服务正在运行 <code>bash sudo systemctl status v2ray</code></li> <li>检查HC客户端的配置是否与服务器端完全一致</li> <li>尝试更换网络环境（如从WiFi切换到手机热点）</li> </ol>  <p>为了提高代理性能，你可以尝试以下优化措施：</p>  <ul> <li>启用HC客户端的"路由分流"功能，让国内流量直连</li> <li>调整"并发连接数"参数，找到最适合你网络环境的数值</li> <li>在"高级设置"中启用"快速打开"选项减少延迟</li> <li>定期更新HC客户端和V2Ray核心以获得性能改进</li> </ul>  <h2>六、常见问题深度解析</h2>  <h3>1. 连接速度慢怎么办？</h3>  <p>代理速度受多种因素影响，可以尝试以下方法：</p>  <ul> <li>更换服务器位置，选择物理距离更近的机房</li> <li>测试不同端口，有些ISP会对特定端口限速</li> <li>调整加密方式，如将aes-256-gcm改为chacha20</li> <li>检查服务器负载，避免CPU或带宽过载</li> </ul>  <h3>2. 如何确保长期稳定使用？</h3>  <ul> <li>设置自动更新脚本，定期更新V2Ray核心</li> <li>配置多个备用服务器，在主服务器失效时自动切换</li> <li>使用域名而非IP地址，方便更换服务器IP</li> <li>监控服务器状态，设置异常报警</li> </ul>  <h3>3. 高级安全配置建议</h3>  <p>对于安全要求高的用户：</p>  <ul> <li>启用TLS 1.3和动态端口功能</li> <li>配置四层流量伪装（如将Vmess流量伪装成Skype通话）</li> <li>实现双向TLS认证（mTLS）</li> <li>设置IP白名单和访问频率限制</li> </ul>  <h2>七、Vmess与其他代理协议对比</h2>  <p>在选择代理协议时，了解各种协议的优缺点非常重要：</p>  <p>| 特性        | Vmess       | Shadowsocks | Trojan      | |------------|-------------|-------------|-------------| | 加密强度    | ★★★★★       | ★★★★        | ★★★★★       | | 抗检测能力  | ★★★★★       | ★★★         | ★★★★        | | 配置复杂度  | ★★★★        | ★★          | ★★★         | | 移动端支持  | ★★★★        | ★★★★★       | ★★★         | | 性能开销    | ★★★         | ★★★★★       | ★★★★        |</p>  <p>从对比可以看出，Vmess在安全性和抗检测能力方面表现突出，特别适合网络环境严格的地区使用。而Shadowsocks则更轻量，适合低性能设备和移动端。</p>  <h2>八、总结与展望</h2>  <p>通过本文的详细指导，相信你已经成功在HC客户端上搭建了Vmess代理服务。这种基于Vmess协议的代理方案不仅提供了出色的网络访问体验，还保障了你的网络隐私和安全。</p>  <p>随着网络技术的发展，代理技术也在不断演进。未来，我们可能会看到更多基于QUIC协议、多路径TCP等新技术的代理方案出现。但无论技术如何变化，保护网络隐私、促进信息自由流通的核心价值不会改变。</p>  <p><strong>精彩点评</strong>：HC客户端与Vmess协议的结合，犹如给互联网自由插上了一对隐形的翅膀。它不仅解决了"能不能"访问的问题，更优雅地处理了"好不好"访问的体验。在这个数字化生存的时代，掌握这样一项技能，无异于获得了一把打开知识宝库的金钥匙。技术本身是中性的，关键在于使用者如何运用——无论是用于学术研究、商业情报收集，还是简单地追一部海外剧集，它都在默默守护着每个人应有的数字权利。记住，技术永远在为思想服务，而不是相反。</p>                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/free-nodes/2025-8-4-free-v2ray.htm">「8月4日」2025年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></p>
-                                        <p>下一个：<a href="/free-nodes/2025-8-6-clash-node.htm">「8月6日」2025年最新高速Shadowrocket/V2ray/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></p>
+                                        <p>上一个：<a href="/free-nodes/2025-8-4-free-v2ray.htm">「8月4日」2025年最新高速Shadowrocket节点/Clash节点/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></p>
+                                        <p>下一个：<a href="/free-nodes/2025-8-6-clash-node.htm">「8月6日」2025年最新高速Shadowrocket节点/V2ray节点/Clash节点/SSR免费节点链接订阅，推荐便宜订阅源</a></p>
                                     </div>
                                 <div class="panel panel-default mt-5">
                     <div class="panel-heading">
@@ -144,10 +144,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                     </div>
                     <div class="panel-body">
                         <ul class="p-0 x-0">
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-4-free-v2ray.htm">「8月4日」2025年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-3-node-share-links.htm">「8月3日」2025年最新高速V2ray/Clash/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-2-free-shadowrocket-node.htm">「8月2日」2025年最新高速SSR/Clash/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-8-1-free-clash.htm">「8月1日」2025年最新高速Clash/SSR/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-4-free-v2ray.htm">「8月4日」2025年最新高速Shadowrocket节点/Clash节点/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-3-node-share-links.htm">「8月3日」2025年最新高速V2ray节点/Clash节点/Shadowrocket节点/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-2-free-shadowrocket-node.htm">「8月2日」2025年最新高速SSR/Clash节点/V2ray节点/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-8-1-free-clash.htm">「8月1日」2025年最新高速Clash节点/SSR/V2ray节点/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
                                                         <li class="py-2"><a href="/free-nodes/2025-7-31-free-high-speed-nodes.htm">「7月31日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
                                                         <li class="py-2"><a href="/free-nodes/2025-7-30-free-node-subscribe-links.htm">「7月30日」2025年最新高速SSR/Shadowrocket/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
                                                         <li class="py-2"><a href="/free-nodes/2025-7-29-node-share.htm">「7月29日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
@@ -166,16 +166,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-7-28-clash-node-daily-updates.htm" title="「7月28日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源">「7月28日」2025年最新高速SSR/V2ray/Shadowrocket/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-31-free-high-speed-nodes.htm" title="「7月31日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源">「7月31日」2025年最新高速Shadowrocket/SSR/Clash/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-21-free-ssr-subscribe.htm" title="「7月21日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源">「7月21日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-22-clash-node.htm" title="「7月22日」2025年最新高速V2ray/Clash/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「7月22日」2025年最新高速V2ray/Clash/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-20-node-share-links.htm" title="「7月20日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源">「7月20日」2025年最新高速V2ray/Shadowrocket/Clash/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-27-node-share-links.htm" title="「7月27日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源">「7月27日」2025年最新高速Clash/V2ray/Shadowrocket/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-7-clash-v2ray-ss-ssr.htm" title="「7月7日」2025年最新高速Clash/SSR/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「7月7日」2025年最新高速Clash/SSR/V2ray/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-12-node-share-links.htm" title="「8月12日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「8月12日」2025年最新高速SSR/V2ray/Clash/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-8-4-free-v2ray.htm" title="「8月4日」2025年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅，推荐便宜订阅源">「8月4日」2025年最新高速Shadowrocket/Clash/SSR/V2ray免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-7-23-clash-v2ray-ss-ssr.htm" title="「7月23日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源">「7月23日」2025年最新高速Shadowrocket/Clash/V2ray/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-20-free-clash-subscribe.htm" title="「8月20日」2025年最新高速SSR/Shadowrocket节点/V2ray节点/Clash免费节点链接订阅，推荐便宜订阅源">「8月20日」2025年最新高速SSR/Shadowrocket节点/V2ray节点/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-11-clash-node-daily-updates.htm" title="「8月11日」2025年最新高速Shadowrocket节点/SSR/V2ray节点/Clash免费节点链接订阅，推荐便宜订阅源">「8月11日」2025年最新高速Shadowrocket节点/SSR/V2ray节点/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-12-node-share-links.htm" title="「8月12日」2025年最新高速SSR/V2ray节点/Clash节点/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「8月12日」2025年最新高速SSR/V2ray节点/Clash节点/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-9-free-ssr-node.htm" title="「9月9日」2025年最新高速Clash节点/Shadowrocket节点/V2ray节点/SSR免费节点链接订阅，推荐便宜订阅源">「9月9日」2025年最新高速Clash节点/Shadowrocket节点/V2ray节点/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-15-clash-v2ray-ss-ssr.htm" title="「8月15日」2025年最新高速Clash节点/V2ray节点/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源">「8月15日」2025年最新高速Clash节点/V2ray节点/SSR/Shadowrocket免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-22-free-shadowrocket-node.htm" title="「8月22日」2025年最新高速Shadowrocket节点/V2ray节点/Clash节点/SSR免费节点链接订阅，推荐便宜订阅源">「8月22日」2025年最新高速Shadowrocket节点/V2ray节点/Clash节点/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-18-clash-windows.htm" title="「9月18日」2025年最新高速SSR/Shadowrocket节点/V2ray节点/Clash免费节点链接订阅，推荐便宜订阅源">「9月18日」2025年最新高速SSR/Shadowrocket节点/V2ray节点/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-28-shadowrocket-node.htm" title="「8月28日」2025年最新高速Shadowrocket节点/V2ray节点/SSR/Clash免费节点链接订阅，推荐便宜订阅源">「8月28日」2025年最新高速Shadowrocket节点/V2ray节点/SSR/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-3-free-ssr-node.htm" title="「9月3日」2025年最新高速V2ray节点/Shadowrocket节点/SSR/Clash免费节点链接订阅，推荐便宜订阅源">「9月3日」2025年最新高速V2ray节点/Shadowrocket节点/SSR/Clash免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-13-clash-node-daily-updates.htm" title="「8月13日」2025年最新高速Clash节点/Shadowrocket节点/V2ray节点/SSR免费节点链接订阅，推荐便宜订阅源">「8月13日」2025年最新高速Clash节点/Shadowrocket节点/V2ray节点/SSR免费节点链接订阅，推荐便宜订阅源</a></li>
                     </ul>
     </div>
 </div>
@@ -187,10 +187,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-09/" title="2025-09 归档">2025-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-07/" title="2025-07 归档">2025-07</a></h4>
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
             </li>
                     </ul>
     </div>
@@ -206,7 +206,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                                        <p>
+                                        <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
                                                 <a href="/">首页</a> |
                                                 <a href="/free-nodes/">免费节点</a> |
                                                 <a href="/paid-subscribe/">推荐机场</a> |
@@ -217,7 +218,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
-                    <p>
+                                        <p>
                         ClashNode2025订阅分享站 版权所有
                         <br />
                         Powered by WordPress
