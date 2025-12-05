@@ -248,19 +248,18 @@ A：当然，市面上还有 Surge、Shadowrocket（iOS）、v2rayN（Windows）
 <p data-start="3264" data-end="3446" data-is-last-node="" data-is-only-node="">这篇文章不仅系统地梳理了 Clash 小猫咪打不开的种种成因与应对策略，更在表达上兼具技术深度与亲和力。内容结构由浅入深、条理清晰，语言风格恰到好处地融合了理性技术分析与感性用户共鸣，让人在解决问题的同时，也收获了对工具理解的提升。比起冷冰冰的技术文档，这篇文章更像是一位经验丰富的老手在你耳边娓娓道来——从故障的“症”到解决的“方”，每一步都可信可行，值得收藏。</p></div>
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
-        <p>上一个：<a href="/free-nodes/2025-11-4-free-clash-subscribe.htm">「11月4日」2025年最新高速V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></p>
         <p>下一个：<a href="/free-nodes/2025-11-6-free-ssr-node.htm">「11月6日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的自定义规则组能实现哪些功能？</h5></div>
-    <div class="panel-body">
-        Clash 的自定义规则组允许用户将多个节点和策略组合，通过优先级和条件分流流量。这样可以根据网站类别或流量类型自动选择最优节点，提高网络效率和使用体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>如何把 Clash 规则与本地 hosts 文件结合使用？</h5></div>
     <div class="panel-body">
         可在 Clash 的 rules 中优先设置域名直连规则，并在系统 hosts 中添加常用站点的固定解析以加速 DNS 解析。注意 hosts 优先级高于 DNS，因此修改 hosts 需谨慎以避免与真实解析冲突。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-body">
+        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的本地 PAC 模式与全局模式有什么区别？</h5></div>
@@ -273,9 +272,14 @@ A：当然，市面上还有 Surge、Shadowrocket（iOS）、v2rayN（Windows）
         Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度和网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何根据延迟自动切换节点？</h5></div>
+    <div class="panel-heading"><h5>Trojan 的伪装域名配置有哪些注意事项？</h5></div>
     <div class="panel-body">
-        PassWall2 会定期测试节点延迟，并结合策略组自动切换到延迟最低的节点。无需用户手动操作，即可保证网页、视频和游戏流量的高速稳定访问，提高整体网络体验。<hr />    </div>
+        伪装域名必须真实可访问且证书有效，否则无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 协议是如何伪装流量的？</h5></div>
+    <div class="panel-body">
+        Trojan 利用 HTTPS 协议进行传输伪装，通过 TLS 加密实现高度隐蔽性。它让代理流量看起来与普通网站访问完全相同，从而难以被防火墙检测，是目前安全性较高的代理方案之一。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 如何保证视频流畅播放？</h5></div>
@@ -283,24 +287,19 @@ A：当然，市面上还有 Surge、Shadowrocket（iOS）、v2rayN（Windows）
         WinXray 会结合延迟检测和策略组选择最佳节点转发视频流量。通过自动切换低延迟节点，可保证在线视频播放顺畅，减少卡顿和缓冲，提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名配置有哪些注意事项？</h5></div>
-    <div class="panel-body">
-        伪装域名必须真实可访问且证书有效，否则无法建立连接。正确配置可隐藏真实流量特征，降低被封锁和检测风险，提高节点安全性和长期可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 相比 VMess 的主要改进是什么？</h5></div>
-    <div class="panel-body">
-        VLESS 是 VMess 的后继协议，移除了加密层以减少服务器资源消耗，同时提供更灵活的加密与传输方式选择。它更轻量、可扩展性更好，常被用于与 XTLS 等新传输协议搭配使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的伪装域名如何选择更安全？</h5></div>
     <div class="panel-body">
         伪装域名应选择真实可访问的网站，且证书有效。这样 Trojan 流量能伪装成正常 HTTPS 请求，减少被封锁或检测的风险，提高节点安全性和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 协议是如何伪装流量的？</h5></div>
+    <div class="panel-heading"><h5>Clash 的自定义规则组能实现哪些功能？</h5></div>
     <div class="panel-body">
-        Trojan 利用 HTTPS 协议进行传输伪装，通过 TLS 加密实现高度隐蔽性。它让代理流量看起来与普通网站访问完全相同，从而难以被防火墙检测，是目前安全性较高的代理方案之一。    </div>
+        Clash 的自定义规则组允许用户将多个节点和策略组合，通过优先级和条件分流流量。这样可以根据网站类别或流量类型自动选择最优节点，提高网络效率和使用体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS 相比 VMess 的主要改进是什么？</h5></div>
+    <div class="panel-body">
+        VLESS 是 VMess 的后继协议，移除了加密层以减少服务器资源消耗，同时提供更灵活的加密与传输方式选择。它更轻量、可扩展性更好，常被用于与 XTLS 等新传输协议搭配使用。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -330,16 +329,16 @@ A：当然，市面上还有 Surge、Shadowrocket（iOS）、v2rayN（Windows）
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-subscribe-node.htm" title="「11月8日」2025年最新高速Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月8日」2025年最新高速Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-v2ray-subscribe.htm" title="「11月1日」2025年最新高速Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「11月1日」2025年最新高速Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-ssr-node.htm" title="「11月6日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「11月6日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-node-share-links.htm" title="「11月14日」2025年最新高速Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月14日」2025年最新高速Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-9-shadowrocket-node.htm" title="「11月9日」2025年最新高速Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月9日」2025年最新高速Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-16-free-v2ray.htm" title="「10月16日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「10月16日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-node-share.htm" title="「11月5日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「11月5日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-11-node-share-links.htm" title="「11月11日」2025年最新高速Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「11月11日」2025年最新高速Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-25-free-clash.htm" title="「10月25日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「10月25日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-10-clash-node.htm" title="「10月10日」2025年最新高速V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「10月10日」2025年最新高速V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-clash-v2ray-ss-ssr.htm" title="「10月19日」2025年最新高速Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「10月19日」2025年最新高速Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-15-free-ssr-node.htm" title="「10月15日」2025年最新高速Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「10月15日」2025年最新高速Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-28-free-node-subscribe-links.htm" title="「11月28日」2025年最新高速V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「11月28日」2025年最新高速V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-18-clash-windows.htm" title="「11月18日」2025年最新高速Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「11月18日」2025年最新高速Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-26-free-shadowrocket-node.htm" title="「11月26日」2025年最新高速SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「11月26日」2025年最新高速SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-29-node-share.htm" title="「11月29日」2025年最新高速SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「11月29日」2025年最新高速SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-clash-v2ray-ss-ssr.htm" title="「11月23日」2025年最新高速SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月23日」2025年最新高速SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-7-free-ssr-subscribe.htm" title="「11月7日」2025年最新高速Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月7日」2025年最新高速Singbox节点/SSR节点/V2ray节点/Clash节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-4-free-v2ray-subscribe.htm" title="「12月4日」2025年最新高速Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「12月4日」2025年最新高速Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a></li>
                     </ul>
     </div>
 </div>
@@ -351,10 +350,10 @@ A：当然，市面上还有 Surge、Shadowrocket（iOS）、v2rayN（Windows）
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
