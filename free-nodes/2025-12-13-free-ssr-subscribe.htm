@@ -307,6 +307,7 @@ sudo systemctl start clash
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2025-12-11-free-v2ray-subscribe.htm">「12月11日」2025年最新高速Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></p>
+        <p>下一个：<a href="/free-nodes/2025-12-14-clash-node.htm">「12月14日」2025年最新高速Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
@@ -315,24 +316,9 @@ sudo systemctl start clash
         TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响支持代理的应用。TUN 更适合全局加速和游戏、视频等应用，保证所有流量通过节点，提高网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 协议的多路复用功能如何提升性能？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
     <div class="panel-body">
-        SSR 多路复用允许多个短连接共享同一通道，减少握手次数和加密开销。适合游戏、即时通讯等高频短连接场景，提升网络吞吐量和连接稳定性，提高整体上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的传输协议选择对性能有何影响？</h5></div>
-    <div class="panel-body">
-        V2Ray 支持 TCP、WebSocket、gRPC、QUIC 等多种传输协议。不同协议在延迟、抗封锁和吞吐量上差异明显。用户可根据网络环境选择最优协议，以获得稳定且高速的连接体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 能否同步 Quantumult X 的规则？</h5></div>
-    <div class="panel-body">
-        Surfboard 的规则语法与 Quantumult X 相似，但并非完全兼容。部分策略组或脚本需手动修改格式方能正常使用，因此不建议直接复制，最好通过转换工具处理。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
-    <div class="panel-body">
-        在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。<hr />    </div>
+        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何安全地共享订阅链接而不泄露个人信息？</h5></div>
@@ -350,14 +336,29 @@ sudo systemctl start clash
         全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用、IP 或端口走节点，可优化带宽使用和访问效率，根据需求灵活选择模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
+    <div class="panel-body">
+        在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 协议的多路复用功能如何提升性能？</h5></div>
+    <div class="panel-body">
+        SSR 多路复用允许多个短连接共享同一通道，减少握手次数和加密开销。适合游戏、即时通讯等高频短连接场景，提升网络吞吐量和连接稳定性，提高整体上网体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 能否同步 Quantumult X 的规则？</h5></div>
+    <div class="panel-body">
+        Surfboard 的规则语法与 Quantumult X 相似，但并非完全兼容。部分策略组或脚本需手动修改格式方能正常使用，因此不建议直接复制，最好通过转换工具处理。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VLess + Reality 的优势主要体现在哪些方面？</h5></div>
     <div class="panel-body">
         Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的传输协议选择对性能有何影响？</h5></div>
     <div class="panel-body">
-        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。    </div>
+        V2Ray 支持 TCP、WebSocket、gRPC、QUIC 等多种传输协议。不同协议在延迟、抗封锁和吞吐量上差异明显。用户可根据网络环境选择最优协议，以获得稳定且高速的连接体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -387,16 +388,16 @@ sudo systemctl start clash
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-subscribe-node.htm" title="「11月8日」2025年最新高速Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月8日」2025年最新高速Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-17-node-share-links.htm" title="「11月17日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「11月17日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-10-free-ssr-node.htm" title="「12月10日」2025年最新高速Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「12月10日」2025年最新高速Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-22-free-shadowrocket-node.htm" title="「11月22日」2025年最新高速V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「11月22日」2025年最新高速V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-4-free-v2ray-subscribe.htm" title="「12月4日」2025年最新高速Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「12月4日」2025年最新高速Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-shadowrocket-node.htm" title="「11月10日」2025年最新高速SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月10日」2025年最新高速SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-6-free-ssr-node.htm" title="「11月6日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「11月6日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-18-clash-v2ray-ss-ssr.htm" title="「12月18日」2025年最新高速SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「12月18日」2025年最新高速SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-free-v2ray.htm" title="「11月30日」2025年最新高速Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月30日」2025年最新高速Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-8-free-ssr-node.htm" title="「12月8日」2025年最新高速Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「12月8日」2025年最新高速Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-node-share-links.htm" title="「11月14日」2025年最新高速Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月14日」2025年最新高速Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-shadowrocket-node.htm" title="「11月9日」2025年最新高速Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月9日」2025年最新高速Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-subscribe-node.htm" title="「11月8日」2025年最新高速Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「11月8日」2025年最新高速Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-19-clash-v2ray-ss-ssr.htm" title="「11月19日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「11月19日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-28-free-node-subscribe-links.htm" title="「11月28日」2025年最新高速V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「11月28日」2025年最新高速V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-5-free-clash-subscribe.htm" title="「12月5日」2025年最新高速Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「12月5日」2025年最新高速Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-7-clash-v2ray-ss-ssr.htm" title="「12月7日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「12月7日」2025年最新高速Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-clash-node-daily-updates.htm" title="「11月12日」2025年最新高速Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「11月12日」2025年最新高速Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a></li>
                     </ul>
     </div>
 </div>
@@ -408,7 +409,7 @@ sudo systemctl start clash
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
