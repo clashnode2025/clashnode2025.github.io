@@ -275,14 +275,14 @@ A：Quantumult在规则管理上更加细腻，适合高级用户。Stash和Loon
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何更新 Clash 的订阅节点？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 如何设置不同用户的带宽限制？</h5></div>
     <div class="panel-body">
-        在 Clash 中更新订阅节点，只需在配置页面中点击“Update”或“Refresh”按钮即可。系统会重新下载订阅链接中的内容，自动替换旧节点。这样能确保用户随时获取最新可用节点，避免连接失败或延迟过高。<hr />    </div>
+        管理员可为每个用户设置独立的带宽上限和流量配额。超过配额后可自动阻断或降速，确保服务器资源合理分配，避免单个用户占用过多带宽而影响其他用户体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 Reality 模式需要额外配置吗？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何实现域名精确分流？</h5></div>
     <div class="panel-body">
-        Reality 模式需要配置伪装域名、公钥和服务器指纹等参数。正确配置后，可有效隐藏流量特征，提高在高封锁环境下的可用性和安全性。<hr />    </div>
+        Sing-box 支持按域名匹配流量，将不同应用流量分配到指定节点。结合策略组使用，可自动选择最优节点，提高访问速度和网络稳定性，实现精确流量管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 的分流规则可以按端口分配节点吗？</h5></div>
@@ -290,9 +290,9 @@ A：Quantumult在规则管理上更加细腻，适合高级用户。Stash和Loon
         支持。用户可通过端口号匹配流量，将不同应用的流量分配到指定节点，实现精准分流。结合策略组使用，可优化访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何实现域名精确分流？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 如何在 iPhone 上使用？</h5></div>
     <div class="panel-body">
-        Sing-box 支持按域名匹配流量，将不同应用流量分配到指定节点。结合策略组使用，可自动选择最优节点，提高访问速度和网络稳定性，实现精确流量管理。<hr />    </div>
+        从 App Store 下载 Surfboard 后，导入 Clash 订阅链接即可使用。Surfboard 提供直观的节点切换和规则管理界面，可查看实时延迟与流量数据，非常适合希望简单上手的 iOS 用户。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 可以与 Shadowsocks 等客户端同时使用吗？</h5></div>
@@ -305,14 +305,9 @@ A：Quantumult在规则管理上更加细腻，适合高级用户。Stash和Loon
         Sing-box 支持多平台，包括 Windows、Linux、macOS 和 Android。可从官方 GitHub 页面下载预编译版本或通过命令行安装。配置文件采用 JSON 格式，兼容多种协议配置。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何设置不同用户的带宽限制？</h5></div>
+    <div class="panel-heading"><h5>VLESS 的 Reality 模式需要额外配置吗？</h5></div>
     <div class="panel-body">
-        管理员可为每个用户设置独立的带宽上限和流量配额。超过配额后可自动阻断或降速，确保服务器资源合理分配，避免单个用户占用过多带宽而影响其他用户体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 如何在 iPhone 上使用？</h5></div>
-    <div class="panel-body">
-        从 App Store 下载 Surfboard 后，导入 Clash 订阅链接即可使用。Surfboard 提供直观的节点切换和规则管理界面，可查看实时延迟与流量数据，非常适合希望简单上手的 iOS 用户。<hr />    </div>
+        Reality 模式需要配置伪装域名、公钥和服务器指纹等参数。正确配置后，可有效隐藏流量特征，提高在高封锁环境下的可用性和安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>使用 Reality 协议后，客户端与服务端的密钥如何管理？</h5></div>
@@ -322,7 +317,12 @@ A：Quantumult在规则管理上更加细腻，适合高级用户。Stash和Loon
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何定时自动更新节点？</h5></div>
     <div class="panel-body">
-        可在计划任务中添加命令 `passwall update` 并设定时间间隔，例如每日凌晨自动更新。这样可确保节点信息实时同步，避免旧节点失效影响连接体验。    </div>
+        可在计划任务中添加命令 `passwall update` 并设定时间间隔，例如每日凌晨自动更新。这样可确保节点信息实时同步，避免旧节点失效影响连接体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何更新 Clash 的订阅节点？</h5></div>
+    <div class="panel-body">
+        在 Clash 中更新订阅节点，只需在配置页面中点击“Update”或“Refresh”按钮即可。系统会重新下载订阅链接中的内容，自动替换旧节点。这样能确保用户随时获取最新可用节点，避免连接失败或延迟过高。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -371,16 +371,16 @@ A：Quantumult在规则管理上更加细腻，适合高级用户。Stash和Loon
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-23.htm" title="「8月23日」2025年最新高速Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「8月23日」2025年最新高速Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-8-27.htm" title="「8月27日」2025年最新高速Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「8月27日」2025年最新高速Singbox节点/SSR节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-21-free-high-speed-nodes.htm" title="「7月21日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「7月21日」2025年最新高速Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-21.htm" title="「8月21日」2025年最新高速Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「8月21日」2025年最新高速Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-ssr-subscribe.htm" title="「8月12日」2025年最新高速Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「8月12日」2025年最新高速Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-5.htm" title="「8月5日」2025年最新高速Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源">「8月5日」2025年最新高速Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-23.htm" title="「8月23日」2025年最新高速Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「8月23日」2025年最新高速Trojan节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-6-free-clash.htm" title="「8月6日」2025年最新高速Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点免费节点链接订阅，推荐便宜订阅源">「8月6日」2025年最新高速Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-7-31.htm" title="「7月31日」2025年最新高速V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源">「7月31日」2025年最新高速V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-19-free-ssr-node.htm" title="「7月19日」2025年最新高速V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点链接订阅，推荐便宜订阅源">「7月19日」2025年最新高速V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点/Trojan节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-22-free-ssr-subscribe.htm" title="「7月22日」2025年最新高速Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「7月22日」2025年最新高速Clash节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-7.htm" title="「8月7日」2025年最新高速Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「8月7日」2025年最新高速Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-11.htm" title="「8月11日」2025年最新高速Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「8月11日」2025年最新高速Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-8-13.htm" title="「8月13日」2025年最新高速Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「8月13日」2025年最新高速Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-8-9.htm" title="「8月9日」2025年最新高速SSR节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/V2ray节点免费节点链接订阅，推荐便宜订阅源">「8月9日」2025年最新高速SSR节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/V2ray节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-clash-node-daily-updates.htm" title="「8月28日」2025年最新高速Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「8月28日」2025年最新高速Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-clash-node.htm" title="「8月18日」2025年最新高速SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点免费节点链接订阅，推荐便宜订阅源">「8月18日」2025年最新高速SSR节点/Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/Clash节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-node-share.htm" title="「8月8日」2025年最新高速Trojan节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源">「8月8日」2025年最新高速Trojan节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点/Singbox节点免费节点链接订阅，推荐便宜订阅源</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -392,10 +392,10 @@ A：Quantumult在规则管理上更加细腻，适合高级用户。Stash和Loon
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
